@@ -10,10 +10,17 @@ import logoJavascript from "../images/techs/javascript.png";
 import logoReact from "../images/techs/react.png";
 import logoVue from "../images/techs/vue.png";
 import logoLaravel from "../images/techs/laravel.png";
+import logoPhp from "../images/techs/php.svg";
 import logoPython from "../images/techs/python.png";
 import logoPostgresql from "../images/techs/postgresql.png";
 import logoMysql from "../images/techs/mysql.png";
 import logoGit from "../images/techs/git.png";
+import logoGithub from "../images/techs/github.png";
+import logoPostman from "../images/techs/postman.svg";
+import logoNotion from "../images/techs/notion.png";
+import logoTrello from "../images/techs/trello.png";
+import logoPhpstorm from "../images/techs/phpstorm.png";
+import logoVscode from "../images/techs/vsc.svg";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import Badge from "../components/Badge";
@@ -26,13 +33,14 @@ class Home extends React.Component {
     this.state = {
       loading: true,
       error: null,
-      data: [],
+      techs: [],
+      tools: [],
     };
   }
 
   componentDidMount() {
     this.setState({
-      data: [
+      techs: [
         {
           id: 1,
           image: logoHtml5,
@@ -64,32 +72,73 @@ class Home extends React.Component {
           name: "Vue.js",
         },
         {
-          id: 3,
+          id: 7,
           image: logoLaravel,
           name: "Laravel",
         },
         {
-          id: 4,
+          id: 8,
+          image: logoPhp,
+          name: "Php",
+        },{
+          id: 9,
           image: logoPython,
           name: "Python",
         },
         {
-          id: 4,
+          id: 10,
           image: logoPostgresql,
           name: "PostgreSQL",
         },
         {
-          id: 4,
+          id: 11,
           image: logoMysql,
           name: "MySQL",
         },
         {
-          id: 4,
+          id: 12,
           image: logoGit,
           name: "Git",
         },
+        
       ],
     });
+    this.setState({
+      tools:[
+        {
+          id: 1,
+          image: logoGithub,
+          name: "Github",
+        },
+        {
+          id: 2,
+          image: logoPostman,
+          name: "Postman",
+        },
+        {
+          id: 2,
+          image: logoNotion,
+          name: "Notion",
+        },
+        {
+          id: 2,
+          image: logoTrello,
+          name: "Trello",
+        },
+        {
+          id: 2,
+          image: logoPhpstorm,
+          name: "PhpStorm",
+        },
+        {
+          id: 2,
+          image: logoVscode,
+          name: "VSCode",
+        },
+
+        
+      ]
+    })
   }
 
   render() {
@@ -115,7 +164,8 @@ class Home extends React.Component {
         <Badge firstName={firstName} lastName={lastName}></Badge>
         <div className="Badges_list">
           <div className="Badges__container">
-            <BadgesList badges={this.state.data}></BadgesList>
+            <BadgesList title={'Tecnologías'} badges={this.state.techs}></BadgesList>
+            <BadgesList title={'Herramientas'} badges={this.state.tools}></BadgesList>
             {/* {this.state.loading && <Skeleton></Skeleton>}
 
             {!this.state.loading && (

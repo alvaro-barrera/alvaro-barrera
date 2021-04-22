@@ -26,10 +26,11 @@ class BadgesListItem extends React.Component {
   };
   render() {
     return (
-      <div className="BadgesListItem text-center">
+      <div className="BadgesListItem text-center"
+      onMouseLeave={this.handleMouseLeave}
+      >
         <img
           onMouseOver={this.handleMouseOverImage}
-          onMouseLeave={this.handleMouseLeaveImage}
           className="BadgesListItem__avatar"
           src={this.props.badge.image}
           alt={`${this.props.badge.name}`}
@@ -50,7 +51,7 @@ class BadgesList extends React.Component {
       <React.Fragment>
         <h3 className="text-center">
           <span class="badge badge-secondary BadgesList__title">
-            Tecnologías
+            {this.props.title}
           </span>
         </h3>
         <ul class="nav nav-pills flex-column flex-sm-row justify-content-center">
