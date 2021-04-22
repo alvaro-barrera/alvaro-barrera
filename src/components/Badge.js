@@ -23,7 +23,7 @@ class Badge extends React.Component {
           </h1>
         </div>
         <div className="Badge__section-info">
-          <h2>Desarrollador Backend y Frontend</h2>
+          <h2>Desarrollador <span className="Badge__domain">back-end</span> & <span className="Badge__domain">front-end</span></h2>
           <div>@Alvaro__Barrera</div>
         </div>
         <div className="Badge__footer mt-4">

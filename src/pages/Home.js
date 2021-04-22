@@ -3,15 +3,21 @@ import Navbar from "../components/Navbar";
 import BadgesList from "../components/BadgesList";
 import "./styles/Badges.css";
 import logo from "../images/desarrollo-web.png";
+import logoHtml5 from "../images/techs/html5.png";
+import logoCss from "../images/techs/css.png";
+import logoBootstrap from "../images/techs/bootstrap.png";
+import logoJavascript from "../images/techs/javascript.png";
 import logoReact from "../images/techs/react.png";
 import logoVue from "../images/techs/vue.png";
 import logoLaravel from "../images/techs/laravel.png";
 import logoPython from "../images/techs/python.png";
 import logoPostgresql from "../images/techs/postgresql.png";
 import logoMysql from "../images/techs/mysql.png";
+import logoGit from "../images/techs/git.png";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import Badge from "../components/Badge";
+import BadgeNew from "./BadgeNew";
 
 class Home extends React.Component {
   constructor(props) {
@@ -23,16 +29,37 @@ class Home extends React.Component {
       data: [],
     };
   }
+
   componentDidMount() {
     this.setState({
       data: [
         {
           id: 1,
+          image: logoHtml5,
+          name: "HTML5",
+        },
+        {
+          id: 2,
+          image: logoCss,
+          name: "CSS",
+        },
+        {
+          id: 3,
+          image: logoBootstrap,
+          name: "Bootstrap",
+        },
+        {
+          id: 4,
+          image: logoJavascript,
+          name: "Javascript",
+        },
+        {
+          id: 5,
           image: logoReact,
           name: "React.js",
         },
         {
-          id: 2,
+          id: 6,
           image: logoVue,
           name: "Vue.js",
         },
@@ -55,6 +82,11 @@ class Home extends React.Component {
           id: 4,
           image: logoMysql,
           name: "MySQL",
+        },
+        {
+          id: 4,
+          image: logoGit,
+          name: "Git",
         },
       ],
     });

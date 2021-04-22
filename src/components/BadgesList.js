@@ -17,6 +17,7 @@ class BadgesListItem extends React.Component {
     if (e.target.parentElement.querySelector("strong")) {
       e.target.parentElement.querySelector("strong").className = "d-block";
     }
+    console.log(e.target.parentElement);
   };
   handleMouseLeaveImage = (e) => {
     if (e.target.parentElement.querySelector("strong")) {
@@ -25,10 +26,7 @@ class BadgesListItem extends React.Component {
   };
   render() {
     return (
-      <div
-        className="BadgesListItem"
-      >
-        <strong className="d-none">{this.props.badge.name}</strong>
+      <div className="BadgesListItem text-center">
         <img
           onMouseOver={this.handleMouseOverImage}
           onMouseLeave={this.handleMouseLeaveImage}
@@ -36,6 +34,11 @@ class BadgesListItem extends React.Component {
           src={this.props.badge.image}
           alt={`${this.props.badge.name}`}
         />
+        <strong className="d-none">
+          <span class="badge badge-success BadgesListItem__tag-title text-center mb-1">
+            {this.props.badge.name}
+          </span>
+        </strong>
       </div>
     );
   }
@@ -51,13 +54,13 @@ class BadgesList extends React.Component {
           </span>
         </h3>
         <ul class="nav nav-pills flex-column flex-sm-row justify-content-center">
-        {this.props.badges.map((badge) => {
-              return (
-                <li  class="nav-item ml-2 mr-2" href="#" key={badge.id}>
+          {this.props.badges.map((badge) => {
+            return (
+              <li class="nav-item ml-2 mr-2" href="#" key={badge.id}>
                 <BadgesListItem badge={badge} />
-                </li >
-              );
-            })}
+              </li>
+            );
+          })}
         </ul>
         {/* <div className="BadgesList">
           <ul className="list-unstyled">
