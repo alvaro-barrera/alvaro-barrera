@@ -7,7 +7,7 @@ import { SocialIcon } from "react-social-icons";
 class Badge extends React.Component {
   render() {
     return (
-      <div className="Badge">
+      <div className="Badge Badge__border">
         {/* <div className="Badge__header">
                  <img src={headerLogo} alt="Logo"/> 
             </div> */}

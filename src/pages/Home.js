@@ -80,7 +80,8 @@ class Home extends React.Component {
           id: 8,
           image: logoPhp,
           name: "Php",
-        },{
+        },
+        {
           id: 9,
           image: logoPython,
           name: "Python",
@@ -100,11 +101,10 @@ class Home extends React.Component {
           image: logoGit,
           name: "Git",
         },
-        
       ],
     });
     this.setState({
-      tools:[
+      tools: [
         {
           id: 1,
           image: logoGithub,
@@ -135,10 +135,8 @@ class Home extends React.Component {
           image: logoVscode,
           name: "VSCode",
         },
-
-        
-      ]
-    })
+      ],
+    });
   }
 
   render() {
@@ -151,6 +149,7 @@ class Home extends React.Component {
             <div className="Badges__container">
               {/* <img className="Badges_conf-logo" src={logo} alt="Logo" /> */}
               <h1 className="Badgeds__title">Bienvenid@ a mi sitio web 💻</h1>
+              <Badge firstName={firstName} lastName={lastName}></Badge>
             </div>
           </div>
         </div>
@@ -161,11 +160,16 @@ class Home extends React.Component {
             </Link>
           </div>
         </div> */}
-        <Badge firstName={firstName} lastName={lastName}></Badge>
         <div className="Badges_list">
           <div className="Badges__container">
-            <BadgesList title={'Tecnologías'} badges={this.state.techs}></BadgesList>
-            <BadgesList title={'Herramientas'} badges={this.state.tools}></BadgesList>
+            <BadgesList
+              title={"Tecnologías"}
+              badges={this.state.techs}
+            ></BadgesList>
+            <BadgesList
+              title={"Herramientas"}
+              badges={this.state.tools}
+            ></BadgesList>
             {/* {this.state.loading && <Skeleton></Skeleton>}
 
             {!this.state.loading && (
