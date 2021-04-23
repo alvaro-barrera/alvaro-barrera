@@ -6,6 +6,9 @@
 .BriefcaseItem{
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%);
     border-radius: 8px 8px 8px 8px;
+    background-color: white;
+    padding: 10px;
+    /* width: 18rem; */
 }
 /* .BriefcaseItem__image {
   width: 90%;
@@ -28,3 +31,47 @@
   border-radius: 20px;
   margin: auto;
 } */
+
+.Briefcase__row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.Briefcase__row,
+.Briefcase__row > .Briefcase__column {
+  padding: 8px;
+  text-align: center;
+}
+
+/* Create three equal Briefcase__columns that floats next to each other */
+.Briefcase__column {
+  /* float: left; */
+  display: inline-block;
+
+  width: 44%;
+  /* display: none; Hide columns by default */
+}
+
+/* Clear floats after rows */
+.Briefcase__row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+/* .content { */
+ 
+/* } */
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+.BriefcaseItem__badges-container {
+  padding: .5rem;
+  margin-right: auto;
+  margin-left: auto;
+  border-width: .2rem;
+}

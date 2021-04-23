@@ -1,4 +1,5 @@
 import React from "react";
+import SectionTitle from "./SectionTitle";
 
 import "./styles/BadgesList.css";
 
@@ -26,16 +27,17 @@ class BadgesListItem extends React.Component {
   };
   render() {
     return (
-      <div className="BadgesListItem text-center"
-      onMouseLeave={this.handleMouseLeave}
+      <div
+        className="BadgesListItem text-center"
+        // onMouseLeave={this.handleMouseLeave}
       >
         <img
-          onMouseOver={this.handleMouseOverImage}
+          // onMouseOver={this.handleMouseOverImage}
           className="BadgesListItem__avatar"
           src={this.props.badge.image}
           alt={`${this.props.badge.name}`}
         />
-        <strong className="d-none">
+        <strong className="d-block">
           <span class="badge badge-success BadgesListItem__tag-title text-center mb-1">
             {this.props.badge.name}
           </span>
@@ -48,12 +50,8 @@ class BadgesListItem extends React.Component {
 class BadgesList extends React.Component {
   render() {
     return (
-      <React.Fragment>
-        <h3 className="text-center">
-          <span class="badge badge-secondary BadgesList__title">
-            {this.props.title}
-          </span>
-        </h3>
+      <div className="pb-3 pt-3">
+        <SectionTitle title={this.props.title}></SectionTitle>
         <ul class="nav nav-pills flex-column flex-sm-row justify-content-center">
           {this.props.badges.map((badge) => {
             return (
@@ -74,7 +72,7 @@ class BadgesList extends React.Component {
             })}
           </ul>
         </div> */}
-      </React.Fragment>
+      </div>
     );
   }
 }

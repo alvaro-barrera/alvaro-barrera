@@ -15,7 +15,9 @@ body {
 h1, h2 {
   font-family: 'Anton', sans-serif;
 }
-
+.Title__Anton{
+  font-family: 'Anton', sans-serif;
+}
 a.link-unstyled {
   color: inherit;
 }

@@ -13,10 +13,7 @@ class Footer extends React.Component {
                 className="font-weight-bold text-white"
                 href="https://www.linkedin.com/in/alvaro-barrera/"
                 target="_blank"
-              >
-                Álvaro
-              </a>
-              con 💚 & ⚛️
+              >Álvaro </a> con 💚 & ⚛️
             </p>
           </blockquote>
         </div>
