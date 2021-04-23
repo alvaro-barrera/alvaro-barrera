@@ -25,6 +25,7 @@ import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import Badge from "../components/Badge";
 import BadgeNew from "./BadgeNew";
+import About from "../components/About";
 
 class Home extends React.Component {
   constructor(props) {
@@ -162,6 +163,7 @@ class Home extends React.Component {
         </div> */}
         <div className="Badges_list">
           <div className="Badges__container">
+            <About></About>
             <BadgesList
               title={"Tecnologías"}
               badges={this.state.techs}

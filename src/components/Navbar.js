@@ -130,6 +130,7 @@ class Navbar extends React.Component {
           </div>
           <span className=" float-right">
             <button
+            id="button-contact"
               className="btn text-white font-weight-light"
               onClick={this.handleOpenModal}
             >
