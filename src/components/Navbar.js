@@ -16,6 +16,14 @@ class Navbar extends React.Component {
         email: "",
         message: "",
       },
+      formError: {
+        name: false,
+        celphone: false,
+        email: false,
+        message: false,
+        celphoneDigits: false,
+        emailFormat: false,
+      },
       formContent:
         "https://api.whatsapp.com/send/?phone=%2B51944831430&text=Hola+%C3%81lvaro%2C+me+interesa+contactarme+contigo&app_absent=0",
       baseURL: "https://api.whatsapp.com/send/?phone=%2B51944831430&text=",
@@ -42,12 +50,58 @@ class Navbar extends React.Component {
           email: "",
           message: "",
         },
-        modalIsOpen: false
+        modalIsOpen: false,
       });
     } else {
+      let errorName = false;
+      let errorCelphone = false;
+      let errorEmail = false;
+      let errorMessage = false;
+      let errorCelphoneDigits = false;
+      let errorEmailFormat = false;
+
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+      if (this.state.form.name.trim().length == 0) {
+        errorName = true;
+      }
+      if (this.state.form.celphone.trim().length == 0) {
+        errorCelphone = true;
+      }
+
+      if (this.state.form.message.trim().length == 0) {
+        errorMessage = true;
+      }
+
+      if (this.state.form.celphone.trim().length != 9) {
+        errorCelphoneDigits = true;
+      }
+      if (
+        this.state.form.email.trim().length != 0 &&
+        !re.test(String(this.state.form.email).toLowerCase())
+      ) {
+        errorEmailFormat = true;
+      }
+
+      this.setState({
+        formError: {
+          name: errorName,
+          celphone: errorCelphone,
+          email: errorEmail,
+          message: errorMessage,
+          celphoneDigits: errorCelphoneDigits,
+          emailFormat: errorEmailFormat,
+        },
+      });
       console.log("0");
     }
   };
+  handleKeyPressCelphone = e => {
+    var key = window.event ? e.which : e.keyCode;
+    if (key < 48 || key > 57) {
+      e.preventDefault();
+    }
+  }
   handleChange = (e) => {
     this.setState({
       form: {
@@ -75,7 +129,10 @@ class Navbar extends React.Component {
             <span className="font-weight-bold ml-1">Barrera</span>
           </div>
           <span className=" float-right">
-            <button className="btn text-white" onClick={this.handleOpenModal}>
+            <button
+              className="btn text-white font-weight-light"
+              onClick={this.handleOpenModal}
+            >
               Contáctame 👋
             </button>
           </span>
@@ -89,37 +146,57 @@ class Navbar extends React.Component {
           <hr />
           <form action="">
             <div className="form-group">
-              <label htmlFor="name">
-                🙍 Nombre completo
-              </label>
+              <label htmlFor="name">🙍 Nombre completo</label>
               <input
                 placeholder="Ingresa tu nombre completo"
                 type="text"
                 name="name"
-                className="form-control"
+                className="form-control "
                 onChange={this.handleChange}
                 value={this.state.form.name}
               />
-              <small class="form-text text-muted">Requerido</small>
+              <small
+                className={`form-text ${
+                  this.state.formError.name
+                    ? "text-danger"
+                    : "text-muted d-none"
+                }`}
+              >
+                ⚠️ Requerido
+              </small>
             </div>
             <div className="form-group">
-              <label htmlFor="celphone">
-                📲 Celular de contacto
-              </label>
+              <label htmlFor="celphone">📲 Celular de contacto</label>
               <input
                 placeholder="Ingresa un número de contacto"
-                type="number"
+                type="text"
                 name="celphone"
                 className="form-control"
                 onChange={this.handleChange}
                 value={this.state.form.celphone}
+                onKeyPress={this.handleKeyPressCelphone}
               />
-              <small class="form-text text-muted">Requerido</small>
+              <small
+                className={`form-text ${
+                  this.state.formError.celphone
+                    ? "text-danger"
+                    : "text-muted d-none"
+                }`}
+              >
+                ⚠️ Requerido
+              </small>
+              <small
+                className={`form-text ${
+                  this.state.formError.celphoneDigits
+                    ? "text-danger"
+                    : "text-muted d-none"
+                }`}
+              >
+                ❌ 9 dígitos requeridos
+              </small>
             </div>
             <div className="form-group">
-              <label htmlFor="email">
-                  📧 Email de contacto
-                  </label>
+              <label htmlFor="email">📧 Email de contacto <small className="text-muted">(Opcional)</small></label>
               <input
                 placeholder="Ingresa tu email"
                 type="text"
@@ -128,12 +205,19 @@ class Navbar extends React.Component {
                 onChange={this.handleChange}
                 value={this.state.form.email}
               />
-              <small class="form-text text-muted">Opcional</small>
+              <small
+                className={`form-text ${
+                  this.state.formError.emailFormat
+                    ? "text-danger"
+                    : "text-muted d-none"
+                }`}
+              >
+                ❌ Formato no válido
+              </small>
             </div>
             <div className="form-group">
               <label htmlFor="message">
-                ✍ Datos que consideres
-                importantes
+                ✍ Datos que consideres importantes
               </label>
               <textarea
                 placeholder="Escribe los datos que consideres de importancia"
@@ -142,11 +226,19 @@ class Navbar extends React.Component {
                 onChange={this.handleChange}
                 value={this.state.form.message}
               ></textarea>
-              <small class="form-text text-muted">Requerido</small>
+              <small
+                className={`form-text ${
+                  this.state.formError.message
+                    ? "text-danger"
+                    : "text-muted d-none"
+                }`}
+              >
+                ⚠️ Requerido
+              </small>
             </div>
             <div className="form-group">
               <button
-              type="button"
+                type="button"
                 className="btn btn-primary float-right btn-block"
                 onClick={this.handleSubmitForm}
               >

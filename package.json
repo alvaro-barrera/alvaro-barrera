@@ -1,5 +1,5 @@
 {
-  "homepage":"https://whitehatdevelop.github.io/about-me-test",
+  "homepage": "https://whitehatdevelop.github.io/about-me-test",
   "name": "about-me",
   "version": "0.1.0",
   "private": true,
@@ -22,7 +22,8 @@
     "react-loading-skeleton": "^2.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "2.1.5",
-    "react-social-icons": "^5.1.1"
+    "react-social-icons": "^5.1.1",
+    "react-toastify": "^7.0.3"
   },
   "devDependencies": {
     "faker": "^4.1.0",
