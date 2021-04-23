@@ -1,8 +1,6 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import BadgesList from "../components/BadgesList";
 import "./styles/Badges.css";
-import logo from "../images/desarrollo-web.png";
 import logoHtml5 from "../images/techs/html5.png";
 import logoCss from "../images/techs/css.png";
 import logoBootstrap from "../images/techs/bootstrap.png";
@@ -21,11 +19,11 @@ import logoNotion from "../images/techs/notion.png";
 import logoTrello from "../images/techs/trello.png";
 import logoPhpstorm from "../images/techs/phpstorm.png";
 import logoVscode from "../images/techs/vsc.svg";
-import { Link } from "react-router-dom";
-import Skeleton from "react-loading-skeleton";
+import logoSolticrm from "../images/briefcase/solticrm.PNG";
+import logoSistemalotes from "../images/briefcase/sistemalotes.PNG";
 import Badge from "../components/Badge";
-import BadgeNew from "./BadgeNew";
 import About from "../components/About";
+import Briefcase from "../components/Briefcase";
 
 class Home extends React.Component {
   constructor(props) {
@@ -36,6 +34,7 @@ class Home extends React.Component {
       error: null,
       techs: [],
       tools: [],
+      projects: [],
     };
   }
 
@@ -103,8 +102,6 @@ class Home extends React.Component {
           name: "Git",
         },
       ],
-    });
-    this.setState({
       tools: [
         {
           id: 1,
@@ -137,6 +134,20 @@ class Home extends React.Component {
           name: "VSCode",
         },
       ],
+      projects: [
+        {
+          id: 1,
+          name: "Solti-CRM",
+          image: logoSolticrm,
+          footer: 'Aplicativo web y móvil para la Gestión de las Relaciones con Clientes administrando la información de los clientes para administrar cuentas, leads y oportunidades de ventas en un único local'
+        },
+        {
+          id: 2,
+          name: "Sistema para lotes y viviendas",
+          image: logoSistemalotes,
+          footer: 'Sistema web administrativo y ecommerce para gestión de proyectos inmobiliarios, gestión de contratos, pago de cuotas y facturación electrónica',
+        },
+      ],
     });
   }
 
@@ -148,22 +159,15 @@ class Home extends React.Component {
         <div className="Badges">
           <div className="Badges__hero">
             <div className="Badges__container">
-              {/* <img className="Badges_conf-logo" src={logo} alt="Logo" /> */}
               <h1 className="Badgeds__title">Bienvenid@ a mi sitio web 💻</h1>
               <Badge firstName={firstName} lastName={lastName}></Badge>
             </div>
           </div>
         </div>
-        {/* <div className="Badge_contain">
-          <div className="Badges__buttons">
-            <Link to="/badges/new" className="btn btn-primary">
-              Nuevo
-            </Link>
-          </div>
-        </div> */}
         <div className="Badges_list">
           <div className="Badges__container">
             <About></About>
+            <Briefcase projects={this.state.projects}></Briefcase>
             <BadgesList
               title={"Tecnologías"}
               badges={this.state.techs}
@@ -172,17 +176,6 @@ class Home extends React.Component {
               title={"Herramientas"}
               badges={this.state.tools}
             ></BadgesList>
-            {/* {this.state.loading && <Skeleton></Skeleton>}
-
-            {!this.state.loading && (
-              <button
-                className="btn btn-primary"
-                type="button"
-                onClick={() => this.fetchCharacters()}
-              >
-                Ver más
-              </button>
-            )} */}
           </div>
         </div>
       </React.Fragment>

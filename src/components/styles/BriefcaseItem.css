@@ -1,0 +1,30 @@
+.BriefcaseItem__image {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.BriefcaseItem{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%);
+    border-radius: 8px 8px 8px 8px;
+}
+/* .BriefcaseItem__image {
+  width: 90%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.BriefcaseItem__image_container {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  height: 75%;
+  transition: 1s ease-in-out;
+}
+
+.BriefcaseItem___container {
+  position: relative;
+  height: 450px;
+  width: 500px;
+  border-radius: 20px;
+  margin: auto;
+} */
