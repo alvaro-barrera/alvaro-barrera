@@ -1,6 +1,4 @@
 import React from "react";
-import confLogo from "../images/badge-header.svg";
-import headerLogo from "../images/desarrollo-web.png";
 import "./styles/Badge.css";
 import { SocialIcon } from "react-social-icons";
 
@@ -23,28 +21,40 @@ class Badge extends React.Component {
           </h1>
         </div>
         <div className="Badge__section-info">
-          <h2>Desarrollador <span className="Badge__domain">back-end</span> & <span className="Badge__domain">front-end</span></h2>
-          <div>@Alvaro__Barrera</div>
+          <h2>
+            Desarrollador <span className="Badge__domain">back-end</span> &{" "}
+            <span className="Badge__domain">front-end</span>
+          </h2>
         </div>
         <div className="Badge__footer mt-4">
           <div className="d-flex">
             <SocialIcon
-            target="_blank" rel="noopener noreferrer" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="mr-1 ml-1"
               label="Twitter Álvaro Barrera"
               url="https://twitter.com/Alvaro__Barrera"
             />
             <SocialIcon
-            target="_blank" rel="noopener noreferrer" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="mr-1 ml-1"
               label="LinkedIn Álvaro Barrera"
               url="https://www.linkedin.com/in/alvaro-barrera/"
             />
             <SocialIcon
-            target="_blank" rel="noopener noreferrer" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="mr-1 ml-1"
               label="WhatsApp"
               url="https://api.whatsapp.com/send/?phone=%2B51944831430&text=Hola+%C3%81lvaro%2C+me+interesa+contactarme+contigo&app_absent=0"
+            />
+            <SocialIcon
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mr-1 ml-1"
+              label="Instagram de Álvaro Barrera"
+              url="https://www.instagram.com/alvaro__barrera/"
             />
           </div>
         </div>

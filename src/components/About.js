@@ -17,15 +17,13 @@ class About extends React.Component {
             Laravel, Vue.js y actualmente React.js, sin embargo me considero
             como un apasionado por el aprendizaje y las tecnologías, así como
             aplicarlas para obtener mejores resultados, me gusta resolver
-            problemas y afrontar nuevos retos. 👨🏽‍💻
+            problemas y afrontar nuevos retos.<span role="img" aria-label="laptop"> 👨🏽‍💻</span>
           </p>
           <p className="lead">
             <button
               onClick={this.handleRefContact}
               type="button"
-              className="btn btn-primary btn-lg"
-              href="#"
-              role="button"
+              className="btn btn-primary btn-lg ButtonContact__animation"
             >
               ¿Tienes algún proyecto?
             </button>

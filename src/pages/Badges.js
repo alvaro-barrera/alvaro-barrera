@@ -1,11 +1,7 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import BadgesList from '../components/BadgesList';
 import './styles/Badges.css'
 import logo from '../images/desarrollo-web.png'
-import logoReact from '../images/techs/react.png'
-import logoVue from '../images/techs/vue.png'
-import logoLaravel from '../images/techs/laravel.png'
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 
@@ -27,27 +23,7 @@ class Badges extends React.Component {
     componentDidMount(){
         console.log('3')
         this.fetchCharacters()
-        // this.timeoutId = setTimeout(()=>{
-        //     this.setState({
-        //         data:[
-        //             {
-        //                 id:1,
-        //                 image:logoReact,
-        //                 name: 'React.js'
-        //             },
-        //             {
-        //                 id:1,
-        //                 image:logoVue,
-        //                 name: 'Vue.js'
-        //             },
-        //             {     
-        //                 id:1,
-        //                 image:logoLaravel,
-        //                 name: 'Laravel'
-        //             },
-        //         ]
-        //     })
-        // },3000)
+      
     }
 
     componentWillUnmount(){

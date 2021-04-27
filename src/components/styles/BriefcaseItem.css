@@ -39,7 +39,7 @@
 /* Add padding BETWEEN each column (if you want) */
 .Briefcase__row,
 .Briefcase__row > .Briefcase__column {
-  padding: 8px;
+  padding: 3px;
   text-align: center;
 }
 

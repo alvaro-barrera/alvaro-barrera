@@ -10,10 +10,20 @@
 body {
   font-family: 'Lato', 'Helvetica Neue', sans-serif;
   background-color: #F4F4F7;
+  overflow-x: hidden;
 }
+
+html{
+  overflow-x: hidden;
+}
+
 
 h1, h2 {
   font-family: 'Anton', sans-serif;
+}
+
+.Main__content{
+  margin-top: 50px;
 }
 .Title__Anton{
   font-family: 'Anton', sans-serif;

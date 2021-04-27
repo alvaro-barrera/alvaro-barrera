@@ -3,7 +3,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   border-radius: 8px 8px 8px 8px;
   overflow: hidden;
-  height: 50px;
+  height: 70px;
   margin-bottom: 0px;
   margin-top: 2rem;
 }
@@ -15,4 +15,14 @@
   align-items: center;
   padding: 0.5rem 0;
   color: antiquewhite  !important;
+}
+
+.page-footer{
+  background: #548285;
+  color: antiquewhite  !important;
+}
+
+.Footer__color{
+  color: antiquewhite  !important;
+
 }

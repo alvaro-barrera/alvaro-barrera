@@ -1,8 +1,9 @@
 import React from "react";
 import "./styles/Navbar.css";
 import logo from "../images/idea.svg";
-import { Link } from "react-router-dom";
 import Modal from "../components/Modal";
+import { Link } from "react-router-dom";
+import { GrApps } from "react-icons/gr";
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class Navbar extends React.Component {
     };
   }
   handleOpenModal = (e) => {
+    e.preventDefault()
     this.setState({ modalIsOpen: true });
   };
 
@@ -62,22 +64,22 @@ class Navbar extends React.Component {
 
       const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-      if (this.state.form.name.trim().length == 0) {
+      if (this.state.form.name.trim().length === 0) {
         errorName = true;
       }
-      if (this.state.form.celphone.trim().length == 0) {
+      if (this.state.form.celphone.trim().length === 0) {
         errorCelphone = true;
       }
 
-      if (this.state.form.message.trim().length == 0) {
+      if (this.state.form.message.trim().length === 0) {
         errorMessage = true;
       }
 
-      if (this.state.form.celphone.trim().length != 9) {
+      if (this.state.form.celphone.trim().length !== 9) {
         errorCelphoneDigits = true;
       }
       if (
-        this.state.form.email.trim().length != 0 &&
+        this.state.form.email.trim().length !== 0 &&
         !re.test(String(this.state.form.email).toLowerCase())
       ) {
         errorEmailFormat = true;
@@ -96,12 +98,12 @@ class Navbar extends React.Component {
       console.log("0");
     }
   };
-  handleKeyPressCelphone = e => {
+  handleKeyPressCelphone = (e) => {
     var key = window.event ? e.which : e.keyCode;
     if (key < 48 || key > 57) {
       e.preventDefault();
     }
-  }
+  };
   handleChange = (e) => {
     this.setState({
       form: {
@@ -119,35 +121,85 @@ class Navbar extends React.Component {
     });
     this.validateForm();
   };
+  handleToogleNavbar = (e) => {
+    e.preventDefault()
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  };
   render() {
     return (
       <div className="Navbar">
-        <div className="container-fluid d-flex justify-content-between align-items-center">
-          <div className="Navbar__brand">
+        <div className="topnav" id="myTopnav">
+          <a href="#home" className="active Navbar__brand">
             <img className="Navbar__brand-logo" src={logo} alt="Logo" />
             <span className="font-weight-light">Álvaro</span>
             <span className="font-weight-bold ml-1">Barrera</span>
-          </div>
-          <span className=" float-right">
-            <button
-            id="button-contact"
-              className="btn text-white font-weight-light"
-              onClick={this.handleOpenModal}
-            >
-              Contáctame 👋
-            </button>
+          </a>
+             <span className="float-right">
+
+          <Link
+            className="text-white font-weight-light"
+            to="/"
+          >
+            Inicio
+          </Link>
+          <Link
+            className="text-white font-weight-light"
+            to="/education"
+          >
+            Educación
+          </Link>
+          <Link
+            className="text-white font-weight-light"
+            to="/projects"
+          >
+            Proyectos
+          </Link>
+          <a
+          id="button-contact"
+          href="#!"
+            className="btn text-white font-weight-light"
+            onClick={this.handleOpenModal}
+          >
+            Contáctame{" "}
+            <span role="img" aria-label="waving-hand-sing">
+              👋
+            </span>
+          </a>
+          <a
+            href="#!"
+            className="icon"
+            onClick={this.handleToogleNavbar}
+          >
+            <GrApps></GrApps>
+          </a>
           </span>
         </div>
+
         <Modal
           //   form={this.state.form}
           isOpen={this.state.modalIsOpen}
           onClose={this.handleCloseModal}
         >
-          <h2>Solicitud de contacto 👋</h2>
+          <h2>
+            Solicitud de contacto{" "}
+            <span role="img" aria-label="waving-hand-sing">
+              👋
+            </span>
+          </h2>
           <hr />
           <form action="">
             <div className="form-group">
-              <label htmlFor="name">🙍 Nombre completo</label>
+              <label htmlFor="name">
+                <span role="img" aria-label="man">
+                  🙍
+                </span>{" "}
+                Nombre completo
+              </label>
               <input
                 placeholder="Ingresa tu nombre completo"
                 type="text"
@@ -163,11 +215,19 @@ class Navbar extends React.Component {
                     : "text-muted d-none"
                 }`}
               >
-                ⚠️ Requerido
+                <span role="img" aria-label="warning">
+                  ⚠️
+                </span>{" "}
+                Requerido
               </small>
             </div>
             <div className="form-group">
-              <label htmlFor="celphone">📲 Celular de contacto</label>
+              <label htmlFor="celphone">
+                <span role="img" aria-label="celphone">
+                  📲
+                </span>{" "}
+                Celular de contacto
+              </label>
               <input
                 placeholder="Ingresa un número de contacto"
                 type="text"
@@ -184,7 +244,10 @@ class Navbar extends React.Component {
                     : "text-muted d-none"
                 }`}
               >
-                ⚠️ Requerido
+                <span role="img" aria-label="warning">
+                  ⚠️
+                </span>{" "}
+                Requerido
               </small>
               <small
                 className={`form-text ${
@@ -193,11 +256,20 @@ class Navbar extends React.Component {
                     : "text-muted d-none"
                 }`}
               >
-                ❌ 9 dígitos requeridos
+                <span role="img" aria-label="incorrect">
+                  ❌
+                </span>{" "}
+                9 dígitos requeridos
               </small>
             </div>
             <div className="form-group">
-              <label htmlFor="email">📧 Email de contacto <small className="text-muted">(Opcional)</small></label>
+              <label htmlFor="email">
+                <span role="img" aria-label="mailing">
+                  📧
+                </span>{" "}
+                Email de contacto{" "}
+                <small className="text-muted">(Opcional)</small>
+              </label>
               <input
                 placeholder="Ingresa tu email"
                 type="text"
@@ -213,12 +285,18 @@ class Navbar extends React.Component {
                     : "text-muted d-none"
                 }`}
               >
-                ❌ Formato no válido
+                <span role="img" aria-label="incorrect">
+                  ❌
+                </span>{" "}
+                Formato no válido
               </small>
             </div>
             <div className="form-group">
               <label htmlFor="message">
-                ✍ Datos que consideres importantes
+                <span role="img" aria-label="writing-hand">
+                  ✍
+                </span>{" "}
+                Datos que consideres importantes
               </label>
               <textarea
                 placeholder="Escribe los datos que consideres de importancia"
@@ -234,7 +312,10 @@ class Navbar extends React.Component {
                     : "text-muted d-none"
                 }`}
               >
-                ⚠️ Requerido
+                <span role="img" aria-label="warning">
+                  ⚠️
+                </span>{" "}
+                Requerido
               </small>
             </div>
             <div className="form-group">
@@ -250,12 +331,20 @@ class Navbar extends React.Component {
           <div className="mt-1">
             <div className="form-group text-center">
               <small className="text-primary">
-                Este formulario requerirá una aplicación WhatsApp activa 📱
+                Este formulario requerirá una aplicación WhatsApp activa{" "}
+                <span role="img" aria-label="celphone">
+                  📱
+                </span>
               </small>
             </div>
           </div>
 
-          <a target="_blank" id="ref-wsp" href={this.state.formContent}></a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            id="ref-wsp"
+            href={this.state.formContent}
+          ></a>
         </Modal>
       </div>
     );

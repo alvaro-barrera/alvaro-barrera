@@ -1,0 +1,12 @@
+.Certificate__container{
+    margin-bottom: 0;
+}
+
+.Certificate__li{
+    background-color: transparent;
+    border: transparent;
+}
+
+.Certificate__card{
+    border-left-color: #23989E;
+}

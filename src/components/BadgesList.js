@@ -29,16 +29,14 @@ class BadgesListItem extends React.Component {
     return (
       <div
         className="BadgesListItem text-center"
-        // onMouseLeave={this.handleMouseLeave}
       >
         <img
-          // onMouseOver={this.handleMouseOverImage}
           className="BadgesListItem__avatar"
           src={this.props.badge.image}
           alt={`${this.props.badge.name}`}
         />
         <strong className="d-block">
-          <span class="badge badge-success BadgesListItem__tag-title text-center mb-1">
+          <span className="badge badge-success BadgesListItem__tag-title text-center mb-1">
             {this.props.badge.name}
           </span>
         </strong>
@@ -52,26 +50,15 @@ class BadgesList extends React.Component {
     return (
       <div className="pb-3 pt-3">
         <SectionTitle title={this.props.title}></SectionTitle>
-        <ul class="nav nav-pills flex-column flex-sm-row justify-content-center">
+        <ul className="BadgesListItem__ul nav nav-pills flex-column flex-sm-row justify-content-center">
           {this.props.badges.map((badge) => {
             return (
-              <li class="nav-item ml-2 mr-2" href="#" key={badge.id}>
+              <li className="BadgesListItem__li nav-item ml-2 mr-2" href="#" key={badge.id}>
                 <BadgesListItem badge={badge} />
               </li>
             );
           })}
         </ul>
-        {/* <div className="BadgesList">
-          <ul className="list-unstyled">
-            {this.props.badges.map((badge) => {
-              return (
-                <li key={badge.id}>
-                  <BadgesListItem badge={badge} />
-                </li>
-              );
-            })}
-          </ul>
-        </div> */}
       </div>
     );
   }
