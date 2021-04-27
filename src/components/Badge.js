@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles/Badge.css";
 import { SocialIcon } from "react-social-icons";
+import imageProfile from '../images/profile.jpg'
 
 class Badge extends React.Component {
   render() {
@@ -12,7 +13,8 @@ class Badge extends React.Component {
         <div className="Badge__section-name">
           <img
             className="Badge__avatar"
-            src="https://secure.gravatar.com/avatar/d63a77006e35ee16aeda45d9fdf500f9"
+            // src="https://secure.gravatar.com/avatar/d63a77006e35ee16aeda45d9fdf500f9"
+            src={imageProfile}
             alt="Avatar"
           />
           <h1>
