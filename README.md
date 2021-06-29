@@ -231,3 +231,6 @@ Here are some ideas to get you started:
     />
   </a>
 </p>
+
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=alvaro-barrera&label=Profile%20views&color=0e75b6&style=flat" alt="alvaro-barrera" /> </p>
+
