@@ -17,7 +17,7 @@ Here are some ideas to get you started:
 <h3 align="center">A passionate software developer from Perú</h3>
 
 - More about me at
-[https://alvaro-barrera.github.io/](https://alvaro-barrera.github.io/) 😄
+[https://alvaro-barrera.me/](https://alvaro-barrera.me/) 😄
 
 <p align="left">
   <a href="https://twitter.com/alvaro__barrera" target="blank"
