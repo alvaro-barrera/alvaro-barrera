@@ -113,7 +113,7 @@ class Training extends React.Component {
       <React.Fragment>
         <div className="Badges_list">
           <div className="Badges__container"></div>
-          <div className="pb-3 pt-3">
+          <div className="pb-3 pt-5">
             <Education certificates={this.state.certificates}></Education>;
           </div>
         </div>

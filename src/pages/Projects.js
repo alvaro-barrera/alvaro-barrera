@@ -112,7 +112,7 @@ class Projects extends React.Component {
           ],
           techs: ["React.js"],
           footer: "",
-          demo :"https://alvaro-barrera.me/react-todo-app/"
+          demo :"https://alvaro-barrera.github.io/react-todo-app/"
         },
       ],
     });

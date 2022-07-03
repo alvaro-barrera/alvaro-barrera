@@ -71,7 +71,7 @@ class BriefcaseItem extends React.Component {
 class Briefcase extends React.Component {
   render() {
     return (
-      <div className="pb-3 pt-3">
+      <div className="pb-3 pt-5">
         <SectionTitle title={this.props.title}></SectionTitle>
         <div className="Briefcase__row">
           <div className="Briefcase__cards">

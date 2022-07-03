@@ -11,7 +11,7 @@ class About extends React.Component {
         <div className="jumbotron text-justify">
           <h2 className="">Sobre mí</h2>
           <p className="lead">
-            Egresado de la carrera de Ing. de Sistemas
+            Egresado de la carrera de Ingeniería de Sistemas
             en la Universidad Nacional Pedro Ruiz Gallo - Lambayeque - Perú, me
             desenvuelvo como desarrollador web con técnologías tales como
             Laravel, Angular JS y React.js, sin embargo me considero

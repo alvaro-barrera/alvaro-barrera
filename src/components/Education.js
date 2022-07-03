@@ -8,26 +8,47 @@ class Certificate extends React.Component {
       <React.Fragment>
         {this.props.certificates.map((certificate) => {
           return (
-            <li className="list-group-item Certificate__li" key={certificate.id}>
+            <li
+              className="list-group-item Certificate__li"
+              key={certificate.id}
+            >
               <div className="card Certificate__card">
                 <div className="card-body">
                   <h5 className="card-title font-weight-bold lead text-uppercase">
                     <span role="img" aria-label="white-heavy-check-mark">
                       ✅
                     </span>{" "}
-                    <a rel="noopener noreferrer" target="_blank" href={certificate.credential_storage}>{certificate.name}</a>
+                    {certificate.credential_storage ? (
+                      <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href={certificate.credential_storage}
+                      >
+                        {certificate.name}
+                      </a>
+                    ) : (
+                      // eslint-disable-next-line jsx-a11y/anchor-is-valid
+                      <a
+                        rel="noopener noreferrer"
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                        }}
+                      >
+                        {certificate.name}
+                      </a>
+                    )}
                   </h5>
                   <blockquote className="blockquote Certificate__container ml-5">
-                    <p className="mb-0 lead">{certificate.entity} ({certificate.emission})</p>
+                    <p className="mb-0 lead">
+                      {certificate.entity} ({certificate.emission})
+                    </p>
                     {certificate.credential_id.length > 0 && (
                       <small title="text-muted lead">
                         ID de la certificación: {certificate.credential_id}
                       </small>
                     )}
                   </blockquote>
-                  {/* <a href="#" className="btn btn-primary">
-                    Go somewhere
-                  </a> */}
                 </div>
               </div>
             </li>
