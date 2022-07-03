@@ -1,7 +1,7 @@
 import React from 'react';
 import BadgesList from '../components/BadgesList';
 import './styles/Badges.css'
-import logo from '../images/desarrollo-web.png'
+// import logo from '../images/desarrollo-web.png'
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 
@@ -63,7 +63,7 @@ class Badges extends React.Component {
                 <div className="Badges">
                     <div className="Badges__hero">
                         <div className="Badges__container">
-                            <img className="Badges_conf-logo" src={logo} alt="Logo"/>
+                            {/* <img className="Badges_conf-logo" src={logo} alt="Logo"/> */}
                         </div>
                     </div>
                 </div>

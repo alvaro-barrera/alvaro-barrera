@@ -1,5 +1,4 @@
 import React from 'react';
-import header from '../images/desarrollo-web.png';
 import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
 import './styles/BadgeNew.css';
@@ -26,9 +25,6 @@ class BadgeNew extends React.Component {
     render() {
         return(
             <React.Fragment>
-                <div className="BadgeNew__hero">
-                    <img className="img-fluid BadgeNew__hero-logo" src={header} alt="Logo"/>
-                </div>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">

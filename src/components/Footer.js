@@ -16,11 +16,6 @@ class Footer extends React.Component {
         <div className="container-fluid text-center text-md-left">
           <div className="row">
             <div className="col-md-6 mt-md-0 mt-3">
-              <h5 className="text-center">
-                <a href="mailto:jbarrerav@gmail.com" className="Footer__color">
-                  jbarrerav@gmail.com
-                </a>
-              </h5>
               <div className="text-center">
                 <SocialIcon
                   bgColor="white"
@@ -43,8 +38,8 @@ class Footer extends React.Component {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mr-1 ml-1"
-                  label="WhatsApp"
-                  url="https://api.whatsapp.com/send/?phone=%2B51944831430&text=Hola+%C3%81lvaro%2C+me+interesa+contactarme+contigo&app_absent=0"
+                  label="Gitbub"
+                  url="https://github.com/alvaro-barrera"
                 />
                 <SocialIcon
                   bgColor="white"
@@ -60,17 +55,17 @@ class Footer extends React.Component {
             <div className="col-md-3">
               <ul className="list-unstyled text-center mt-4 mb-sm-0">
                 <li>
-                  <Link to="/" className="Footer__color h5">
+                  <Link to="/" className="Footer__link h5">
                     Sobre mí
                   </Link>
                 </li>
                 <li>
-                  <Link to="/education" className="Footer__color h5">
+                  <Link to="/education" className="Footer__link h5">
                     Educación
                   </Link>
                 </li>
                 <li>
-                  <Link to="/projects" className="Footer__color h5">
+                  <Link to="/projects" className="Footer__link h5">
                     Proyectos
                   </Link>
                 </li>
@@ -78,7 +73,7 @@ class Footer extends React.Component {
                   <a
                   href="#!"
                     type="button"
-                    className="Footer__color h5"
+                    className="Footer__link h5"
                     onClick={this.handleRefContact}
                   >
                     Contacto
@@ -90,7 +85,7 @@ class Footer extends React.Component {
         </div>
 
         <div className="footer-copyright text-center py-3">
-          © 2021. Diseñada por
+          © 2022. Diseñada por
           <a
             className="font-weight-bold text-white"
             href="https://www.linkedin.com/in/alvaro-barrera/"

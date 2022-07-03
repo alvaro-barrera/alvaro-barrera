@@ -1,14 +1,12 @@
 .Badge {
-  background: #ffffff;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 8px 8px 8px 8px;
   overflow: hidden;
   height: 380px;
   margin-bottom: 10px;
   padding: 1rem;
+  width: 100%;
 }
 .Badge__border {
-  border: 3px solid #23989E !important;
+  border: 3px solid #23989e !important;
 }
 
 .Badge__header {
@@ -27,12 +25,12 @@
 }
 
 .Badge__section-info {
-  display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
+  padding: 0.5rem 0;
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem 0;
-  background: #f4f4f7;
 }
 
 .Badge__avatar {
@@ -40,6 +38,15 @@
   margin-right: 1rem;
   width: 120px;
   height: 120px;
+}
+
+.Badge__footer__container {
+  background: transparent;
+  /* box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%); */
+  border-radius: 8px 8px 8px 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 .Badge__footer {
@@ -52,7 +59,50 @@
   font-style: italic;
 }
 
-.Badge__domain{
+.Badge__domain {
   text-decoration: underline;
   font-weight: bold;
+}
+
+.Badge__h1 {
+  font-size: 80px;
+  color: var(--white-ligth-color);
+  text-transform: uppercase;
+}
+
+.Badge__h2 {
+  color: var(--white-ligth-color);
+  font-size: 60px;
+  width: 17ch;
+  animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+@media screen and (max-width: 600px) {
+  .Badge__h2 {
+    font-size: 2.1em;
+    width: 16ch;
+  }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.Badge__icon-social {
+  /* border: 3px solid #f4f4f7; */
+  margin-left: 1.5rem!important;
+  margin-right: 1.5rem!important;
+  border-radius: 28px;
 }

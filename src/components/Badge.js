@@ -1,63 +1,53 @@
 import React from "react";
 import "./styles/Badge.css";
 import { SocialIcon } from "react-social-icons";
-import imageProfile from '../images/profile.jpg'
 
 class Badge extends React.Component {
   render() {
     return (
-      <div className="Badge Badge__border">
-        {/* <div className="Badge__header">
-                 <img src={headerLogo} alt="Logo"/> 
-            </div> */}
+      <div className="Badge">
         <div className="Badge__section-name">
-          <img
-            className="Badge__avatar"
-            // src="https://secure.gravatar.com/avatar/d63a77006e35ee16aeda45d9fdf500f9"
-            src={imageProfile}
-            alt="Avatar"
-          />
-          <h1>
-            {this.props.firstName} <br />
-            {this.props.lastName}
-          </h1>
+          <h1 class="Badge__h1">Álvaro Barrera</h1>
         </div>
         <div className="Badge__section-info">
-          <h2>
-            Desarrollador <span className="Badge__domain">back-end</span> &{" "}
-            <span className="Badge__domain">front-end</span>
-          </h2>
+          <h2 class="Badge__h2">Software Developer.</h2>
         </div>
-        <div className="Badge__footer mt-4">
-          <div className="d-flex">
-            <SocialIcon
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mr-1 ml-1"
-              label="Twitter Álvaro Barrera"
-              url="https://twitter.com/Alvaro__Barrera"
-            />
-            <SocialIcon
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mr-1 ml-1"
-              label="LinkedIn Álvaro Barrera"
-              url="https://www.linkedin.com/in/alvaro-barrera/"
-            />
-            <SocialIcon
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mr-1 ml-1"
-              label="WhatsApp"
-              url="https://api.whatsapp.com/send/?phone=%2B51944831430&text=Hola+%C3%81lvaro%2C+me+interesa+contactarme+contigo&app_absent=0"
-            />
-            <SocialIcon
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mr-1 ml-1"
-              label="Instagram de Álvaro Barrera"
-              url="https://www.instagram.com/alvaro__barrera/"
-            />
+        <div className="Badge__footer__container">
+          <div className="Badge__footer">
+            <div className="d-flex">
+              <SocialIcon
+                bgColor="white"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mr-1 ml-1 Badge__icon-social"
+                label="Twitter Álvaro Barrera"
+                url="https://twitter.com/Alvaro__Barrera"
+              />
+              <SocialIcon
+                bgColor="white"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mr-1 ml-1 Badge__icon-social"
+                label="LinkedIn Álvaro Barrera"
+                url="https://www.linkedin.com/in/alvaro-barrera/"
+              />
+              <SocialIcon
+                bgColor="white"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mr-1 ml-1 Badge__icon-social"
+                label="Github"
+                url="https://github.com/alvaro-barrera"
+              />
+              <SocialIcon
+                bgColor="white"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mr-1 ml-1 Badge__icon-social"
+                label="Instagram de Álvaro Barrera"
+                url="https://www.instagram.com/alvaro__barrera/"
+              />
+            </div>
           </div>
         </div>
       </div>

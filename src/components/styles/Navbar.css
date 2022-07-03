@@ -1,7 +1,7 @@
 .Navbar {
   width: 100%;
   padding: 0.5rem 0;
-  background-color: #19676b;
+  background-color: var(--secondary-color);
 
   overflow: hidden;
   position: fixed; /* Set the navbar to fixed position */
@@ -12,7 +12,7 @@
 }
 
 .Navbar__brand {
-  color: #ffffff;
+  color: var(--white-color);
   display: flex;
   align-items: center;
   padding-top: 0 !important;
@@ -20,7 +20,7 @@
 }
 
 .Navbar__brand:hover {
-  color: #ffffff;
+  color: var(--white-color);
   text-decoration: none;
 }
 
@@ -90,4 +90,8 @@
     display: block;
     text-align: left;
   }
+}
+.Navbar__toggle-text {
+  border: 1px solid var(--white-ligth-color);;
+  border-radius: 25%;
 }

@@ -1,9 +1,8 @@
 import React from "react";
 import "./styles/Navbar.css";
-import logo from "../images/idea.svg";
 import Modal from "../components/Modal";
 import { Link } from "react-router-dom";
-import { GrApps } from "react-icons/gr";
+import logo from "../images/logo.png";
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -31,7 +30,7 @@ class Navbar extends React.Component {
     };
   }
   handleOpenModal = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     this.setState({ modalIsOpen: true });
   };
 
@@ -62,7 +61,8 @@ class Navbar extends React.Component {
       let errorCelphoneDigits = false;
       let errorEmailFormat = false;
 
-      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      const re =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
       if (this.state.form.name.trim().length === 0) {
         errorName = true;
@@ -122,7 +122,7 @@ class Navbar extends React.Component {
     this.validateForm();
   };
   handleToogleNavbar = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
       x.className += " responsive";
@@ -134,49 +134,51 @@ class Navbar extends React.Component {
     return (
       <div className="Navbar">
         <div className="topnav" id="myTopnav">
-          <a href="#home" className="active Navbar__brand">
+          {/* <a href="#home" className="active Navbar__brand">
             <img className="Navbar__brand-logo" src={logo} alt="Logo" />
             <span className="font-weight-light">Álvaro</span>
             <span className="font-weight-bold ml-1">Barrera</span>
-          </a>
-             <span className="float-right">
-
-          <Link
-            className="text-white font-weight-light"
-            to="/"
-          >
-            Inicio
-          </Link>
-          <Link
-            className="text-white font-weight-light"
-            to="/education"
-          >
-            Educación
-          </Link>
-          <Link
-            className="text-white font-weight-light"
-            to="/projects"
-          >
-            Proyectos
-          </Link>
-          <a
-          id="button-contact"
-          href="#!"
-            className="btn text-white font-weight-light"
-            onClick={this.handleOpenModal}
-          >
-            Contáctame{" "}
-            <span role="img" aria-label="waving-hand-sing">
-              👋
-            </span>
-          </a>
-          <a
-            href="#!"
-            className="icon"
-            onClick={this.handleToogleNavbar}
-          >
-            <GrApps></GrApps>
-          </a>
+          </a> */}
+          <span class="float-left">
+            <a class="text-white font-weight-light" href="#/">
+              <img
+                className="Navbar__brand-logo"
+                src={logo}
+                alt="Alvaro Barrera"
+              />
+              <span class="font-weight-light">Álvaro</span>
+              <span class="font-weight-bold ml-1">Barrera</span>
+            </a>
+          </span>
+          <span className="float-right">
+            <Link className="text-white font-weight-light" to="/">
+              Inicio
+            </Link>
+            <Link className="text-white font-weight-light" to="/education">
+              Educación
+            </Link>
+            <Link className="text-white font-weight-light" to="/projects">
+              Proyectos
+            </Link>
+            <a
+              id="button-contact"
+              href="#!"
+              className="btn text-white font-weight-light"
+              onClick={this.handleOpenModal}
+            >
+              Contáctame{" "}
+              <span role="img" aria-label="waving-hand-sing">
+                👋
+              </span>
+            </a>
+            <a href="#!" className="icon" onClick={this.handleToogleNavbar}>
+              {/* <GrApps></GrApps> */}
+              <p class="Navbar__toggle-text text-white font-weight-light">
+                <span role="img" aria-label="lightning">
+                  ⚡
+                </span>
+              </p>
+            </a>
           </span>
         </div>
 

@@ -16,20 +16,51 @@ class BriefcaseItem extends React.Component {
   };
   render() {
     return (
-      <div className="Briefcase__column">
-        <div className="content card BriefcaseItem">
-          <img className="card-img-top" src={this.props.project.image} alt="" />
-          <h4 className="Title__Anton">{this.props.project.name}</h4>
-          <div className="BriefcaseItem__badges-container">
-            {this.props.project.techs.map((tech,index) => {
-              return (
-                <React.Fragment key={index}>
-                  <span className="badge badge-pill badge-success BadgesListItem__tag-title ml-1 mr-1">
-                    {tech}
-                  </span>
-                </React.Fragment>
-              );
-            })}
+      <div className="BriefcaseItem__card">
+        <div className="BriefcaseItem__card-image">
+          <img
+            className="BriefcaseItem__image"
+            src={this.props.project.image}
+            alt=""
+          />
+        </div>
+        <div className="BriefcaseItem__card-overlay">
+          <div className="BriefcaseItem__card-header">
+            <div className="BriefcaseItem__card-header-text">
+              <h3 className="Title__Anton">
+                {this.props.project.name}
+                {this.props.project.demo && (
+                  <a
+                    href={this.props.project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Demo{" "}
+                  </a>
+                )}
+              </h3>
+            </div>
+          </div>
+          <div className="BriefcaseItem__card-description">
+            <div className="BriefcaseItem__badges-container">
+              <ul>
+                {this.props.project.detailLists.map((item, index) => {
+                  return (
+                    <React.Fragment key={index}>
+                      <li className="BriefcaseItem_li">
+                        {" "}
+                        <span role="img" aria-label="star">
+                          ⭐
+                        </span>
+                        <span className="BriefcaseItem__description-span">
+                          {item}
+                        </span>
+                      </li>
+                    </React.Fragment>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -43,13 +74,15 @@ class Briefcase extends React.Component {
       <div className="pb-3 pt-3">
         <SectionTitle title={this.props.title}></SectionTitle>
         <div className="Briefcase__row">
-          {this.props.projects.map((project) => {
-            return (
-              <React.Fragment key={project.id}>
-                <BriefcaseItem project={project}></BriefcaseItem>
-              </React.Fragment>
-            );
-          })}
+          <div className="Briefcase__cards">
+            {this.props.projects.map((project) => {
+              return (
+                <React.Fragment key={project.id}>
+                  <BriefcaseItem project={project}></BriefcaseItem>
+                </React.Fragment>
+              );
+            })}
+          </div>
         </div>
       </div>
     );

@@ -18,8 +18,7 @@ class Certificate extends React.Component {
                     <a rel="noopener noreferrer" target="_blank" href={certificate.credential_storage}>{certificate.name}</a>
                   </h5>
                   <blockquote className="blockquote Certificate__container ml-5">
-                    <p className="mb-0 lead">{certificate.entity}</p>
-                    <p className="mb-1 lead">{certificate.emission}</p>
+                    <p className="mb-0 lead">{certificate.entity} ({certificate.emission})</p>
                     {certificate.credential_id.length > 0 && (
                       <small title="text-muted lead">
                         ID de la certificación: {certificate.credential_id}

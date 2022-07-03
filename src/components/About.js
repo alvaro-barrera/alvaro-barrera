@@ -9,28 +9,22 @@ class About extends React.Component {
     return (
       <div>
         <div className="jumbotron text-justify">
-          <h2 className="display-4">Sobre mí</h2>
+          <h2 className="">Sobre mí</h2>
           <p className="lead">
-            Actualmente me encuentro culminando la carrera de Ing. de Sistemas
+            Egresado de la carrera de Ing. de Sistemas
             en la Universidad Nacional Pedro Ruiz Gallo - Lambayeque - Perú, me
             desenvuelvo como desarrollador web con técnologías tales como
-            Laravel, Vue.js y actualmente React.js, sin embargo me considero
-            como un apasionado por el aprendizaje y las tecnologías, así como
-            aplicarlas para obtener mejores resultados, me gusta resolver
-            problemas y afrontar nuevos retos.<span role="img" aria-label="laptop"> 👨🏽‍💻</span>
+            Laravel, Angular JS y React.js, sin embargo me considero
+            como un apasionado por el aprendizaje y las tecnologías, me gusta resolver
+            problemas y afrontar nuevos retos.
+            <span role="img" aria-label="laptop">
+              {" "}
+              👨🏽‍💻
+            </span>
           </p>
-          <p className="lead">
-            <button
-              onClick={this.handleRefContact}
-              type="button"
-              className="btn btn-primary btn-lg ButtonContact__animation"
-            >
-              ¿Tienes algún proyecto?
-            </button>
-          </p>
-        </div>
-        <div className="jumbotron text-justify">
-          <h2 className="display-4">Habilidades</h2>
+
+          <br />
+          <h2 className="">Habilidades</h2>
           <ul>
             <li className="lead About__li">Autodidacta</li>
             <li className="lead About__li">
@@ -44,18 +38,21 @@ class About extends React.Component {
               Conocimientos en desarrollo ágil - SCRUM
             </li>
             <li className="lead About__li">
-              Experiencia en optimización de SEO on page
-            </li>
-            <li className="lead About__li">
               Experiencia en desarrollo de API’s en Laravel
-            </li>
-            <li className="lead About__li">
-              Experiencia en documentación con Postman
             </li>
             <li className="lead About__li">
               Control de versiones: Git, Github
             </li>
           </ul>
+          <p className="lead">
+            <button
+              onClick={this.handleRefContact}
+              type="button"
+              className="btn btn-primary btn-lg ButtonContact__animation"
+            >
+              ¿Tienes algún proyecto?
+            </button>
+          </p>
         </div>
       </div>
     );

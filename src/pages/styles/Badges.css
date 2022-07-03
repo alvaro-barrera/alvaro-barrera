@@ -1,7 +1,8 @@
 .Badges__hero {
   width: 100%;
   padding: 2rem 0;
-  background: url("../../images/stars.svg"), #1b1b25;
+  /* background: url("../../images/stars.svg"), var(--primary-color); */
+  background-color: var(--primary-color);
   background-repeat: repeat;
   margin-bottom: 0rem;
 }
@@ -62,10 +63,7 @@
       rotate(-45deg)
       ;  
   }  */
-   40%
-  {
-    transform: scale( 1.04 )
-      /* rotate(-45deg) */
-      ;
-  } 
+  40% {
+    transform: scale(1.04) /* rotate(-45deg) */;
+  }
 }
