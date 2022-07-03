@@ -100,7 +100,7 @@ self.__precacheManifest = [
     "url": "/static/media/bootstrap.584d9f32.png"
   },
   {
-    "revision": "993d38297bae572a1c62f026bd57c2aa",
+    "revision": "2087231f6a43348df4a30d1e0bce963c",
     "url": "/index.html"
   }
 ];
