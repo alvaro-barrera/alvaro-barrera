@@ -1,27 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "cf6498b4871e19ccf00c",
-    "url": "/static/css/main.e2c48e2b.chunk.css"
+    "revision": "75228d9ece732a31a67c",
+    "url": "/static/css/main.f20ee66e.chunk.css"
   },
   {
-    "revision": "cf6498b4871e19ccf00c",
-    "url": "/static/js/main.cf6498b4.chunk.js"
+    "revision": "75228d9ece732a31a67c",
+    "url": "/static/js/main.75228d9e.chunk.js"
   },
   {
-    "revision": "42ac5946195a7306e2a5",
-    "url": "/static/js/runtime~main.42ac5946.js"
+    "revision": "fdfcfda2d9b1bf31db52",
+    "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "129641ebf834efb1dbc6",
-    "url": "/static/css/2.7abfe77f.chunk.css"
+    "revision": "f748724ddb263e28f099",
+    "url": "/static/css/2.5d3b9e25.chunk.css"
   },
   {
-    "revision": "129641ebf834efb1dbc6",
-    "url": "/static/js/2.129641eb.chunk.js"
-  },
-  {
-    "revision": "15a4866e67b5a9aac43ae3af08de6721",
-    "url": "/static/media/javascript.15a4866e.png"
+    "revision": "f748724ddb263e28f099",
+    "url": "/static/js/2.f748724d.chunk.js"
   },
   {
     "revision": "c3ba82a536fe4983dad4c06b578dcd5d",
@@ -30,10 +26,6 @@ self.__precacheManifest = [
   {
     "revision": "8bfc5015da73628edae2996b01ed50c0",
     "url": "/static/media/laravel.8bfc5015.png"
-  },
-  {
-    "revision": "44403f1eece67c892a0c6a6791da5ad4",
-    "url": "/static/media/php.44403f1e.svg"
   },
   {
     "revision": "ea92d6580dda0fbcf61a8ccb16e0d02a",
@@ -58,6 +50,10 @@ self.__precacheManifest = [
   {
     "revision": "28d2fd31a112f9bc1faad68cf7ca857d",
     "url": "/static/media/vsc.28d2fd31.svg"
+  },
+  {
+    "revision": "97bc7b45b666aae00d74f7d44fa40b2c",
+    "url": "/static/media/ror.97bc7b45.svg"
   },
   {
     "revision": "26cd8d82884328bfa0733d841bf8b464",
@@ -96,7 +92,19 @@ self.__precacheManifest = [
     "url": "/static/media/stars.1d17360a.svg"
   },
   {
-    "revision": "42fb034974f8cd83d398f801eae1a49f",
+    "revision": "584d9f322f08684db8ff2217731e474f",
+    "url": "/static/media/bootstrap.584d9f32.png"
+  },
+  {
+    "revision": "15a4866e67b5a9aac43ae3af08de6721",
+    "url": "/static/media/javascript.15a4866e.png"
+  },
+  {
+    "revision": "44403f1eece67c892a0c6a6791da5ad4",
+    "url": "/static/media/php.44403f1e.svg"
+  },
+  {
+    "revision": "d4f1ec7072c1ec343662561a60932e2d",
     "url": "/index.html"
   }
 ];
