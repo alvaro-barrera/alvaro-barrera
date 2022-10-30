@@ -12,7 +12,7 @@ class Certificate extends React.Component {
               className="list-group-item Certificate__li"
               key={certificate.id}
             >
-              <div className="card Certificate__card">
+              <div className="card Certificate__card border">
                 <div className="card-body">
                   <h5 className="card-title font-weight-bold lead text-uppercase">
                     <span role="img" aria-label="white-heavy-check-mark">
@@ -62,7 +62,7 @@ class Certificate extends React.Component {
 class Education extends React.Component {
   render() {
     return (
-      <ul className="list-group">
+      <ul className="list-group separation">
         <SectionTitle title={"Educación"}></SectionTitle>
         <Certificate certificates={this.props.certificates}></Certificate>
       </ul>

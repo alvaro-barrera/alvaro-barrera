@@ -139,15 +139,15 @@ class Navbar extends React.Component {
             <span className="font-weight-light">Álvaro</span>
             <span className="font-weight-bold ml-1">Barrera</span>
           </a> */}
-          <span class="float-left">
-            <a class="text-white font-weight-light" href="#/">
+          <span className="float-left">
+            <a className="text-white font-weight-light" href="#/">
               <img
                 className="Navbar__brand-logo"
                 src={logo}
                 alt="Alvaro Barrera"
               />
-              <span class="font-weight-light">Álvaro</span>
-              <span class="font-weight-bold ml-1">Barrera</span>
+              <span className="font-weight-light">Álvaro</span>
+              <span className="font-weight-bold ml-1">Barrera</span>
             </a>
           </span>
           <span className="float-right">
@@ -173,7 +173,7 @@ class Navbar extends React.Component {
             </a>
             <a href="#!" className="icon" onClick={this.handleToogleNavbar}>
               {/* <GrApps></GrApps> */}
-              <p class="Navbar__toggle-text text-white font-weight-light">
+              <p className="Navbar__toggle-text text-white font-weight-light">
                 <span role="img" aria-label="lightning">
                   ⚡
                 </span>

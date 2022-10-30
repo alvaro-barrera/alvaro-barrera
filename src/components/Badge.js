@@ -7,10 +7,10 @@ class Badge extends React.Component {
     return (
       <div className="Badge">
         <div className="Badge__section-name">
-          <h1 class="Badge__h1">Álvaro Barrera</h1>
+          <h1 className="Badge__h1">Álvaro Barrera</h1>
         </div>
-        <div className="Badge__section-info">
-          <h2 class="Badge__h2">Software Developer.</h2>
+        <div className="Badge__section-info separation">
+          <h2 className="Badge__h2">Software Engineer</h2>
         </div>
         <div className="Badge__footer__container">
           <div className="Badge__footer">

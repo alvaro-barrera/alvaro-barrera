@@ -53,7 +53,7 @@ class BadgesList extends React.Component {
         <ul className="BadgesListItem__ul nav nav-pills flex-column flex-sm-row justify-content-center">
           {this.props.badges.map((badge) => {
             return (
-              <li className="BadgesListItem__li nav-item ml-2 mr-2" href="#" key={badge.id}>
+              <li className="BadgesListItem__li nav-item ml-2 mr-2 border" href="#" key={badge.id}>
                 <BadgesListItem badge={badge} />
               </li>
             );

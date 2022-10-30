@@ -68,41 +68,51 @@
   font-size: 80px;
   color: var(--white-ligth-color);
   text-transform: uppercase;
+  background: var(--white-color);
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%);
+  border-radius: var(--border-radius-large);
+  display: inline-block;
+  padding: 8px 24px;
+}
+
+@media only screen and (max-width: 768px) {
+  .Badge__h1 {
+    font-size: 44px;
+  }
+  .Badge__section-info  .Badge__h2{
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Badge__h1 {
+    font-size: 30px;
+  }
+  .Badge__section-info  .Badge__h2{
+    font-size: 25px;
+  }
+  .Badge__icon-social {
+    margin-left: .5rem !important;
+    margin-right: .5rem !important;
+  }
 }
 
 .Badge__h2 {
   color: var(--white-ligth-color);
-  font-size: 60px;
-  width: 17ch;
-  animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+  font-size: 50px;
   white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-}
-
-@media screen and (max-width: 600px) {
-  .Badge__h2 {
-    font-size: 2.1em;
-    width: 16ch;
-  }
-}
-
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+  font-weight: 300;
 }
 
 .Badge__icon-social {
-  /* border: 3px solid #f4f4f7; */
-  margin-left: 1rem !important;
-  margin-right: 1rem !important;
+  margin-left: 1rem;
+  margin-right: 1rem;
   border-radius: 28px;
+}
+
+@media only screen and (min-width: 768px) {
+  .Badge__icon-social {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
 }

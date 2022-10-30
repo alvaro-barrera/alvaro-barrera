@@ -4,7 +4,6 @@ import "./styles/BriefcaseItem.css";
 
 class BriefcaseItem extends React.Component {
   handlePopupImage = (url) => {
-    console.log(url);
     window.open(
       url,
       "Nombre de la ventana",
@@ -16,7 +15,7 @@ class BriefcaseItem extends React.Component {
   };
   render() {
     return (
-      <div className="BriefcaseItem__card">
+      <div className="BriefcaseItem__card border">
         <div className="BriefcaseItem__card-image">
           <img
             className="BriefcaseItem__image"
@@ -71,7 +70,7 @@ class BriefcaseItem extends React.Component {
 class Briefcase extends React.Component {
   render() {
     return (
-      <div className="pb-3 pt-5">
+      <div className="pb-3 pt-5 separation">
         <SectionTitle title={this.props.title}></SectionTitle>
         <div className="Briefcase__row">
           <div className="Briefcase__cards">

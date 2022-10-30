@@ -19,6 +19,7 @@ import logoTrello from "../images/techs/trello.png";
 import logoPhpstorm from "../images/techs/phpstorm.png";
 import logoVscode from "../images/techs/vsc.svg";
 import logoAngular from "../images/techs/angular.png";
+import logoROR from "../images/techs/ror.svg";
 // PROJECTS
 import Badge from "../components/Badge";
 import About from "../components/About";
@@ -40,25 +41,25 @@ class Home extends React.Component {
   componentDidMount() {
     this.setState({
       techs: [
-        {
-          id: 8,
+        /*{
+          id: 1,
           image: logoPhp,
           name: "Php",
-        },
+        },*/
         {
-          id: 7,
+          id: 2,
           image: logoLaravel,
           name: "Laravel",
         },
-        {
-          id: 4,
+        /*{
+          id: 3,
           image: logoJavascript,
           name: "Javascript",
-        },
+        },*/
         {
-          id: 7,
+          id: 3,
           image: logoAngular,
-          name: "Angular JS",
+          name: "Angular",
         },
         {
           id: 5,
@@ -79,6 +80,11 @@ class Home extends React.Component {
           id: 12,
           image: logoGit,
           name: "Git",
+        },
+        {
+          id: 13,
+          image: logoROR,
+          name: "Ruby on Rails",
         },
       ],
       tools: [
@@ -136,16 +142,18 @@ class Home extends React.Component {
           </div>
         </div>
         <div className="Badges_list">
-          <div className="Badges__container">
+          <div className="Badges__container ">
             <About></About>
-            <BadgesList
-              title={"Tecnologías"}
-              badges={this.state.techs}
-            ></BadgesList>
-            <BadgesList
-              title={"Herramientas"}
-              badges={this.state.tools}
-            ></BadgesList>
+            <div className="separation">
+              <BadgesList
+                title={"Tecnologías"}
+                badges={this.state.techs}
+              ></BadgesList>
+              <BadgesList
+                title={"Herramientas"}
+                badges={this.state.tools}
+              ></BadgesList>
+            </div>
           </div>
         </div>
       </React.Fragment>
