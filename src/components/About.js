@@ -43,6 +43,9 @@ class About extends React.Component {
             Experiencia en desarrollo / integración de API’s
           </li>
           <li className="lead About__li">
+            Trabajo con microservicios y migración de sistemas legacy
+          </li>
+          <li className="lead About__li">
             Control de versiones: Git, Github - GitFlow
           </li>
         </ul>
@@ -52,7 +55,7 @@ class About extends React.Component {
             type="button"
             className="btn btn-primary btn-lg ButtonContact__animation"
           >
-            ¿Tienes algún proyecto?
+            Contratar mis servicios profesionales
           </button>
         </p>
       </div>

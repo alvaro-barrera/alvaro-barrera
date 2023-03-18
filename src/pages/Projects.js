@@ -6,6 +6,9 @@ import logoWebbes from "../images/briefcase/web_bes.PNG";
 import logoBesefactura from "../images/briefcase/bes_efactura.PNG";
 import logoPersonal from "../images/briefcase/personal.png";
 import logoTodo from "../images/briefcase/todo.png";
+import logoUlearning from "../images/briefcase/ulearning.png";
+import logoCodecix from "../images/briefcase/codecix.png";
+
 import Briefcase from "../components/Briefcase";
 
 class Projects extends React.Component {
@@ -26,7 +29,7 @@ class Projects extends React.Component {
           name: "Solti-CRM",
           image: logoSolticrm,
           detailLists: [
-            "Laravel 6",
+            "Laravel 6, MySQL",
             "Autenticación con redes sociales",
             "Suscripciones a correo electrónico",
             "Servicio web service para consumo móvil",
@@ -40,7 +43,7 @@ class Projects extends React.Component {
           name: "Sistema para lotes y viviendas",
           image: logoSistemalotes,
           detailLists: [
-            "Laravel 6 - Vue.js",
+            "Laravel 6, Vue.js, MySQL",
             "Gestión de contratos, pagos y facturación electrónica",
             "Suscripciones a correo electrónico",
             "Servicio web service para consumo e-commerce",
@@ -54,7 +57,7 @@ class Projects extends React.Component {
           name: "Sistema Aulas Virtuales",
           image: logoClassroom,
           detailLists: [
-            "Laravel 6 - Vue.js",
+            "Laravel 6, Vue.js, MySQL",
             "Single Page Application",
             "Sistema de gestión escolar",
             "Web service para consumo proyecto SPA Vue.js",
@@ -67,7 +70,7 @@ class Projects extends React.Component {
           name: "Punto de venta + Facturación electrónica",
           image: logoBesefactura,
           detailLists: [
-            "API Laravel 6 - Vue.js",
+            "API Laravel 6, Vue.js, MySQL",
             "Facturación electrónica UBL 2.1",
             "Web service para consumo proyecto SPA Vue.js",
           ],
@@ -113,6 +116,32 @@ class Projects extends React.Component {
           techs: ["React.js"],
           footer: "",
           demo :"https://alvaro-barrera.github.io/react-todo-app/"
+        },
+        {
+          id: 7,
+          name: "Plataforma académica - U-Learning",
+          image: logoUlearning,
+          detailLists: [
+            "Laravel, Angular, PostgreSQL, Docker",
+            "E-commerce de cursos virtuales y presenciales",
+            "Plataforma de aprendizaje para estudiantes",
+            "Sistema académico administrativo",
+          ],
+          techs: ["Laravel", "Angular", "PostgreSQL"],
+          footer: "",
+          demo :"https://ulearning.com.pe/"
+        },
+        {
+          id: 8,
+          name: "Codecix - Servicios profesionales",
+          image: logoCodecix,
+          detailLists: [
+            "Next.js",
+            "Servicios profesionales de desarrollos web",
+          ],
+          techs: ["Next.js"],
+          footer: "",
+          demo :"https://codecix.com/"
         },
       ],
     });

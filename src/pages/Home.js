@@ -1,14 +1,10 @@
 import React from "react";
 import BadgesList from "../components/BadgesList";
 import "./styles/Badges.css";
-import logoHtml5 from "../images/techs/html5.png";
-import logoCss from "../images/techs/css.png";
-import logoBootstrap from "../images/techs/bootstrap.png";
-import logoJavascript from "../images/techs/javascript.png";
+import logoDocker from "../images/techs/docker.png";
+import logoJira from "../images/techs/jira.png";
 import logoReact from "../images/techs/react.png";
-import logoVue from "../images/techs/vue.png";
 import logoLaravel from "../images/techs/laravel.png";
-import logoPhp from "../images/techs/php.svg";
 import logoPostgresql from "../images/techs/postgresql.png";
 import logoMysql from "../images/techs/mysql.png";
 import logoGit from "../images/techs/git.png";
@@ -86,6 +82,11 @@ class Home extends React.Component {
           image: logoROR,
           name: "Ruby on Rails",
         },
+        {
+          id: 14,
+          image: logoDocker,
+          name: "Docker",
+        },
       ],
       tools: [
         {
@@ -117,6 +118,11 @@ class Home extends React.Component {
           id: 6,
           image: logoVscode,
           name: "VSCode",
+        },
+        {
+          id: 7,
+          image: logoJira,
+          name: "Jira",
         },
       ],
     });

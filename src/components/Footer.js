@@ -85,7 +85,7 @@ class Footer extends React.Component {
         </div>
 
         <div className="footer-copyright text-center py-3">
-          © 2022. Diseñada por
+          © 2022-2023. Diseñada por
           <a
             className="font-weight-bold text-white"
             href="https://www.linkedin.com/in/alvaro-barrera/"

@@ -68,9 +68,6 @@
   font-size: 80px;
   color: var(--white-ligth-color);
   text-transform: uppercase;
-  background: var(--white-color);
-  box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%);
-  border-radius: var(--border-radius-large);
   display: inline-block;
   padding: 8px 24px;
 }
