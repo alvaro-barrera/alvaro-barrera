@@ -1,23 +1,27 @@
 self.__precacheManifest = [
   {
-    "revision": "75228d9ece732a31a67c",
-    "url": "/static/css/main.f20ee66e.chunk.css"
+    "revision": "0c123a652111eb00d23f",
+    "url": "/static/css/main.5eae8588.chunk.css"
   },
   {
-    "revision": "75228d9ece732a31a67c",
-    "url": "/static/js/main.75228d9e.chunk.js"
+    "revision": "0c123a652111eb00d23f",
+    "url": "/static/js/main.0c123a65.chunk.js"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "f748724ddb263e28f099",
+    "revision": "0051f8ad1bf496496bf2",
     "url": "/static/css/2.5d3b9e25.chunk.css"
   },
   {
-    "revision": "f748724ddb263e28f099",
-    "url": "/static/js/2.f748724d.chunk.js"
+    "revision": "0051f8ad1bf496496bf2",
+    "url": "/static/js/2.0051f8ad.chunk.js"
+  },
+  {
+    "revision": "4924a1358965c0996e75f225bfb4e042",
+    "url": "/static/media/docker.4924a135.png"
   },
   {
     "revision": "c3ba82a536fe4983dad4c06b578dcd5d",
@@ -76,12 +80,20 @@ self.__precacheManifest = [
     "url": "/static/media/bes_efactura.dd37b634.PNG"
   },
   {
-    "revision": "9446b12a523c9fefe0149e5021d743d9",
-    "url": "/static/media/personal.9446b12a.png"
+    "revision": "cacea14afa8f05d0092d40d478bc2cb4",
+    "url": "/static/media/personal.cacea14a.png"
   },
   {
     "revision": "f89277051032d139cff1045d8e29f1c1",
     "url": "/static/media/todo.f8927705.png"
+  },
+  {
+    "revision": "011301bd6cab9bb22237a9e4b68eef4b",
+    "url": "/static/media/ulearning.011301bd.png"
+  },
+  {
+    "revision": "2cfadce9da9afc84f02e53d46cbd517e",
+    "url": "/static/media/codecix.2cfadce9.png"
   },
   {
     "revision": "860cf1fd965c7be49dcdf8b0ec69791c",
@@ -92,19 +104,7 @@ self.__precacheManifest = [
     "url": "/static/media/stars.1d17360a.svg"
   },
   {
-    "revision": "584d9f322f08684db8ff2217731e474f",
-    "url": "/static/media/bootstrap.584d9f32.png"
-  },
-  {
-    "revision": "15a4866e67b5a9aac43ae3af08de6721",
-    "url": "/static/media/javascript.15a4866e.png"
-  },
-  {
-    "revision": "44403f1eece67c892a0c6a6791da5ad4",
-    "url": "/static/media/php.44403f1e.svg"
-  },
-  {
-    "revision": "d4f1ec7072c1ec343662561a60932e2d",
+    "revision": "0752865fd48feda503e57175fbca8103",
     "url": "/index.html"
   }
 ];
