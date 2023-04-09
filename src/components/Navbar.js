@@ -341,7 +341,7 @@ class Navbar extends React.Component {
             target="_blank"
             id="ref-wsp"
             href={this.state.formContent}
-          ></a>
+          >&nbsp;</a>
         </Modal>
       </div>
     );

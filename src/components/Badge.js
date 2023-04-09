@@ -39,14 +39,6 @@ class Badge extends React.Component {
                 label="Github"
                 url="https://github.com/alvaro-barrera"
               />
-              <SocialIcon
-                bgColor="white"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mr-1 ml-1 Badge__icon-social"
-                label="Instagram de Álvaro Barrera"
-                url="https://www.instagram.com/alvaro__barrera/"
-              />
             </div>
           </div>
         </div>

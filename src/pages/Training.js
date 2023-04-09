@@ -67,7 +67,7 @@ class Training extends React.Component {
           credential_storage:
             "https://drive.google.com/file/d/1BkXzdn1FjN4FcJLu31VWVexTqm6TmUcD/view?usp=sharing",
         },
-        {
+        /*{
           id: 5,
           name: "Programación con JavaScript",
           entity:
@@ -76,7 +76,7 @@ class Training extends React.Component {
           credential_id: "41b0ba76-ba19-42ae-9ac3-a4f6822bebab",
           credential_storage:
             "https://drive.google.com/file/d/1BC7wxDbZzgeOKoOz1bjdKB5JSO6TUks_/view?usp=sharing",
-        },
+        },*/
         {
           id: 4,
           name: "Certificación en Comercio Electrónico",
@@ -96,7 +96,7 @@ class Training extends React.Component {
           credential_storage:
             "https://drive.google.com/file/d/12Tt2abcTpnCBA0gcwthTNhG4mnmVGg3i/view?usp=sharing",
         },
-        {
+        /*{
           id: 2,
           name: "Scrum Fundamentals Certified (SFC)",
           entity: "SCRUMstudy - Accreditation Body for Scrum and Agile",
@@ -104,7 +104,7 @@ class Training extends React.Component {
           credential_id: "835898",
           credential_storage:
             "https://www.scrumstudy.com/certification/verify?type=SFC&number=835898",
-        },
+        },*/
       ],
     });
   }

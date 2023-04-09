@@ -41,14 +41,6 @@ class Footer extends React.Component {
                   label="Gitbub"
                   url="https://github.com/alvaro-barrera"
                 />
-                <SocialIcon
-                  bgColor="white"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mr-1 ml-1"
-                  label="Instagram de Álvaro Barrera"
-                  url="https://www.instagram.com/alvaro__barrera/"
-                />
               </div>
             </div>
 
