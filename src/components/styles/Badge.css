@@ -1,9 +1,9 @@
 .Badge {
   overflow: hidden;
-  height: 380px;
   margin-bottom: 10px;
   padding: 1rem;
   width: 100%;
+  text-align: -webkit-center;
 }
 .Badge__border {
   border: 3px solid #23989e !important;
@@ -45,7 +45,7 @@
   /* box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%); */
   border-radius: 8px 8px 8px 8px;
   overflow: hidden;
-  margin-bottom: 10px;
+  margin-top: 10px;
   width: 100%;
 }
 
@@ -76,7 +76,7 @@
   .Badge__h1 {
     font-size: 44px;
   }
-  .Badge__section-info  .Badge__h2{
+  .Badge__section-info .Badge__h2 {
     font-size: 32px;
   }
 }
@@ -85,12 +85,12 @@
   .Badge__h1 {
     font-size: 30px;
   }
-  .Badge__section-info  .Badge__h2{
+  .Badge__section-info .Badge__h2 {
     font-size: 25px;
   }
   .Badge__icon-social {
-    margin-left: .5rem !important;
-    margin-right: .5rem !important;
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
   }
 }
 
@@ -112,4 +112,70 @@
     margin-left: 1rem !important;
     margin-right: 1rem !important;
   }
+}
+
+.Linkedin-pofile__container {
+  background-color: var(--white-ligth-color);
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+  padding-top: 18px;
+  position: relative;
+  width: 350px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.Linkedin-pofile__container .pro {
+  color: #231e39;
+  background-color: #febb0b;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 3px 7px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.Linkedin-pofile__container .round {
+  border: 1px solid #03bfcb;
+  border-radius: 50%;
+  padding: 7px;
+  width: 96px;
+}
+
+.View-profile__button {
+  border: 1px solid #03bfcb;
+  border-radius: 3px;
+  font-weight: 500;
+  padding: 10px 25px;
+  background-color: transparent;
+  color: var(--green-color);
+}
+
+.Skills__container {
+  background-color: var(--primary-color);
+  text-align: left;
+  padding: 15px;
+  margin-top: 22px;
+  border-radius: 0 0 5px 5px;
+}
+
+.Skills__container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Skills__container ul li {
+  border: 1px solid #2d2747;
+  border-radius: 2px;
+  display: inline-block;
+  font-size: 12px;
+  margin: 0 7px 7px 0;
+  padding: 7px;
+}
+
+.Profile-link__container {
+  margin: 16px 0 20px 0;
 }

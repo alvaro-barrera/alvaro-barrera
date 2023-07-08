@@ -17,7 +17,7 @@ class Certificate extends React.Component {
 }
 
 const CertificateItem = ({ certificate }) => {
-  const [visible, setVisible] = React.useState(false);
+  const [visible, setVisible] = React.useState(true);
 
   const handleToggle = () => {
     setVisible(!visible);

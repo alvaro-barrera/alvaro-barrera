@@ -1,18 +1,18 @@
-.About__li{
-    margin-bottom: 0;
+.About__li {
+  margin-bottom: 0;
 }
 
 .About__title {
-    background: var(--secondary-color);
-    border-radius: var(--border-radius-small);
-    padding: 10px 30px;
+  background: var(--secondary-color);
+  border-radius: var(--border-radius-small);
+  padding: 10px 30px;
 }
 
 .About__title h2 {
-    color: var(--white-color) !important;
+  color: var(--white-color) !important;
 }
 
 .About__h2 {
-    border-bottom: 1px solid #dee2e6!important;
-    padding-bottom: 1rem!important;
+  border-bottom: 1px solid #dee2e6 !important;
+  padding-bottom: 1rem !important;
 }

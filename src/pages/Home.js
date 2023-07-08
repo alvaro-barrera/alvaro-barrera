@@ -150,16 +150,7 @@ class Home extends React.Component {
         <div className="Badges_list">
           <div className="Badges__container ">
             <About></About>
-            <div className="separation">
-              <BadgesList
-                title={"Tecnologías"}
-                badges={this.state.techs}
-              ></BadgesList>
-              <BadgesList
-                title={"Herramientas"}
-                badges={this.state.tools}
-              ></BadgesList>
-            </div>
+            
           </div>
         </div>
       </React.Fragment>

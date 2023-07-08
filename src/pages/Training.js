@@ -15,6 +15,15 @@ class Training extends React.Component {
     this.setState({
       certificates: [
         {
+          id: 13,
+          name: "Curso Profesional de Arquitectura de Software",
+          entity: "Platzi",
+          emission: "abril 2023",
+          credential_id: "d196ea91-49f0-4a63-83f1-9ad3ca4c126f",
+          credential_storage:
+            "https://platzi.com/p/alvaro-barrera300/curso/1248-pro-arquitectura/diploma/detalle/",
+        },
+        {
           id: 11,
           name: "Ingeniería de Sistemas",
           entity: "Universidad Nacional Pedro Ruiz - Lambayeque - Perú",
@@ -58,7 +67,7 @@ class Training extends React.Component {
           credential_storage:
             "https://drive.google.com/file/d/1I4eKCTRLrrChshqYgy8xuwkIQ_qoLjyi/view?usp=sharing",
         },
-        {
+        /*{
           id: 6,
           name: "Fundamentos de la gestión de proyectos",
           entity: "LinkedIn",
@@ -67,7 +76,7 @@ class Training extends React.Component {
           credential_storage:
             "https://drive.google.com/file/d/1BkXzdn1FjN4FcJLu31VWVexTqm6TmUcD/view?usp=sharing",
         },
-        /*{
+        {
           id: 5,
           name: "Programación con JavaScript",
           entity:
@@ -76,7 +85,7 @@ class Training extends React.Component {
           credential_id: "41b0ba76-ba19-42ae-9ac3-a4f6822bebab",
           credential_storage:
             "https://drive.google.com/file/d/1BC7wxDbZzgeOKoOz1bjdKB5JSO6TUks_/view?usp=sharing",
-        },*/
+        },
         {
           id: 4,
           name: "Certificación en Comercio Electrónico",
@@ -85,7 +94,7 @@ class Training extends React.Component {
           credential_id: "835898",
           credential_storage:
             "https://drive.google.com/file/d/104c3NsFTKuIxHA14hTAp4jXyh5vkXzOk/view?usp=sharing",
-        },
+        },*/
         {
           id: 3,
           name: "Gestión de Proyectos con Metodologías Ágiles y Enfoques en Lean",
