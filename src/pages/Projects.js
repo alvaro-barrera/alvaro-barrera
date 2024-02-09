@@ -65,6 +65,7 @@ class Projects extends React.Component {
           ],
           techs: ["Laravel 6", "Vue.js", "Single Page Application", "API"],
           footer: "Sistema web administrativo para gestión escolar",
+          demo: "https://colegiojuanabad.com/",
         },
         {
           id: 4,
