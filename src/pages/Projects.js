@@ -8,6 +8,7 @@ import logoPersonal from "../images/briefcase/personal.png";
 import logoTodo from "../images/briefcase/todo.png";
 import logoUlearning from "../images/briefcase/ulearning.png";
 import logoCodecix from "../images/briefcase/codecix.png";
+import logoMultirepuestosJa from "../images/briefcase/multirepuestos_ja.png";
 
 import Briefcase from "../components/Briefcase";
 
@@ -88,9 +89,7 @@ class Projects extends React.Component {
           id: 5,
           name: "Web - Desarrollo de Software",
           image: logoWebbes,
-          detailLists: [
-            "Página informativa de servicios",
-          ],
+          detailLists: ["Página informativa de servicios"],
           techs: ["Laravel 6", "Javascript", "Bootstrap 4"],
           footer: "Sistema web administrativo para gestión escolar",
         },
@@ -98,10 +97,7 @@ class Projects extends React.Component {
           id: 6,
           name: "Portafolio personal",
           image: logoPersonal,
-          detailLists: [
-            "React.js",
-            "Web personal y portafolio",
-          ],
+          detailLists: ["React.js", "Web personal y portafolio"],
           techs: ["React.js"],
           footer: "",
         },
@@ -115,7 +111,7 @@ class Projects extends React.Component {
           ],
           techs: ["React.js"],
           footer: "",
-          demo :"https://alvaro-barrera.github.io/react-todo-app/"
+          demo: "https://alvaro-barrera.github.io/react-todo-app/",
         },
         {
           id: 7,
@@ -129,7 +125,7 @@ class Projects extends React.Component {
           ],
           techs: ["Laravel", "Angular", "PostgreSQL"],
           footer: "",
-          demo :"https://ulearning.com.pe/"
+          demo: "https://ulearning.com.pe/",
         },
         {
           id: 8,
@@ -141,7 +137,19 @@ class Projects extends React.Component {
           ],
           techs: ["Next.js"],
           footer: "",
-          demo :"https://codecix.com/"
+          demo: "https://codecix.com/",
+        },
+        {
+          id: 8,
+          name: "Multirepuestos J&A",
+          image: logoMultirepuestosJa,
+          detailLists: [
+            "Laravel, Javascript, PostgreSQL",
+            "Venta de repuestos de autos",
+          ],
+          techs: ["Laravel", "PostgreSQL"],
+          footer: "",
+          demo: "http://multirepuestos-ja.com/",
         },
       ],
     });

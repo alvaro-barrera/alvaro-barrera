@@ -6,13 +6,8 @@ class Badge extends React.Component {
     return (
       <div className="Badge">
         <div class="Linkedin-pofile__container">
-          <img
-            class="round"
-            src="https://media.licdn.com/dms/image/D4E03AQFmPh369A8iXQ/profile-displayphoto-shrink_400_400/0/1674703899512?e=1694044800&v=beta&t=AOJRJB7ts3AXt9yQfsXm4YF9RyV0hmJ_5khcCOJ2AQY"
-            alt="Álvaro Barrera linkedin"
-          />
           <h1>Álvaro Barrera</h1>
-          <h6>Semi Senior Software Engineer</h6>
+          <h6>Software Engineer</h6>
           <div class="Profile-link__container">
             <a
               href="https://www.linkedin.com/in/alvaro-barrera"
