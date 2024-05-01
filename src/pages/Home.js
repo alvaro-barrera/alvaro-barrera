@@ -1,5 +1,4 @@
 import React from "react";
-import BadgesList from "../components/BadgesList";
 import "./styles/Badges.css";
 import logoDocker from "../images/techs/docker.png";
 import logoJira from "../images/techs/jira.png";

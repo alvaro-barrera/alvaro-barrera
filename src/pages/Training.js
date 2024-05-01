@@ -15,6 +15,15 @@ class Training extends React.Component {
     this.setState({
       certificates: [
         {
+          id: 14,
+          name: "Object-Oriented Design",
+          entity: "University of Alberta",
+          emission: "abril 2024",
+          credential_id: "75MBSAEBQFAR",
+          credential_storage:
+            "https://www.coursera.org/account/accomplishments/verify/75MBSAEBQFAR",
+        },
+        {
           id: 13,
           name: "Curso Profesional de Arquitectura de Software",
           entity: "Platzi",

@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/Navbar.css";
 import Modal from "../components/Modal";
 import { Link } from "react-router-dom";
-import logo from "../images/logo.png";
+import transparent_logo from "../images/transparent_logo.png";
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -138,7 +138,7 @@ class Navbar extends React.Component {
             <a className="text-white font-weight-light" href="#/">
               <img
                 className="Navbar__brand-logo"
-                src={logo}
+                src={transparent_logo}
                 alt="Alvaro Barrera"
               />
               <span className="font-weight-light">Álvaro</span>

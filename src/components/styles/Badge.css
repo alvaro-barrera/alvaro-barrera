@@ -72,6 +72,14 @@
   padding: 8px 24px;
 }
 
+.Linkedin-pofile__column {
+  display: block;
+}
+
+.Linkedin-pofile__column .Navbar__brand-logo {
+  height: 280px;
+}
+
 @media only screen and (max-width: 768px) {
   .Badge__h1 {
     font-size: 44px;
@@ -92,6 +100,14 @@
     margin-left: 0.5rem !important;
     margin-right: 0.5rem !important;
   }
+  .Linkedin-pofile__column.logo {
+    display: none;
+  }
+}
+
+.Linkedin-pofile__column.logo {
+  align-content: center;
+  opacity: 0.9;
 }
 
 .Badge__h2 {
@@ -118,11 +134,16 @@
   background-color: var(--white-ligth-color);
   border-radius: 5px;
   box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
-  padding-top: 18px;
+  padding-top: 35px;
   position: relative;
-  width: 350px;
   max-width: 100%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.Linkedin-pofile__container h1 {
+  font-weight: bold;
 }
 
 .Linkedin-pofile__container .pro {
@@ -154,7 +175,6 @@
 }
 
 .Skills__container {
-  background-color: var(--primary-color);
   text-align: left;
   padding: 15px;
   margin-top: 22px;
@@ -165,6 +185,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 .Skills__container ul li {

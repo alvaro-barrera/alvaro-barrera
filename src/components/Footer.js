@@ -4,6 +4,7 @@ import { SocialIcon } from "react-social-icons";
 import "./styles/Footer.css";
 import { GrReactjs } from "react-icons/gr";
 import { BsFillHeartFill } from "react-icons/bs";
+import logo from "../images/white_logo.png";
 
 
 class Footer extends React.Component {
@@ -73,11 +74,19 @@ class Footer extends React.Component {
                 </li>
               </ul>
             </div>
+
+            <div className="col-md-3">
+              <img
+                className="Navbar__brand-logo"
+                src={logo}
+                alt="Alvaro Barrera"
+              />
+            </div>
           </div>
         </div>
 
         <div className="footer-copyright text-center py-3">
-          © 2022-2023. Diseñada por
+          © 2022-2024. Diseñada por
           <a
             className="font-weight-bold text-white"
             href="https://www.linkedin.com/in/alvaro-barrera/"
