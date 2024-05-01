@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "51b521b8a94f5b2604f5",
-    "url": "/static/css/main.b5bc4087.chunk.css"
+    "revision": "e186b10bced2f5685f22",
+    "url": "/static/css/main.a4dc25b8.chunk.css"
   },
   {
-    "revision": "51b521b8a94f5b2604f5",
-    "url": "/static/js/main.51b521b8.chunk.js"
+    "revision": "e186b10bced2f5685f22",
+    "url": "/static/js/main.e186b10b.chunk.js"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "104fff1895ecd2445117",
+    "revision": "35a058cf5eef8e9b3bdf",
     "url": "/static/css/2.5d3b9e25.chunk.css"
   },
   {
-    "revision": "104fff1895ecd2445117",
-    "url": "/static/js/2.104fff18.chunk.js"
+    "revision": "35a058cf5eef8e9b3bdf",
+    "url": "/static/js/2.35a058cf.chunk.js"
   },
   {
     "revision": "4924a1358965c0996e75f225bfb4e042",
@@ -100,15 +100,11 @@ self.__precacheManifest = [
     "url": "/static/media/multirepuestos_ja.77fd681a.png"
   },
   {
-    "revision": "860cf1fd965c7be49dcdf8b0ec69791c",
-    "url": "/static/media/logo.860cf1fd.png"
-  },
-  {
     "revision": "1d17360a685ac86023b90aa14fd2c62d",
     "url": "/static/media/stars.1d17360a.svg"
   },
   {
-    "revision": "16d9eeff941c2c8ef6ca559812913f94",
+    "revision": "3d48b8a89208373539939f06d6654e01",
     "url": "/index.html"
   }
 ];
