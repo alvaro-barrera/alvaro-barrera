@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "b51bbddeb8f4336b159f",
-    "url": "/static/css/main.25f929f8.chunk.css"
+    "revision": "5a99b60ce001eb8c4409",
+    "url": "/static/css/main.703a28da.chunk.css"
   },
   {
-    "revision": "b51bbddeb8f4336b159f",
-    "url": "/static/js/main.b51bbdde.chunk.js"
+    "revision": "5a99b60ce001eb8c4409",
+    "url": "/static/js/main.5a99b60c.chunk.js"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "104fff1895ecd2445117",
+    "revision": "4ecad27e61022bf7f945",
     "url": "/static/css/2.5d3b9e25.chunk.css"
   },
   {
-    "revision": "104fff1895ecd2445117",
-    "url": "/static/js/2.104fff18.chunk.js"
+    "revision": "4ecad27e61022bf7f945",
+    "url": "/static/js/2.4ecad27e.chunk.js"
   },
   {
     "revision": "4924a1358965c0996e75f225bfb4e042",
@@ -84,23 +84,47 @@ self.__precacheManifest = [
     "url": "/static/media/personal.cacea14a.png"
   },
   {
-    "revision": "011301bd6cab9bb22237a9e4b68eef4b",
-    "url": "/static/media/ulearning.011301bd.png"
+    "revision": "df18ff2791d7c616d04603780fd9937b",
+    "url": "/static/media/ulearning.df18ff27.png"
   },
   {
     "revision": "2cfadce9da9afc84f02e53d46cbd517e",
     "url": "/static/media/codecix.2cfadce9.png"
   },
   {
-    "revision": "77fd681a3250cb6fa6bd57a234d7ebdb",
-    "url": "/static/media/multirepuestos_ja.77fd681a.png"
+    "revision": "73bdb27159cf554ddbde1be89c7a2df0",
+    "url": "/static/media/multirepuestos_ja.73bdb271.png"
+  },
+  {
+    "revision": "947d926822517994474f7afd23d9c556",
+    "url": "/static/media/colegiojuanabad.947d9268.png"
+  },
+  {
+    "revision": "341d2eeeb52c099f1cbbabd2088ba8fc",
+    "url": "/static/media/logo_inndatsys.341d2eee.webp"
+  },
+  {
+    "revision": "e1c58c7580abc35c1641d5470f3febb3",
+    "url": "/static/media/logo_ja.e1c58c75.png"
+  },
+  {
+    "revision": "86b3fe6cf15b2d28f39c991a94d104eb",
+    "url": "/static/media/logo_juan_abad.86b3fe6c.png"
+  },
+  {
+    "revision": "110a9d26e4a71e7697ca8b73b7af9115",
+    "url": "/static/media/logo_solti.110a9d26.jpg"
+  },
+  {
+    "revision": "64d9d4c7e7cb73209bef2c7ac8880141",
+    "url": "/static/media/logo_uss.64d9d4c7.svg"
   },
   {
     "revision": "1d17360a685ac86023b90aa14fd2c62d",
     "url": "/static/media/stars.1d17360a.svg"
   },
   {
-    "revision": "6c8cb971927a9db5079f7427cdd4a782",
+    "revision": "2ea12642ecbf371f833436f7c23e1f32",
     "url": "/index.html"
   }
 ];
