@@ -16,7 +16,7 @@
   }
 
   .BriefcaseItem__card {
-    height: 280px !important;
+    /* height: 280px !important; */
     min-height: 100% !important;
   }
 }
@@ -89,7 +89,7 @@
 
 .Briefcase__cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-gap: 2rem;
   gap: 2rem;
   margin: 1rem 5vw;
@@ -108,15 +108,19 @@
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   /* background-color: #fff; */
+  height: 300px;
+  align-content: center;
 }
 
 .BriefcaseItem__card-image {
   width: 100%;
   height: auto;
+  cursor: pointer;
 }
 
 .BriefcaseItem__image {
   max-width: 100%;
+  max-height: 100%;
   width: 100%;
   border-radius: 15px;
 }
@@ -129,9 +133,9 @@
   align-items: center;
   grid-gap: 2em;
   gap: 2em;
-  padding: 2em;
-  border-radius: 40px 0 0 0;
-  border-radius: calc(var(--curve) * 1px) 0 0 0;
+  padding: 5px 10px;
+  /* border-radius: 40px 0 0 0; */
+  /* border-radius: calc(var(--curve) * 1px) 0 0 0; */
   background-color: #fff;
   background-color: var(--surface-color);
   -webkit-transform: translateY(-100%);
@@ -155,6 +159,27 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   overflow: hidden;
+  overflow: auto;
+  height: 600px;
+}
+
+.BriefcaseItem__card-description::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.BriefcaseItem__card-description::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.BriefcaseItem__card-description::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.BriefcaseItem__card-description::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .BriefcaseItem__description-span {
@@ -191,7 +216,8 @@
 
 .BriefcaseItem__card-header-text h3 {
   display: flex;
-  font-size: 1.75rem;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
 li {

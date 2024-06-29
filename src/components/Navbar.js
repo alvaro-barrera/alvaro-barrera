@@ -95,7 +95,6 @@ class Navbar extends React.Component {
           emailFormat: errorEmailFormat,
         },
       });
-      console.log("0");
     }
   };
   handleKeyPressCelphone = (e) => {

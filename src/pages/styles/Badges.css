@@ -19,9 +19,9 @@
   margin: 0 auto;
   padding: 0 1rem;
 }
-.separation h2{
-  border-bottom: 1px solid #dee2e6!important;
-  padding-bottom: 1rem!important;
+.separation h2 {
+  border-bottom: 1px solid #dee2e6 !important;
+  padding-bottom: 1rem !important;
 }
 
 .Badges_conf-logo {
@@ -68,6 +68,90 @@
       ;  
   }  */
   40% {
-    transform: scale(1.04) /* rotate(-45deg) */;
+    transform: scale(1.04);
+  }
+}
+
+.section-title {
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-bottom: 6px;
+  color: #000;
+  letter-spacing: 0.3px;
+}
+
+.section-title h2 {
+  padding: 0;
+}
+
+.section-title::after {
+  content: "";
+  height: 3px;
+  background: #fbb900;
+  width: 80px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/****************/
+/*   BX-SLIDER  */
+/****************/
+
+section.client {
+  padding: 20px 0em;
+  background-color: #eee;
+  background: rgba(20, 183, 137, 0.3);
+}
+
+section.client .section-title {
+  margin-bottom: 6em;
+}
+
+.bx-controls {
+  position: relative;
+}
+
+.bx-wrapper .bx-pager {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #666;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.Customer__carousel-client .slide img {
+  height: 70px;
+  margin: 0 10px;
+}
+
+.Customer__container {
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .Customer__carousel-client .slide img {
+    height: 20px;
+    margin: 0 5px;
   }
 }

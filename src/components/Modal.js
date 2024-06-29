@@ -7,11 +7,10 @@ function Modal(props) {
   if (!props.isOpen) {
     return null;
   }
-  
 
   return ReactDOM.createPortal(
     <div className="Modal">
-      <div className="Modal__container">
+      <div className={`Modal__container ${props.width && props.width}`}>
         <button onClick={props.onClose} className="Modal__close-button">
           X
         </button>

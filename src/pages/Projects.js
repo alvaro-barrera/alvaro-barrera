@@ -5,12 +5,20 @@ import logoClassroom from "../images/briefcase/classroom.PNG";
 import logoWebbes from "../images/briefcase/web_bes.PNG";
 import logoBesefactura from "../images/briefcase/bes_efactura.PNG";
 import logoPersonal from "../images/briefcase/personal.png";
-import logoTodo from "../images/briefcase/todo.png";
+// import logoTodo from "../images/briefcase/todo.png";
 import logoUlearning from "../images/briefcase/ulearning.png";
 import logoCodecix from "../images/briefcase/codecix.png";
 import logoMultirepuestosJa from "../images/briefcase/multirepuestos_ja.png";
+import logoColegioJuanAbad from "../images/briefcase/colegiojuanabad.png";
+import logoCentauri from "../images/customers/logo_centauri.png";
+import logoInndatsys from "../images/customers/logo_inndatsys.webp";
+import logoJa from "../images/customers/logo_ja.png";
+import logoJuanAbad from "../images/customers/logo_juan_abad.png";
+import logoSolti from "../images/customers/logo_solti.jpg";
+import logoUss from "../images/customers/logo_uss.svg";
 
 import Briefcase from "../components/Briefcase";
+import Customer from "../components/Customer";
 
 class Projects extends React.Component {
   constructor(props) {
@@ -20,11 +28,51 @@ class Projects extends React.Component {
       loading: true,
       error: null,
       projects: [],
+      customers: [],
     };
   }
   componentDidMount() {
     this.setState({
       projects: [
+        {
+          id: 7,
+          name: "Plataforma académica - U-Learning",
+          image: logoUlearning,
+          detailLists: [
+            "Laravel, Angular, PostgreSQL, Docker",
+            "E-commerce de cursos virtuales y presenciales",
+            "Plataforma de aprendizaje para estudiantes",
+            "Sistema académico administrativo",
+          ],
+          techs: ["Laravel", "Angular", "PostgreSQL"],
+          footer: "",
+          demo: "https://ulearning.com.pe/",
+        },
+        {
+          id: 8,
+          name: "Multirepuestos J&A",
+          image: logoMultirepuestosJa,
+          detailLists: [
+            "Laravel, Javascript, PostgreSQL",
+            "Venta de repuestos de autos",
+          ],
+          techs: ["Laravel", "PostgreSQL"],
+          footer: "",
+          demo: "http://multirepuestos-ja.com/",
+        },
+        {
+          id: 3,
+          name: "Sistema Aulas Virtuales",
+          image: logoClassroom,
+          detailLists: [
+            "Laravel 6, Vue.js, MySQL",
+            "Single Page Application",
+            "Sistema de gestión escolar",
+            "Web service para consumo proyecto SPA Vue.js",
+          ],
+          techs: ["Laravel 6", "Vue.js", "Single Page Application", "API"],
+          footer: "Sistema web administrativo para gestión escolar",
+        },
         {
           id: 1,
           name: "Solti-CRM",
@@ -47,24 +95,20 @@ class Projects extends React.Component {
             "Laravel 6, Vue.js, MySQL",
             "Gestión de contratos, pagos y facturación electrónica",
             "Suscripciones a correo electrónico",
-            "Servicio web service para consumo e-commerce",
+            "API para consumo e-commerce",
           ],
           techs: ["Laravel 6", "Vue.js", "Bootstrap 4", "Ecommerce", "API"],
           footer:
             "Sistema web administrativo y ecommerce para gestión de proyectos inmobiliarios, gestión de contratos, pago de cuotas y facturación electrónica",
         },
         {
-          id: 3,
-          name: "Sistema Aulas Virtuales",
-          image: logoClassroom,
-          detailLists: [
-            "Laravel 6, Vue.js, MySQL",
-            "Single Page Application",
-            "Sistema de gestión escolar",
-            "Web service para consumo proyecto SPA Vue.js",
-          ],
-          techs: ["Laravel 6", "Vue.js", "Single Page Application", "API"],
-          footer: "Sistema web administrativo para gestión escolar",
+          id: 2,
+          name: "Web - Colegio Juan Abad",
+          image: logoColegioJuanAbad,
+          detailLists: ["Laravel 6, Bootstrap 4"],
+          techs: ["Laravel 6", "Bootstrap 4"],
+          footer:
+            "Página web informativa conectada a un sistema interno de aula virtual",
           demo: "https://colegiojuanabad.com/",
         },
         {
@@ -102,32 +146,19 @@ class Projects extends React.Component {
           techs: ["React.js"],
           footer: "",
         },
-        {
-          id: 7,
-          name: "Gestor de tareas",
-          image: logoTodo,
-          detailLists: [
-            "React.js",
-            "Aplicación para gestionar tareas con almacenamiento local",
-          ],
-          techs: ["React.js"],
-          footer: "",
-          demo: "https://alvaro-barrera.github.io/react-todo-app/",
-        },
-        {
-          id: 7,
-          name: "Plataforma académica - U-Learning",
-          image: logoUlearning,
-          detailLists: [
-            "Laravel, Angular, PostgreSQL, Docker",
-            "E-commerce de cursos virtuales y presenciales",
-            "Plataforma de aprendizaje para estudiantes",
-            "Sistema académico administrativo",
-          ],
-          techs: ["Laravel", "Angular", "PostgreSQL"],
-          footer: "",
-          demo: "https://ulearning.com.pe/",
-        },
+        // {
+        //   id: 7,
+        //   name: "Gestor de tareas",
+        //   image: logoTodo,
+        //   detailLists: [
+        //     "React.js",
+        //     "Aplicación para gestionar tareas con almacenamiento local",
+        //   ],
+        //   techs: ["React.js"],
+        //   footer: "",
+        //   demo: "https://alvaro-barrera.github.io/react-todo-app/",
+        // },
+
         {
           id: 8,
           name: "Codecix - Servicios profesionales",
@@ -138,19 +169,39 @@ class Projects extends React.Component {
           ],
           techs: ["Next.js"],
           footer: "",
-          demo: "https://codecix.com/",
+          // demo: "https://codecix.com/",
+        },
+      ],
+      customers: [
+        {
+          logo: logoCentauri,
+          text: "Centauri Technologies Corp",
+          link: "https://centauritech.com/",
         },
         {
-          id: 8,
-          name: "Multirepuestos J&A",
-          image: logoMultirepuestosJa,
-          detailLists: [
-            "Laravel, Javascript, PostgreSQL",
-            "Venta de repuestos de autos",
-          ],
-          techs: ["Laravel", "PostgreSQL"],
-          footer: "",
-          demo: "http://multirepuestos-ja.com/",
+          logo: logoInndatsys,
+          text: "INNDATSYS",
+          link: "https://inndatsys.com/",
+        },
+        {
+          logo: logoJa,
+          text: "Multirepuestos J&A",
+          link: "https://multirepuestos-ja.com/",
+        },
+        {
+          logo: logoJuanAbad,
+          text: "Colegio Juan Abad",
+          link: "https://colegiojuanabad.com/",
+        },
+        {
+          logo: logoSolti,
+          text: "SOLTI PERÚ",
+          link: "https://soltiperu.com/",
+        },
+        {
+          logo: logoUss,
+          text: "USS",
+          link: "https://ulearning.com.pe/",
         },
       ],
     });
@@ -160,6 +211,10 @@ class Projects extends React.Component {
       <React.Fragment>
         <div className="Badges_list">
           <div className="Badges__container"></div>
+          <Customer
+            title={"Clientes"}
+            customers={this.state.customers}
+          ></Customer>
           <Briefcase
             title={"Proyectos"}
             projects={this.state.projects}
