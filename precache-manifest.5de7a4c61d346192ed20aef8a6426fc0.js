@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "e186b10bced2f5685f22",
-    "url": "/static/css/main.a4dc25b8.chunk.css"
+    "revision": "b51bbddeb8f4336b159f",
+    "url": "/static/css/main.25f929f8.chunk.css"
   },
   {
-    "revision": "e186b10bced2f5685f22",
-    "url": "/static/js/main.e186b10b.chunk.js"
+    "revision": "b51bbddeb8f4336b159f",
+    "url": "/static/js/main.b51bbdde.chunk.js"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "35a058cf5eef8e9b3bdf",
+    "revision": "104fff1895ecd2445117",
     "url": "/static/css/2.5d3b9e25.chunk.css"
   },
   {
-    "revision": "35a058cf5eef8e9b3bdf",
-    "url": "/static/js/2.35a058cf.chunk.js"
+    "revision": "104fff1895ecd2445117",
+    "url": "/static/js/2.104fff18.chunk.js"
   },
   {
     "revision": "4924a1358965c0996e75f225bfb4e042",
@@ -84,10 +84,6 @@ self.__precacheManifest = [
     "url": "/static/media/personal.cacea14a.png"
   },
   {
-    "revision": "f89277051032d139cff1045d8e29f1c1",
-    "url": "/static/media/todo.f8927705.png"
-  },
-  {
     "revision": "011301bd6cab9bb22237a9e4b68eef4b",
     "url": "/static/media/ulearning.011301bd.png"
   },
@@ -104,7 +100,7 @@ self.__precacheManifest = [
     "url": "/static/media/stars.1d17360a.svg"
   },
   {
-    "revision": "d83940256becee36d4d670015a2bc3f6",
+    "revision": "6c8cb971927a9db5079f7427cdd4a782",
     "url": "/index.html"
   }
 ];
