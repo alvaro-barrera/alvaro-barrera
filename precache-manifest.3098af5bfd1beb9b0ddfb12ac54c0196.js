@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "5a99b60ce001eb8c4409",
-    "url": "/static/css/main.703a28da.chunk.css"
+    "revision": "739630fe292bbec78aa4",
+    "url": "/static/css/main.eefd94ef.chunk.css"
   },
   {
-    "revision": "5a99b60ce001eb8c4409",
-    "url": "/static/js/main.5a99b60c.chunk.js"
+    "revision": "739630fe292bbec78aa4",
+    "url": "/static/js/main.739630fe.chunk.js"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "4ecad27e61022bf7f945",
+    "revision": "e6c168933e5bf297bf6a",
     "url": "/static/css/2.5d3b9e25.chunk.css"
   },
   {
-    "revision": "4ecad27e61022bf7f945",
-    "url": "/static/js/2.4ecad27e.chunk.js"
+    "revision": "e6c168933e5bf297bf6a",
+    "url": "/static/js/2.e6c16893.chunk.js"
   },
   {
     "revision": "4924a1358965c0996e75f225bfb4e042",
@@ -100,6 +100,10 @@ self.__precacheManifest = [
     "url": "/static/media/colegiojuanabad.947d9268.png"
   },
   {
+    "revision": "f7ddc89e74e8a2147bcf0780d312a178",
+    "url": "/static/media/cas.f7ddc89e.png"
+  },
+  {
     "revision": "341d2eeeb52c099f1cbbabd2088ba8fc",
     "url": "/static/media/logo_inndatsys.341d2eee.webp"
   },
@@ -120,11 +124,15 @@ self.__precacheManifest = [
     "url": "/static/media/logo_uss.64d9d4c7.svg"
   },
   {
+    "revision": "7c61413354dac1f390c265f1d3084551",
+    "url": "/static/media/logo_cas.7c614133.png"
+  },
+  {
     "revision": "1d17360a685ac86023b90aa14fd2c62d",
     "url": "/static/media/stars.1d17360a.svg"
   },
   {
-    "revision": "2ea12642ecbf371f833436f7c23e1f32",
+    "revision": "767cef824c53b3729e39e753c26d8120",
     "url": "/index.html"
   }
 ];
