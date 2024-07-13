@@ -152,7 +152,7 @@ class Navbar extends React.Component {
               Educación
             </Link>
             <Link className="text-white font-weight-light" to="/projects">
-              Proyectos
+            Clientes
             </Link>
             <a
               id="button-contact"

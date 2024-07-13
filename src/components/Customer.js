@@ -8,6 +8,7 @@ class Customer extends React.Component {
         <section class="client">
           <div class="container">
             <div class="Customer__container row">
+              <p class="Customer__container--phrase">Clientes que eligieron trabajar conmigo</p>
               <div class="Customer__carousel-client">
                 <div class="slide">
                   {this.props.customers.map((customer, i) => (

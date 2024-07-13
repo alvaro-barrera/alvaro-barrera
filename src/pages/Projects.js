@@ -10,12 +10,14 @@ import logoUlearning from "../images/briefcase/ulearning.png";
 import logoCodecix from "../images/briefcase/codecix.png";
 import logoMultirepuestosJa from "../images/briefcase/multirepuestos_ja.png";
 import logoColegioJuanAbad from "../images/briefcase/colegiojuanabad.png";
+import photoCas from "../images/briefcase/cas.png";
 import logoCentauri from "../images/customers/logo_centauri.png";
 import logoInndatsys from "../images/customers/logo_inndatsys.webp";
 import logoJa from "../images/customers/logo_ja.png";
 import logoJuanAbad from "../images/customers/logo_juan_abad.png";
 import logoSolti from "../images/customers/logo_solti.jpg";
 import logoUss from "../images/customers/logo_uss.svg";
+import logoCas from "../images/customers/logo_cas.png";
 
 import Briefcase from "../components/Briefcase";
 import Customer from "../components/Customer";
@@ -171,6 +173,18 @@ class Projects extends React.Component {
           footer: "",
           // demo: "https://codecix.com/",
         },
+        {
+          id: 9,
+          name: "I.E 10796 Carlos Augusto Salaverry",
+          image: photoCas,
+          detailLists: [
+            "HMTL, CSS, JS",
+            "Página información para el VI Torneo Regional De Ajedrez",
+          ],
+          techs: ["HMTL", "CSS", "JS"],
+          footer: "",
+          demo: "https://colegiosalaverry.com/",
+        },
       ],
       customers: [
         {
@@ -202,6 +216,11 @@ class Projects extends React.Component {
           logo: logoUss,
           text: "USS",
           link: "https://ulearning.com.pe/",
+        },
+        {
+          logo: logoCas,
+          text: "I.E 10796 Carlos Augusto Salaverry",
+          link: "https://colegiosalaverry.com/",
         },
       ],
     });
