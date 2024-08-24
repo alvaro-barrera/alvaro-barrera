@@ -6,7 +6,6 @@ import { GrReactjs } from "react-icons/gr";
 import { BsFillHeartFill } from "react-icons/bs";
 import logo from "../images/white_logo.png";
 
-
 class Footer extends React.Component {
   handleRefContact = (e) => {
     document.getElementById("button-contact").click();
@@ -53,6 +52,11 @@ class Footer extends React.Component {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/articles" className="Footer__link h5">
+                    Artículos
+                  </Link>
+                </li>
+                <li>
                   <Link to="/education" className="Footer__link h5">
                     Educación
                   </Link>
@@ -64,7 +68,7 @@ class Footer extends React.Component {
                 </li>
                 <li>
                   <a
-                  href="#!"
+                    href="#!"
                     type="button"
                     className="Footer__link h5"
                     onClick={this.handleRefContact}
@@ -99,7 +103,9 @@ class Footer extends React.Component {
           con{" "}
           <span role="img" aria-label="green-heart">
             <BsFillHeartFill></BsFillHeartFill>
-          </span> & <span role="img" aria-label="react">
+          </span>{" "}
+          &{" "}
+          <span role="img" aria-label="react">
             <GrReactjs></GrReactjs>
           </span>
         </div>

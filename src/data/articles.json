@@ -1,0 +1,20 @@
+[
+    {
+        "slug": "arquitectura-software",
+        "previous": "",
+        "next": "disenio-en-el-proceso-de-software",
+        "title": "Arquitectura de Software",
+        "date": "23/08/2024",
+        "summary": "Introducción a la Arquitectura de Software, roles de diseñador y arquitecto",
+        "content": "Con una buena arquitectura, el software debería ser:<br/>1. Flexible<br/>2. Reusable/reutilizable<br/>3. Mantenible<br/><br/>Es esencial conocer y aplicar principios de diseño. Para comunicar estos principios, utilizamos una notación visual llamada UML (Lenguaje Unificado de Modelado). Si no entiendes por qué las piezas están donde están, es una señal de que el diseño del proyecto no ha sido adecuado desde el principio.<br/><br/><h5>Diferencia entre el diseño y la arquitectura de software</h5><br/>El diseñador de software es responsable de esbozar y proponer una solución de software para resolver un problema, detallando los componentes individuales y sus responsabilidades. En esta etapa, se busca convertir los requisitos en código funcional y fácil de mantener a largo plazo.<br/><br/>El arquitecto de software es responsable de analizar el sistema, elegir el marco de trabajo, seleccionar el almacenamiento de datos y determinar cómo cada componente interactúa con los demás.<br/><br/>Entonces, el diseño de software se ocupa de los aspectos de nivel inferior de un sistema, en cambio, la arquitectura de software considera el panorama completo, que incluye los aspectos de nivel superior del sistema y los problemas comerciales que se deben resolver. Ambos roles deben ser capaces de comunicar soluciones de alta calidad de manera efectiva a las partes interesadas.<br/><br/>Uno de los desafíos clave en la arquitectura de software es encontrar el equilibrio óptimo entre velocidad y calidad. A menudo, el cliente desea recibir su software y los resultados que este proporciona lo más rápido posible, mientras que el equipo de ingeniería se esfuerza por entregar un sistema robusto, bien diseñado e implementado. Dada esta situación, la negociación es inevitable y necesaria. Encontrar un equilibrio es crucial para producir un software que cumpla con las expectativas de ambas partes."
+    },
+    {
+        "slug": "disenio-en-el-proceso-de-software",
+        "previous": "arquitectura-software",
+        "next": "",
+        "title": "Diseño en el Proceso de Software",
+        "date": "23/08/2024",
+        "summary": "Diseño conceptual y técnico en el desarrollo de software",
+        "content": "El desarrollo de software es un proceso iterativo, donde se añaden y refinan los requisitos en cada iteración hasta alcanzar una solución final.<br/><br/>Durante la etapa de diseño, actuamos como arquitectos para estructurar y definir el comportamiento del software. Es fundamental basarse en la recopilación de requisitos, escuchar al cliente y hacer preguntas relevantes y esclarecedoras.<br/><br/>Con los requisitos iniciales, podemos idear una solución, que se traduce en un diseño conceptual. Este diseño conceptual se convierte en un diseño técnico, con la creación de maquetas conceptuales y diagramas técnicos.<br/><br/>Las maquetas conceptuales ofrecen ideas iniciales para cumplir con los requisitos, enfocándose en la estructura del software, identificando componentes y sus relaciones, sin entrar en detalles técnicos.<br/><br/>En el diseño técnico, describimos cómo cada componente cumplirá con sus responsabilidades. Dividimos cada componente en partes más pequeñas y específicas. Al entender la composición de los componentes, podemos diseñarlos en detalle.<br/><br/>La comunicación y el feedback son esenciales en el diseño de la solución. Si los componentes y sus conexiones en el diseño conceptual no son alcanzables en el diseño técnico, debemos volver al diseño conceptual. Si las decisiones de diseño han sido validadas con el cliente y son viables técnicamente, los diagramas técnicos servirán para coordinar el trabajo con el equipo de ingeniería."
+    }
+]

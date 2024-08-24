@@ -1,0 +1,10 @@
+.Articles__list {
+  margin-top: 3rem;
+}
+
+.Articles__container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles/Badge.css";
 import { SocialIcon } from "react-social-icons";
-// import logo from "../images/transparent_logo.png";
 
 class Badge extends React.Component {
   render() {
