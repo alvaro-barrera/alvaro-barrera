@@ -39,13 +39,13 @@ const Article = ({ data, show_full = false }) => {
             dangerouslySetInnerHTML={renderContent(data.content)}
           />
           <footer className="article-footer mt-3">
-            <div className="Article__footer-back">
-              <Link to={`/articles`}>Ver todos</Link>
-            </div>
             <div>
+              <Link to={`/articles`}>Ver todos</Link>
+              {" "}
               {data.previous && (
                 <Link to={`/articles/${data.previous}`}>Leer Anterior</Link>
               )}
+              {data.previous && data.next && " "}
               {data.next && (
                 <Link to={`/articles/${data.next}`}>Leer Siguiente</Link>
               )}
