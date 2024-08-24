@@ -7,8 +7,8 @@ class Badge extends React.Component {
     return (
       <React.Fragment>
         <div className="Badge">
-          <div class="Linkedin-pofile__container">
-            <div class="Linkedin-pofile__column">
+          <div className="Linkedin-pofile__container">
+            <div className="Linkedin-pofile__column">
               <h1>Álvaro Barrera</h1>
               <h6>Software Engineer</h6>
 
@@ -40,7 +40,7 @@ class Badge extends React.Component {
                 </div>
               </div>
               <br />
-              <div class="Skills__container">
+              <div className="Skills__container">
                 <ul>
                   <li>Laravel</li>
                   <li>Angular</li>

@@ -11,18 +11,20 @@ const Article = ({ data, show_full = false }) => {
     <div className="article article-content jumbotron text-justify border bg-white pt-0 pb-2">
       <header className="article-headerseparation">
         <h2 className="Title__Anton">{data.title}</h2>
-        <p className="article-meta">
-          Publicado el {data.date} | Autor:{" "}
-          <a
-            className="font-weight-bold"
-            href="https://www.linkedin.com/in/alvaro-barrera/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {" "}
-            Álvaro Barrera
-          </a>{" "}
-        </p>
+        {show_full && (
+          <p className="article-meta">
+            Publicado el {data.date} | Autor:{" "}
+            <a
+              className="font-weight-bold"
+              href="https://www.linkedin.com/in/alvaro-barrera/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {" "}
+              Álvaro Barrera
+            </a>{" "}
+          </p>
+        )}
       </header>
 
       <div className="article-summary mb-4">
@@ -35,13 +37,12 @@ const Article = ({ data, show_full = false }) => {
       ) : (
         <>
           <div
-            className=""
+            className="article-body"
             dangerouslySetInnerHTML={renderContent(data.content)}
           />
           <footer className="article-footer mt-3">
             <div>
-              <Link to={`/articles`}>Ver todos</Link>
-              {" "}
+              <Link to={`/articles`}>Ver todos</Link>{" "}
               {data.previous && (
                 <Link to={`/articles/${data.previous}`}>Leer Anterior</Link>
               )}

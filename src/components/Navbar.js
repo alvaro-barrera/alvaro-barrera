@@ -145,9 +145,6 @@ class Navbar extends React.Component {
             </a>
           </span>
           <span className="float-right">
-            <Link className="text-white font-weight-light" to="/">
-              Inicio
-            </Link>
             <Link className="text-white font-weight-light" to="/articles">
               Artículos
             </Link>
@@ -155,7 +152,7 @@ class Navbar extends React.Component {
               Educación
             </Link>
             <Link className="text-white font-weight-light" to="/projects">
-            Clientes
+              Clientes
             </Link>
             <a
               id="button-contact"
@@ -163,10 +160,7 @@ class Navbar extends React.Component {
               className="btn text-white font-weight-light"
               onClick={this.handleOpenModal}
             >
-              Contáctame{" "}
-              <span role="img" aria-label="waving-hand-sing">
-                👋
-              </span>
+              Contacto
             </a>
             <a href="#!" className="icon" onClick={this.handleToogleNavbar}>
               {/* <GrApps></GrApps> */}
@@ -343,7 +337,9 @@ class Navbar extends React.Component {
             target="_blank"
             id="ref-wsp"
             href={this.state.formContent}
-          >&nbsp;</a>
+          >
+            &nbsp;
+          </a>
         </Modal>
       </div>
     );

@@ -5,12 +5,12 @@ class Customer extends React.Component {
   render() {
     return (
       <div className="pb-3 pt-5 separation">
-        <section class="client">
-          <div class="container">
-            <div class="Customer__container row">
-              <p class="Customer__container--phrase">Clientes que eligieron trabajar conmigo</p>
-              <div class="Customer__carousel-client">
-                <div class="slide">
+        <section className="client">
+          <div className="container">
+            <div className="Customer__container row">
+              <p className="Customer__container--phrase">Clientes que eligieron trabajar conmigo</p>
+              <div className="Customer__carousel-client">
+                <div className="slide">
                   {this.props.customers.map((customer, i) => (
                     <a
                       href={customer.link}

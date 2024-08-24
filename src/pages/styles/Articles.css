@@ -8,3 +8,39 @@
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+.search-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(20, 183, 137, 0.25); /* Color primario con opacidad para la sombra */
+    outline: none; /* Opcional: elimina el contorno por defecto del navegador */
+  }
+
+.results {
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    padding: 10px;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+}
