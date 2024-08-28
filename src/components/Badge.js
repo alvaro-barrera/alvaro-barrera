@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles/Badge.css";
 import { SocialIcon } from "react-social-icons";
+import bannerImage from "../images/profile_pic.png";
 
 class Badge extends React.Component {
   render() {
@@ -9,6 +10,9 @@ class Badge extends React.Component {
         <div className="Badge">
           <div className="Linkedin-pofile__container">
             <div className="Linkedin-pofile__column">
+              <div className="ProfilePhoto">
+                <img src={bannerImage} alt="Álvaro Barrera" />
+              </div>
               <h1>Álvaro Barrera</h1>
               <h6>Software Engineer</h6>
 

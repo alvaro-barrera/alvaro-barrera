@@ -145,11 +145,11 @@ class Navbar extends React.Component {
             </a>
           </span>
           <span className="float-right">
-            <Link className="text-white font-weight-light" to="/articles">
-              Artículos
+            <Link className="text-white font-weight-light" to="/">
+              Inicio
             </Link>
-            <Link className="text-white font-weight-light" to="/education">
-              Educación
+            <Link className="text-white font-weight-light" to="/articles">
+              Blog
             </Link>
             <Link className="text-white font-weight-light" to="/projects">
               Clientes

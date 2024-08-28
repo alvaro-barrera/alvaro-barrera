@@ -26,10 +26,10 @@
 }
 
 .search-input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(20, 183, 137, 0.25); /* Color primario con opacidad para la sombra */
-    outline: none; /* Opcional: elimina el contorno por defecto del navegador */
-  }
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(20, 183, 137, 0.25);
+  outline: none;
+}
 
 .results {
   margin-top: 20px;

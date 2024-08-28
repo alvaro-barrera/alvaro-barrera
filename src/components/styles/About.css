@@ -16,3 +16,6 @@
   border-bottom: 1px solid #dee2e6 !important;
   padding-bottom: 1rem !important;
 }
+.About__card {
+  padding: 2rem;
+}

@@ -30,7 +30,7 @@
 }
 
 .BadgesListItem__tag-title {
-  background-color: var(--orange-color) !important;
+  background-color: var(---button-color) !important;
 }
 
 @media screen and (max-width: 600px) {

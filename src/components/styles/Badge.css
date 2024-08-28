@@ -200,3 +200,16 @@
 .Profile-link__container {
   margin: 16px 0 20px 0;
 }
+
+.ProfilePhoto {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem; /* Ajusta según tus necesidades */
+}
+
+.ProfilePhoto img {
+  width: 120px; /* Ajusta el tamaño según tu diseño */
+  height: 120px; /* Ajusta el tamaño según tu diseño */
+  border-radius: 50%;
+  object-fit: cover;
+}

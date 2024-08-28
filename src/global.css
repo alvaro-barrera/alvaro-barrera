@@ -6,13 +6,14 @@
 }
 
 :root {
-  --primary-color: #14b789;
-  --secondary-color: #14b789;
+  --primary-color: #687e8c;
+  --secondary-color: #687e8c;
   --white-color: #ffffff;
   --green-color: #23989e;
   --white-ligth-color: #f0f8ff;
   --black: #212529;
-  --orange-color: #f49f0a;
+  ---button-hover-color: #325953;
+  ---button-color: #63b1a5;
   --tangerine-color: #f08700;
   --sea-ligth-color: #14b789;
   --surface-color: #ffffff;
@@ -49,7 +50,8 @@ h2 {
   margin-top: 50px;
 }
 .Title__Anton {
-  font-family: "Anton", sans-serif !important;
+  /*font-family: "Anton", sans-serif !important;*/
+  font-weight: 600;
 }
 a.link-unstyled {
   color: inherit;
@@ -66,20 +68,20 @@ a.link-unstyled:hover {
 
 .btn.btn-primary {
   color: #fff;
-  background-color: var(--orange-color);
-  border-color: var(--orange-color);
+  background-color: var(---button-color);
+  border-color: var(---button-color);
 }
 
 .btn.btn-primary:not(:disabled):not(.disabled):hover {
   color: #fff;
-  background-color: #7dcd40;
-  border-color: #7dcd40;
+  background-color: var(---button-hover-color);
+  border-color: var(---button-hover-color);
 }
 
 .btn.btn-primary:not(:disabled):not(.disabled):active {
   color: #fff;
-  background-color: #7dcd40;
-  border-color: #7dcd40;
+  background-color: var(---button-hover-color);
+  border-color: var(---button-hover-color);
 }
 
 .btn.btn-primary:not(:disabled):not(.disabled):focus {
@@ -110,6 +112,12 @@ a.link-unstyled:hover {
 
 .lead {
   font-size: 1.1rem !important;
+}
+
+.lead a,
+button {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .text-black {

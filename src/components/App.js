@@ -9,7 +9,6 @@ import Badges from "../pages/Badges";
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 import Projects from "../pages/Projects";
-import Training from "../pages/Training";
 import Layout from "./Layout";
 import Articles from "../pages/Articles";
 import ArticleDetail from "../pages/ArticleDetail";
@@ -36,7 +35,6 @@ function App() {
           <Route exact path="/projects" component={Projects}></Route>
           <Route exact path="/articles" component={Articles}></Route>
           <Route exact path="/articles/:slug" component={ArticleDetail}></Route>
-          <Route exact path="/education" component={Training}></Route>
           <Route path="/404" component={NotFound}></Route>
           <Redirect from="*" to="/"></Redirect>
         </Switch>

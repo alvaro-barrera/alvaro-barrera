@@ -18,6 +18,8 @@
   background-color: #ffffff;
   padding: 1rem;
   width: 400px;
+  width: 450px;
+    max-width: 90%;
 }
 
 .Modal__container.full {

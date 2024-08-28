@@ -16,12 +16,12 @@ class Training extends React.Component {
       certificates: [
         {
           id: 14,
-          name: "Object-Oriented Design",
+          name: "Programa especializado: Software Design and Architecture",
           entity: "University of Alberta",
-          emission: "abril 2024",
-          credential_id: "75MBSAEBQFAR",
+          emission: "julio 2024",
+          credential_id: "M6XT4JH5MEAG",
           credential_storage:
-            "https://www.coursera.org/account/accomplishments/verify/75MBSAEBQFAR",
+            "https://www.coursera.org/account/accomplishments/specialization/M6XT4JH5MEAG",
         },
         {
           id: 13,
@@ -76,34 +76,6 @@ class Training extends React.Component {
           credential_storage:
             "https://drive.google.com/file/d/1I4eKCTRLrrChshqYgy8xuwkIQ_qoLjyi/view?usp=sharing",
         },
-        /*{
-          id: 6,
-          name: "Fundamentos de la gestión de proyectos",
-          entity: "LinkedIn",
-          emission: "abril 2021",
-          credential_id: "AVMTPsTj5bCFqh4mW3mueTuSLQh7",
-          credential_storage:
-            "https://drive.google.com/file/d/1BkXzdn1FjN4FcJLu31VWVexTqm6TmUcD/view?usp=sharing",
-        },
-        {
-          id: 5,
-          name: "Programación con JavaScript",
-          entity:
-            "Conecta Empleo. Programa de Formación Digital de Fundación Telefónica",
-          emission: "abril 2021",
-          credential_id: "41b0ba76-ba19-42ae-9ac3-a4f6822bebab",
-          credential_storage:
-            "https://drive.google.com/file/d/1BC7wxDbZzgeOKoOz1bjdKB5JSO6TUks_/view?usp=sharing",
-        },
-        {
-          id: 4,
-          name: "Certificación en Comercio Electrónico",
-          entity: "Google Actívate",
-          emission: "marzo 2021",
-          credential_id: "835898",
-          credential_storage:
-            "https://drive.google.com/file/d/104c3NsFTKuIxHA14hTAp4jXyh5vkXzOk/view?usp=sharing",
-        },*/
         {
           id: 3,
           name: "Gestión de Proyectos con Metodologías Ágiles y Enfoques en Lean",
@@ -114,28 +86,14 @@ class Training extends React.Component {
           credential_storage:
             "https://drive.google.com/file/d/12Tt2abcTpnCBA0gcwthTNhG4mnmVGg3i/view?usp=sharing",
         },
-        /*{
-          id: 2,
-          name: "Scrum Fundamentals Certified (SFC)",
-          entity: "SCRUMstudy - Accreditation Body for Scrum and Agile",
-          emission: "marzo 2021",
-          credential_id: "835898",
-          credential_storage:
-            "https://www.scrumstudy.com/certification/verify?type=SFC&number=835898",
-        },*/
       ],
     });
   }
   render() {
     return (
-      <React.Fragment>
-        <div className="Badges_list">
-          <div className="Badges__container"></div>
-          <div className="pb-3 pt-5">
-            <Education certificates={this.state.certificates}></Education>;
-          </div>
-        </div>
-      </React.Fragment>
+      <div className="pb-5">
+        <Education certificates={this.state.certificates}></Education>
+      </div>
     );
   }
 }

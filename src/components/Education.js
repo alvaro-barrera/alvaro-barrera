@@ -7,9 +7,7 @@ class Certificate extends React.Component {
     return (
       <React.Fragment>
         {this.props.certificates.map((certificate) => {
-          return (
-            <CertificateItem certificate={certificate}/>
-          );
+          return <CertificateItem certificate={certificate} />;
         })}
       </React.Fragment>
     );
@@ -21,17 +19,19 @@ const CertificateItem = ({ certificate }) => {
 
   const handleToggle = () => {
     setVisible(!visible);
-  }
+  };
 
   return (
-    <li
-      className="list-group-item Certificate__li"
-      key={certificate.id}
-    >
+    <li className="list-group-item Certificate__li" key={certificate.id}>
       <div className="card Certificate__card border">
         <div className="card-body">
           <h5 className="card-title font-weight-bold lead text-uppercase">
-            <span role="img" aria-label="white-heavy-check-mark" onClick={handleToggle} className="cursor-pointer">
+            <span
+              role="img"
+              aria-label="white-heavy-check-mark"
+              onClick={handleToggle}
+              className="cursor-pointer"
+            >
               &#128270;
             </span>{" "}
             {certificate.credential_storage ? (
@@ -55,24 +55,20 @@ const CertificateItem = ({ certificate }) => {
               </a>
             )}
           </h5>
-          {visible ? 
-            <blockquote className="blockquote Certificate__container ml-5" >
+          {visible ? (
+            <blockquote className="blockquote Certificate__container ml-5">
               <p className="mb-0 lead">
                 {certificate.entity} ({certificate.emission})
               </p>
-              {certificate.credential_id.length > 0 && (
-                <small title="text-muted lead">
-                  ID de la certificación: {certificate.credential_id}
-                </small>
-              )}
-            </blockquote> : ''
-          }
-          
+            </blockquote>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </li>
-  )
-}
+  );
+};
 
 class Education extends React.Component {
   render() {

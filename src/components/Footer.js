@@ -53,12 +53,7 @@ class Footer extends React.Component {
                 </li>
                 <li>
                   <Link to="/articles" className="Footer__link h5">
-                    Artículos
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/education" className="Footer__link h5">
-                    Educación
+                    Blog
                   </Link>
                 </li>
                 <li>
