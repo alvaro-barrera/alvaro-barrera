@@ -132,7 +132,7 @@ self.__precacheManifest = [
     "url": "/static/media/logo_cas.7c614133.png"
   },
   {
-    "revision": "06fd719ade5e397ee62fb8dbcf889b61",
+    "revision": "f1e659f74b834fad396507f682bef692",
     "url": "/index.html"
   }
 ];
