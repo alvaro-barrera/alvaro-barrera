@@ -1,26 +1,27 @@
 import React from "react";
-import logoSolticrm from "../images/briefcase/solticrm.PNG";
-import logoSistemalotes from "../images/briefcase/sistemalotes.PNG";
-import logoClassroom from "../images/briefcase/classroom.PNG";
-import logoWebbes from "../images/briefcase/web_bes.PNG";
-import logoBesefactura from "../images/briefcase/bes_efactura.PNG";
-import logoPersonal from "../images/briefcase/personal.png";
-// import logoTodo from "../images/briefcase/todo.png";
-import logoUlearning from "../images/briefcase/ulearning.png";
-import logoCodecix from "../images/briefcase/codecix.png";
-import logoMultirepuestosJa from "../images/briefcase/multirepuestos_ja.png";
-import logoColegioJuanAbad from "../images/briefcase/colegiojuanabad.png";
-import photoCas from "../images/briefcase/cas.png";
-import logoCentauri from "../images/customers/logo_centauri.png";
+import logoSolticrm from "../images/briefcase/solticrm.webp";
+import logoSistemalotes from "../images/briefcase/sistemalotes.webp";
+import logoClassroom from "../images/briefcase/classroom.webp";
+import logoWebbes from "../images/briefcase/web_bes.webp";
+import logoBesefactura from "../images/briefcase/bes_efactura.webp";
+import logoPersonal from "../images/briefcase/personal.webp";
+import logoUlearning from "../images/briefcase/ulearning.webp";
+import logoCodecix from "../images/briefcase/codecix.webp";
+import logoMultirepuestosJa from "../images/briefcase/multirepuestos_ja.webp";
+import logoColegioJuanAbad from "../images/briefcase/colegiojuanabad.webp";
+import photoCas from "../images/briefcase/cas.webp";
+
+import logoCentauri from "../images/customers/logo_centauri.webp";
 import logoInndatsys from "../images/customers/logo_inndatsys.webp";
-import logoJa from "../images/customers/logo_ja.png";
-import logoJuanAbad from "../images/customers/logo_juan_abad.png";
-import logoSolti from "../images/customers/logo_solti.jpg";
-import logoUss from "../images/customers/logo_uss.svg";
-import logoCas from "../images/customers/logo_cas.png";
+import logoJa from "../images/customers/logo_ja.webp";
+import logoJuanAbad from "../images/customers/logo_juan_abad.webp";
+import logoSolti from "../images/customers/logo_solti.webp";
+import logoUss from "../images/customers/logo_uss.webp";
+import logoCas from "../images/customers/logo_cas.webp";
 
 import Briefcase from "../components/Briefcase";
 import Customer from "../components/Customer";
+import Service from "../components/Service";
 
 class Projects extends React.Component {
   constructor(props) {
@@ -191,6 +192,7 @@ class Projects extends React.Component {
           logo: logoCentauri,
           text: "Centauri Technologies Corp",
           link: "https://centauritech.com/",
+          class: "bg-black",
         },
         {
           logo: logoInndatsys,
@@ -229,11 +231,8 @@ class Projects extends React.Component {
     return (
       <React.Fragment>
         <div className="Badges_list">
-          <div className="Badges__container"></div>
-          <Customer
-            title={"Clientes"}
-            customers={this.state.customers}
-          ></Customer>
+          <Service title="Servicios"></Service>
+          <Customer customers={this.state.customers}></Customer>
           <Briefcase
             title={"Proyectos"}
             projects={this.state.projects}

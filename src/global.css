@@ -144,3 +144,7 @@ button {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.bg-black {
+  background-color: black;
+}

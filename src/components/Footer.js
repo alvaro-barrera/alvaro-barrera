@@ -58,7 +58,7 @@ class Footer extends React.Component {
                 </li>
                 <li>
                   <Link to="/projects" className="Footer__link h5">
-                    Clientes
+                    Servicios
                   </Link>
                 </li>
                 <li>
