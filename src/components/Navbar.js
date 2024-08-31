@@ -152,7 +152,7 @@ class Navbar extends React.Component {
               Blog
             </Link>
             <Link className="text-white font-weight-light" to="/projects">
-              Clientes
+              Servicios
             </Link>
             <a
               id="button-contact"
