@@ -74,7 +74,6 @@ class Education extends React.Component {
   render() {
     return (
       <ul className="list-group separation">
-        <SectionTitle title={"Educación"}></SectionTitle>
         <Certificate certificates={this.props.certificates}></Certificate>
       </ul>
     );
