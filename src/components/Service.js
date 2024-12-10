@@ -15,7 +15,7 @@ const ServiceItem = ({ title, description }) => (
 );
 
 const Service = ({ title }) => (
-  <section className="section-services pt-5">
+  <section className="section-services pt-2">
     <div className="Service__container">
       <div className="row justify-content-center text-center">
         <div className="col-md-10 col-lg-8">

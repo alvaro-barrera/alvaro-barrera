@@ -8,7 +8,6 @@ import {
 import Badges from "../pages/Badges";
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
-import Projects from "../pages/Projects";
 import Layout from "./Layout";
 import Articles from "../pages/Articles";
 import ArticleDetail from "../pages/ArticleDetail";
@@ -32,7 +31,6 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route exact path="/badges" component={Badges}></Route>
-          <Route exact path="/projects" component={Projects}></Route>
           <Route exact path="/articles" component={Articles}></Route>
           <Route exact path="/articles/:slug" component={ArticleDetail}></Route>
           <Route path="/404" component={NotFound}></Route>

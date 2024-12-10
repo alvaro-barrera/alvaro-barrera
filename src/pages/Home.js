@@ -18,6 +18,7 @@ import logoROR from "../images/techs/ror.svg";
 // PROJECTS
 import Badge from "../components/Badge";
 import About from "../components/About";
+import Projects from "./Projects";
 
 class Home extends React.Component {
   constructor(props) {
@@ -149,7 +150,7 @@ class Home extends React.Component {
         <div className="Badges_list">
           <div className="Badges__container ">
             <About></About>
-            
+            <Projects/>
           </div>
         </div>
       </React.Fragment>

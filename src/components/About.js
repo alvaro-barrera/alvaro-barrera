@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./styles/About.css";
 import Training from "../pages/Training";
-import SectionTitle from "./SectionTitle";
 
 const CardSection = ({ title, content, button }) => {
   return (

@@ -151,9 +151,6 @@ class Navbar extends React.Component {
             <Link className="text-white font-weight-light" to="/articles">
               Blog
             </Link>
-            <Link className="text-white font-weight-light" to="/projects">
-              Servicios
-            </Link>
             <a
               id="button-contact"
               href="#!"

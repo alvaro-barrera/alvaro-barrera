@@ -57,11 +57,6 @@ class Footer extends React.Component {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/projects" className="Footer__link h5">
-                    Servicios
-                  </Link>
-                </li>
-                <li>
                   <a
                     href="#!"
                     type="button"

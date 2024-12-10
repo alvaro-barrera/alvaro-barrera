@@ -1,5 +1,4 @@
 import React from "react";
-import SectionTitle from "./SectionTitle";
 import "./styles/Certificate.css";
 
 class Certificate extends React.Component {
