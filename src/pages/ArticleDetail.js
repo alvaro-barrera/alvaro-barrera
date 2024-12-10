@@ -1,12 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Article from "../components/Article";
-import articlesData from "../data/articles.json";
 import "./styles/Articles.css";
+import useArticles from "../hooks/useArticles";
 
 const ArticleDetail = () => {
   const { slug } = useParams();
-  const article = articlesData.find((article) => article.slug === slug);
+  const articlesData = useArticles(slug);
+  const article = articlesData.length > 0 ? articlesData[0] : null;
 
   return (
     <div className="Articles__list">

@@ -1,58 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import Article from "../components/Article";
-import articlesData from "../data/articles.json";
 import "./styles/Articles.css";
+import useArticles from "../hooks/useArticles";
 
-class Articles extends React.Component {
-  constructor(props) {
-    super(props);
+const Articles = () => {
+  const [query, setQuery] = useState("");
+  const filteredArticles = useArticles(query);
 
-    this.state = {
-      articles: articlesData,
-      query: "",
-    };
+  const handleChange = (e) => {
+    setQuery(e.target.value.toLowerCase());
+  };
 
-    // Bind handleChange method
-    this.handleChange = this.handleChange.bind(this);
-  }
+  return (
+    <div className="Articles__list">
+      <div className="Articles__container pt-5">
+        <input
+          type="text"
+          placeholder="Buscar..."
+          value={query}
+          onChange={handleChange}
+          className="search-input mb-3"
+        />
 
-  handleChange(e) {
-    this.setState({ query: e.target.value.toLowerCase() });
-  }
-
-  render() {
-    const { articles, query } = this.state;
-
-    // Filter articles based on the search query
-    const filteredArticles = articles.filter(
-      (article) =>
-        article.title.toLowerCase().includes(query) ||
-        article.summary.toLowerCase().includes(query) ||
-        article.content.toLowerCase().includes(query.replace(/<br\/>/g, " "))
-    );
-
-    return (
-      <div className="Articles__list">
-        <div className="Articles__container pt-5">
-          <input
-            type="text"
-            placeholder="Buscar..."
-            value={query}
-            onChange={this.handleChange}
-            className="search-input mb-3"
-          />
-
-          {filteredArticles.length > 0 ? (
-            filteredArticles.map((article, i) => (
-              <Article key={i} data={article} show_full={false} />
-            ))
-          ) : (
-            <p>No hay artículos disponibles.</p>
-          )}
-        </div>
+        {filteredArticles.length > 0 ? (
+          filteredArticles.map((article, i) => (
+            <Article key={i} data={article} show_full={false} />
+          ))
+        ) : (
+          <p>No hay artículos disponibles.</p>
+        )}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Articles;
