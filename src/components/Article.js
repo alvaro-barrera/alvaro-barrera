@@ -2,6 +2,18 @@ import React from "react";
 import "./styles/Article.css";
 import { Link } from "react-router-dom";
 
+const ArticlePaginator = ({ data }) => {
+  return (
+    <div>
+      <Link to={`/articles`}>Ver todos</Link>{" "}
+      {data.previous && (
+        <Link to={`/articles/${data.previous}`}>Leer Anterior</Link>
+      )}
+      {data.previous && data.next && " "}
+      {data.next && <Link to={`/articles/${data.next}`}>Leer Siguiente</Link>}
+    </div>
+  );
+};
 const Article = ({ data, show_full = false }) => {
   const renderContent = (content) => {
     return { __html: content };
@@ -9,6 +21,12 @@ const Article = ({ data, show_full = false }) => {
 
   return (
     <div className="article article-content jumbotron text-justify border bg-white pt-0 pb-2">
+      {show_full && (
+        <div className="article-footer article-border-bottom">
+          <ArticlePaginator data={data} />
+        </div>
+      )}
+
       <header className="article-headerseparation">
         <h2 className="Title__Anton">{data.title}</h2>
         {show_full && (
@@ -40,17 +58,8 @@ const Article = ({ data, show_full = false }) => {
             className="article-body"
             dangerouslySetInnerHTML={renderContent(data.content)}
           />
-          <footer className="article-footer mt-3">
-            <div>
-              <Link to={`/articles`}>Ver todos</Link>{" "}
-              {data.previous && (
-                <Link to={`/articles/${data.previous}`}>Leer Anterior</Link>
-              )}
-              {data.previous && data.next && " "}
-              {data.next && (
-                <Link to={`/articles/${data.next}`}>Leer Siguiente</Link>
-              )}
-            </div>
+          <footer className="article-footer article-border-top mt-3">
+            <ArticlePaginator data={data} />
           </footer>
         </>
       )}

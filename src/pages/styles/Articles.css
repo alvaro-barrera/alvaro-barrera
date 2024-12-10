@@ -44,3 +44,30 @@
     font-size: 14px;
   }
 }
+.toggle-order-btn {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.toggle-order-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.toggle-order-btn:focus {
+  outline: none;
+}
+
+.toggle-order-btn:active {
+  background-color: var(--primary-color);
+  transform: translateY(0);
+}
