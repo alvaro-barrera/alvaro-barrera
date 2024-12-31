@@ -1,5 +1,7 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
 User-agent: *
-Disallow: /private/
 Allow: /
 
-Sitemap: https://alvaro-barrera.me/sitemap.xml
+Sitemap: https://alvaro-barrera.me/sitemap-index.xml
