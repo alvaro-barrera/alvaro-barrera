@@ -9,6 +9,7 @@ featured: false
 draft: false
 tags:
   - diseño de software
+  - acoplamiento y cohesión
 description: Bajo acoplamiento y alta cohesión optimizan el diseño de software
 ---
 

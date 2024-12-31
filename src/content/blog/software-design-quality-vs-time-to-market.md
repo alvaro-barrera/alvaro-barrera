@@ -9,6 +9,7 @@ featured: false
 draft: false
 tags:
   - diseño de software
+  - calidad de software
 description: >-
   Equilibrar la calidad y tiempo en las decisiones del diseño de software
 ---

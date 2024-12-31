@@ -9,6 +9,7 @@ import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE, SOCIALS } from "@config";
+import InfoCard from "@components/shared/InfoCard";
 
 const posts = await getCollection("blog");
 
@@ -17,6 +18,214 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
 const socialCount = SOCIALS.filter(social => social.active).length;
+
+const logoSolticrm = "solticrm.webp";
+const logoSistemalotes = "sistemalotes.webp";
+const logoClassroom = "classroom.webp";
+const logoWebbes = "web_bes.webp";
+const logoBesefactura = "bes_efactura.webp";
+const logoPersonal = "personal.webp";
+const logoUlearning = "ulearning.webp";
+const logoCodecix = "codecix.webp";
+const logoMultirepuestosJa = "multirepuestos_ja.webp";
+const logoColegioJuanAbad = "colegiojuanabad.webp";
+const photoCas = "cas.webp";
+
+const logoCentauri = "logo_centauri.webp";
+const logoInndatsys = "logo_inndatsys.webp";
+const logoJa = "logo_ja.webp";
+const logoJuanAbad = "logo_juan_abad.webp";
+const logoSolti = "logo_solti.webp";
+const logoUss = "logo_uss.webp";
+const logoCas = "logo_cas.webp";
+
+const projects = [
+  {
+    id: 7,
+    name: "Plataforma académica - U-Learning",
+    image: logoUlearning,
+    detailLists: [
+      "Laravel, Angular, PostgreSQL, Docker",
+      "E-commerce de cursos virtuales y presenciales",
+      "Plataforma de aprendizaje para estudiantes",
+      "Sistema académico administrativo",
+    ],
+    techs: ["Laravel", "Angular", "PostgreSQL"],
+    footer: "",
+    demo: "https://ulearning.com.pe/",
+  },
+  {
+    id: 8,
+    name: "Multirepuestos J&A",
+    image: logoMultirepuestosJa,
+    detailLists: [
+      "Laravel, Javascript, PostgreSQL",
+      "Venta de repuestos de autos",
+    ],
+    techs: ["Laravel", "PostgreSQL"],
+    footer: "",
+    demo: "http://multirepuestos-ja.com/",
+  },
+  {
+    id: 3,
+    name: "Sistema Aulas Virtuales",
+    image: logoClassroom,
+    detailLists: [
+      "Laravel 6, Vue.js, MySQL",
+      "Single Page Application",
+      "Sistema de gestión escolar",
+      "Web service para consumo proyecto SPA Vue.js",
+    ],
+    techs: ["Laravel 6", "Vue.js", "Single Page Application", "API"],
+    footer: "Sistema web administrativo para gestión escolar",
+  },
+  {
+    id: 1,
+    name: "Solti-CRM",
+    image: logoSolticrm,
+    detailLists: [
+      "Laravel 6, MySQL",
+      "Autenticación con redes sociales",
+      "Suscripciones a correo electrónico",
+      "Servicio web service para consumo móvil",
+    ],
+    techs: ["Laravel 6", "Javascript", "Bootstrap 4"],
+    footer:
+      "Aplicativo web y móvil para la Gestión de las Relaciones con Clientes administrando la información de los clientes para administrar cuentas, leads y oportunidades de ventas en un único local",
+  },
+  {
+    id: 2,
+    name: "Sistema para lotes y viviendas",
+    image: logoSistemalotes,
+    detailLists: [
+      "Laravel 6, Vue.js, MySQL",
+      "Gestión de contratos, pagos y facturación electrónica",
+      "Suscripciones a correo electrónico",
+      "API para consumo e-commerce",
+    ],
+    techs: ["Laravel 6", "Vue.js", "Bootstrap 4", "Ecommerce", "API"],
+    footer:
+      "Sistema web administrativo y ecommerce para gestión de proyectos inmobiliarios, gestión de contratos, pago de cuotas y facturación electrónica",
+  },
+  {
+    id: 10,
+    name: "Web - Colegio Juan Abad",
+    image: logoColegioJuanAbad,
+    detailLists: ["Laravel 6, Bootstrap 4"],
+    techs: ["Laravel 6", "Bootstrap 4"],
+    footer:
+      "Página web informativa conectada a un sistema interno de aula virtual",
+    demo: "https://colegiojuanabad.com/",
+  },
+  {
+    id: 4,
+    name: "Punto de venta + Facturación electrónica",
+    image: logoBesefactura,
+    detailLists: [
+      "API Laravel 6, Vue.js, MySQL",
+      "Facturación electrónica UBL 2.1",
+      "Web service para consumo proyecto SPA Vue.js",
+    ],
+    techs: [
+      "Laravel 6",
+      "Vue.js",
+      "Bootstrap 4",
+      "API",
+      "Facturación Electrónica",
+      "UBL 2.1",
+    ],
+    footer: "Sistema web administrativo para gestión escolar",
+  },
+  {
+    id: 5,
+    name: "Web - Desarrollo de Software",
+    image: logoWebbes,
+    detailLists: ["Página informativa de servicios"],
+    techs: ["Laravel 6", "Javascript", "Bootstrap 4"],
+    footer: "Sistema web administrativo para gestión escolar",
+  },
+  {
+    id: 6,
+    name: "Portafolio personal",
+    image: logoPersonal,
+    detailLists: ["React.js", "Web personal y portafolio"],
+    techs: ["React.js"],
+    footer: "",
+  },
+  // {
+  //   id: 7,
+  //   name: "Gestor de tareas",
+  //   image: logoTodo,
+  //   detailLists: [
+  //     "React.js",
+  //     "Aplicación para gestionar tareas con almacenamiento local",
+  //   ],
+  //   techs: ["React.js"],
+  //   footer: "",
+  //   demo: "https://alvaro-barrera.github.io/react-todo-app/",
+  // },
+
+  {
+    id: 8,
+    name: "Codecix - Servicios profesionales",
+    image: logoCodecix,
+    detailLists: ["Next.js", "Servicios profesionales de desarrollos web"],
+    techs: ["Next.js"],
+    footer: "",
+    // demo: "https://codecix.com/",
+  },
+  {
+    id: 9,
+    name: "I.E 10796 Carlos Augusto Salaverry",
+    image: photoCas,
+    detailLists: [
+      "HMTL, CSS, JS",
+      "Página información para el VI Torneo Regional De Ajedrez",
+    ],
+    techs: ["HMTL", "CSS", "JS"],
+    footer: "",
+    demo: "https://colegiosalaverry.com/",
+  },
+];
+
+const customers = [
+  {
+    logo: logoCentauri,
+    text: "Centauri Technologies Corp",
+    link: "https://centauritech.com/",
+    class: "bg-black",
+  },
+  {
+    logo: logoInndatsys,
+    text: "INNDATSYS",
+    link: "https://inndatsys.com/",
+  },
+  {
+    logo: logoJa,
+    text: "Multirepuestos J&A",
+    link: "https://www.facebook.com/MultirepuestosJyA",
+  },
+  {
+    logo: logoJuanAbad,
+    text: "Colegio Juan Abad",
+    link: "https://colegiojuanabad.com/",
+  },
+  {
+    logo: logoSolti,
+    text: "SOLTI PERÚ",
+    link: "https://soltiperu.com/",
+  },
+  {
+    logo: logoUss,
+    text: "USS",
+    link: "https://ulearning.com.pe/",
+  },
+  {
+    logo: logoCas,
+    text: "I.E 10796 Carlos Augusto Salaverry",
+    link: "https://colegiosalaverry.com/",
+  },
+];
 ---
 
 <Layout>
@@ -32,6 +241,9 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         Angular y Docker, sin embargo me considero como un apasionado por el
         aprendizaje y las tecnologías, me gusta resolver problemas y afrontar
         nuevos retos 👨🏽‍💻
+      </p>
+      <p>
+        Stack: Ruby on Rails, Laravel, Angular, PostgreSQL, MySQL, Docker, Git
       </p>
       <p>
         <LinkButton
@@ -57,7 +269,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     <section id="abilities">
       <h2>Habilidades</h2>
 
-      <ol class="my-6 list-inside list-decimal space-y-2">
+      <ul class="my-6 list-inside list-disc space-y-2">
         <li class="">Autodidacta</li>
         <li class="">
           Excelente colaboración y trabajo en equipo: capacidad de trabajar de
@@ -72,8 +284,27 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           Migración de sistemas legacy, trabajo con microservicios y testing
         </li>
         <li class="">Control de versiones: Git, Github, Gitlab con GitFlow</li>
-      </ol>
+      </ul>
     </section>
+
+    <section id="services">
+      <h2>Servicios</h2>
+
+      <div class="my-6 space-y-2">
+        <!-- Consultoría IT -->
+        <InfoCard
+          title="Consultoría IT"
+          content="Especializado en migraciones y optimización de sistemas legacy Laravel y Angular, diseño de bases de datos y suites de tests automáticos. Transforma tu infraestructura tecnológica con soluciones personalizadas y eficientes. ¡Optimiza tu sistema y mejora su rendimiento!"
+        />
+
+        <InfoCard
+          title="Desarrollo de páginas web"
+          content="Creación de páginas para información empresarial, catálogos de productos, y opciones de contacto. Implemento carritos de compras, gestión de pedidos, optimización móvil y SEO. ¡Transforma tu presencia online con soluciones personalizadas!"
+          className="mt-6"
+        />
+      </div>
+    </section>
+
     {
       featuredPosts.length > 0 && (
         <>
@@ -97,7 +328,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     {
       recentPosts.length > 0 && (
         <section id="recent-posts">
-          <h2>Posts recientes</h2>
+          <h2>Artículos recientes</h2>
           <ul>
             {recentPosts.map(
               ({ data, slug }, index) =>
@@ -116,7 +347,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 
     <div class="all-posts-btn-wrapper">
       <LinkButton href="/posts/">
-        Todos los posts
+        Todos los artículos
         <svg xmlns="http://www.w3.org/2000/svg"
           ><path
             d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
@@ -124,6 +355,64 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         </svg>
       </LinkButton>
     </div>
+
+    <section id="customers">
+      <hr />
+
+      <div class="pb-5 pt-5">
+        <section class="client">
+          <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center">
+              <p class="pt-0 text-center text-sm font-bold italic">
+                Clientes que eligieron trabajar conmigo
+              </p>
+              <div class="mx-auto w-9/12 w-full max-w-7xl px-4 text-center">
+                <div
+                  class="flex w-full flex-wrap items-center justify-center space-x-4 justify-self-center overflow-hidden"
+                >
+                  {
+                    customers.map(customer => (
+                      <a
+                        href={customer.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          class={`mx-2 w-[90px] object-contain ${customer.class} md:w-[100px] lg:w-[120px] sm:w-[80px]`}
+                          src={`assets/customers/${customer.logo}`}
+                          alt={customer.text}
+                          title={customer.text}
+                        />
+                      </a>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <section id="briefcase">
+      <h2>Proyectos</h2>
+
+      <div class="my-6 space-y-2">
+        <!-- Consultoría IT -->
+
+        {
+          projects.map(project => {
+            return (
+              <InfoCard
+                title={project.name}
+                content={project.detailLists.join(", ")}
+                className="mt-6"
+                image={`assets/briefcase/${project.image}`}
+              />
+            );
+          })
+        }
+      </div>
+    </section>
   </main>
 
   <Footer />
@@ -156,10 +445,14 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   /* ===== Featured & Recent Posts Sections ===== */
   #featured,
   #abilities,
+  #services,
+  #briefcase,
   #recent-posts {
-    @apply pb-6 pt-12;
+    @apply pb-3 pt-6;
   }
   #abilities h2,
+  #services h2,
+  #briefcase h2,
   #featured h2,
   #recent-posts h2 {
     @apply text-2xl font-semibold tracking-wide;

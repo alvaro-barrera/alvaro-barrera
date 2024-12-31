@@ -9,7 +9,9 @@ featured: false
 draft: false
 tags:
   - diseño de software
-description: Uso de tarjetas CRC para organizar y visualizar el diseño conceptual
+  - diseño conceptual de software
+description: >-
+  Uso de tarjetas CRC para organizar y visualizar el diseño conceptual
 ---
 
 ## Tabla de contenido

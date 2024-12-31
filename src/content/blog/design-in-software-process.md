@@ -9,6 +9,8 @@ featured: false
 draft: false
 tags:
   - diseño de software
+  - diseño conceptual de software
+  - diseño técnico de software
 description: Diseño conceptual y técnico en el desarrollo de software
 ---
 
