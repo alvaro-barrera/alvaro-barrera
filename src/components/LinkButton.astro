@@ -1,6 +1,7 @@
 ---
 export interface Props {
   href: string;
+  target?: string;
   className?: string;
   ariaLabel?: string;
   title?: string;
@@ -9,6 +10,7 @@ export interface Props {
 
 const {
   href,
+  target = '_self',
   className = "",
   ariaLabel,
   title,
@@ -28,6 +30,7 @@ const {
   ) : (
     <a
       {href}
+      target={target ?? '_self'}
       class:list={["group inline-block hover:text-skin-accent", className]}
       aria-label={ariaLabel}
       title={title}
