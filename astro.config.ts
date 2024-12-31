@@ -23,7 +23,7 @@ export default defineConfig({
         remarkCollapse,
         {
           test: "Tabla de contenido",
-          summary: 'Ver contenido'
+          summary: "Ver contenido",
         },
       ],
     ],

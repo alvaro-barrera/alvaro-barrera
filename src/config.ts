@@ -1,7 +1,7 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://alvaro-barrera.me/", // replace this with your deployed domain
+  website: "https://alvaro-barrera.me", // replace this with your deployed domain
   author: "Álvaro Barrera",
   profile: "https://alvaro-barrera.me/",
   desc: "Álvaro Barrera, software engineer en proyectos con Ruby on Rails, Laravel, desarrollo de API's, facturación electrónica, Single Page Application, conocimientos en marcos de trabajo ágiles - SCRUM",
