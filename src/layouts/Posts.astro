@@ -17,11 +17,10 @@ export interface Props {
   page: Page<CollectionEntry<"blog">>;
 }
 
+const { page } = Astro.props;
 const posts = await getCollection("blog");
 
 let tags = getUniqueTags(posts);
-
-const { page } = Astro.props;
 
 const MonthMap: Record<string, string> = {
   "1": "Enero",
