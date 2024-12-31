@@ -18,7 +18,7 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [
-      [remarkToc, { heading: "Tabla de contenido", tight: false }], // Ahora está configurado para usar "Tabla de contenido"
+      [remarkToc, { heading: "Tabla de contenido", tight: false }],
       [
         remarkCollapse,
         {
