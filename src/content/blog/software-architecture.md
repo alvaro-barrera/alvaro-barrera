@@ -3,7 +3,7 @@ author: Álvaro Barrera
 pubDatetime: 2024-08-23T15:22:00Z
 modDatetime: 2024-08-23T15:22:00Z
 title: >-
-  Arquitectura de Software
+  Arquitectura de Software: Introducción
 slug: arquitectura-software
 featured: false
 draft: false
