@@ -129,6 +129,7 @@ Blog
 <li><a href="#introducci%C3%B3n">Introducción</a></li>
 <li><a href="#evaluaci%C3%B3n-del-acoplamiento">Evaluación del Acoplamiento</a></li>
 <li><a href="#cohesi%C3%B3n-alta-vs-cohesi%C3%B3n-baja">Cohesión Alta vs. Cohesión Baja</a></li>
+<li><a href="#la-cohesi%C3%B3n-en-funci%C3%B3n-al-acoplamiento">La cohesión en función al acoplamiento</a></li>
 </ul>
 <p></p></details><p></p>
 <h2 id="introducción">Introducción</h2>
@@ -138,7 +139,32 @@ Blog
 <p>Aunque el acoplamiento se refiere a las interacciones externas entre módulos, el concepto de cohesión se enfoca en el comportamiento interno de un componente. La cohesión mide qué tan bien definido está el propósito y la responsabilidad de un componente.</p>
 <h2 id="cohesión-alta-vs-cohesión-baja">Cohesión Alta vs. Cohesión Baja</h2>
 <p>Una alta cohesión indica que un componente tiene un propósito claro y bien definido, y que todas sus responsabilidades están alineadas. Por el contrario, un componente con baja cohesión tiene múltiples responsabilidades no relacionadas, lo que puede indicar la necesidad de dividirlo en varios componentes más específicos.</p>
-<p>Al identificar una baja cohesión, es probable que podamos refactorizar el componente para mejorar su diseño, dividiendo sus responsabilidades en componentes más especializados y manejables”</p> </article> <ul class="my-8 astro-vj4tpspi"> <li class="inline-block my-1 underline-offset-4 astro-blwjyjpt"> <a href="/tags/diseno-de-software/" class="text-sm pr-2 group astro-blwjyjpt" data-astro-transition-scope="astro-36ssibgs-2"> <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-blwjyjpt"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-blwjyjpt"></path> </svg>
+<p>Al identificar una baja cohesión, es probable que podamos refactorizar el componente para mejorar su diseño, dividiendo sus responsabilidades en componentes más especializados y manejables”.</p>
+<h2 id="la-cohesión-en-función-al-acoplamiento">La cohesión en función al acoplamiento</h2>
+<p>De acuerdo con el Principio de Responsabilidad Única (SRP), una clase debe tener una única razón para cambiar. Al extender este principios a los paquetes de software, estos deberían agrupar clases que respondan a las mismas razones de cambio.</p>
+<p>Para evitar la propagación de cambios en lugares no previstos, es fundamental mantener juntos aquellos elementos (clases/métodos/líneas de código) que comparten la misma naturaleza de cambio. Así, la cohesión de un elemento aumenta en la medida en que sus subelementos estén fuertemente relacionados entre sí (internamente acoplados) y dependan menos de elementos externos (clases/paquetes/contextos).</p>
+<p>Por lo que, un componente será más cohesivo cuanto más acoplados estén sus componentes internos y menos dependa de componentes externos.</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  +-------------------------+       +-----------------------+</span></span>
+<span class="line"><span>  |     Componente A        |       |     Componente B      |</span></span>
+<span class="line"><span>  |  +-----------------+    |       |  +-----------------+  |</span></span>
+<span class="line"><span>  |  |  Sub-Elemento 1 | +  |       |  |  Sub-Elemento 1 |  |</span></span>
+<span class="line"><span>  |  +-----------------+ |  |       |  +-----------------+  |</span></span>
+<span class="line"><span>  |      |         ^     |  |       |      |         ^      |      </span></span>
+<span class="line"><span>  |      v         |     |  |       |      v         |      |</span></span>
+<span class="line"><span>  |  +-----------------+ |  |       |  +-----------------+  |</span></span>
+<span class="line"><span>  |  |  Sub-Elemento 2 | |  |       |  |  Sub-Elemento 2 |  |</span></span>
+<span class="line"><span>  |  +-----------------+ |  |       |  +-----------------+  |</span></span>
+<span class="line"><span>  |      |         ^     |  |       |      |         ^      |      </span></span>
+<span class="line"><span>  |      v         |     |  |       |      v         |      |</span></span>
+<span class="line"><span>  |  +-----------------+ |  |       |  +-----------------+  |</span></span>
+<span class="line"><span>  |  |  Sub-Elemento 3 | +  |       |  |  Sub-Elemento 3 |  |</span></span>
+<span class="line"><span>  |  +-----------------+    |       |  +-----------------+  |</span></span>
+<span class="line"><span>  +-------------------------+       +-----------------------+</span></span>
+<span class="line"><span>              ^                              ^</span></span>
+<span class="line"><span>              |                              |</span></span>
+<span class="line"><span>              +------------------------------+</span></span>
+<span class="line"><span>                      Bajo acoplamiento</span></span>
+<span class="line"><span></span></span></code></pre> </article> <ul class="my-8 astro-vj4tpspi"> <li class="inline-block my-1 underline-offset-4 astro-blwjyjpt"> <a href="/tags/diseno-de-software/" class="text-sm pr-2 group astro-blwjyjpt" data-astro-transition-scope="astro-36ssibgs-2"> <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-blwjyjpt"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-blwjyjpt"></path> </svg>
 &nbsp;<span class="astro-blwjyjpt">diseno-de-software</span> </a> </li> <li class="inline-block my-1 underline-offset-4 astro-blwjyjpt"> <a href="/tags/acoplamiento-y-cohesion/" class="text-sm pr-2 group astro-blwjyjpt" data-astro-transition-scope="astro-36ssibgs-3"> <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-blwjyjpt"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-blwjyjpt"></path> </svg>
 &nbsp;<span class="astro-blwjyjpt">acoplamiento-y-cohesion</span> </a> </li>  </ul> <div class="flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4 astro-vj4tpspi"> <button id="back-to-top" class="focus-outline whitespace-nowrap py-1 hover:opacity-75 astro-vj4tpspi"> <svg xmlns="http://www.w3.org/2000/svg" class="rotate-90 astro-vj4tpspi"> <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-vj4tpspi"></path> </svg> <span class="astro-vj4tpspi">Subir</span> </button> <div class="social-icons astro-wkojbtzc"> <span class="italic astro-wkojbtzc">Compartir post en:</span> <div class="text-center astro-wkojbtzc"> <a href="https://wa.me/?text=https://alvaro-barrera.me/posts/disenio-de-software-acoplamiento-y-cohesion/" target="_blank" class="group inline-block hover:text-skin-accent link-button astro-wkojbtzc" title="Compartir post vía WhatsApp"> <svg
       xmlns="http://www.w3.org/2000/svg"
