@@ -9,7 +9,7 @@ import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE, SOCIALS } from "@config";
-import InfoCard from "@components/shared/InfoCard";
+import InfoCard from "@components/shared/InfoCard.astro";
 
 const posts = await getCollection("blog");
 
@@ -19,25 +19,26 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
 const socialCount = SOCIALS.filter(social => social.active).length;
 
-const logoSolticrm = "solticrm.webp";
-const logoSistemalotes = "sistemalotes.webp";
-const logoClassroom = "classroom.webp";
-const logoWebbes = "web_bes.webp";
-const logoBesefactura = "bes_efactura.webp";
-const logoPersonal = "personal.webp";
-const logoUlearning = "ulearning.webp";
-const logoCodecix = "codecix.webp";
-const logoMultirepuestosJa = "multirepuestos_ja.webp";
-const logoColegioJuanAbad = "colegiojuanabad.webp";
-const photoCas = "cas.webp";
+import logoSolticrm from "assets/briefcase/solticrm.webp";
+import logoClassroom from "assets/briefcase/classroom.webp";
+import logoSistemalotes from "assets/briefcase/sistemalotes.webp";
+import logoWebbes from "assets/briefcase/web_bes.webp";
+import logoBesefactura from "assets/briefcase/bes_efactura.webp";
+import logoPersonal from "assets/briefcase/personal.webp";
+import logoUlearning from "assets/briefcase/ulearning.webp";
+import logoCodecix from "assets/briefcase/codecix.webp";
+import logoMultirepuestosJa from "assets/briefcase/multirepuestos_ja.webp";
+import logoColegioJuanAbad from "assets/briefcase/colegiojuanabad.webp";
+import photoCas from "assets/briefcase/cas.webp";
 
-const logoCentauri = "logo_centauri.webp";
-const logoInndatsys = "logo_inndatsys.webp";
-const logoJa = "logo_ja.webp";
-const logoJuanAbad = "logo_juan_abad.webp";
-const logoSolti = "logo_solti.webp";
-const logoUss = "logo_uss.webp";
-const logoCas = "logo_cas.webp";
+import logoCentauri from "assets/customers/logo_centauri.webp";
+import logoInndatsys from "assets/customers/logo_inndatsys.webp";
+import logoJa from "assets/customers/logo_ja.webp";
+import logoJuanAbad from "assets/customers/logo_juan_abad.webp";
+import logoSolti from "assets/customers/logo_solti.webp";
+import logoUss from "assets/customers/logo_uss.webp";
+import logoCas from "assets/customers/logo_cas.webp";
+import { Image } from "astro:assets";
 
 const projects = [
   {
@@ -377,9 +378,9 @@ const customers = [
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img
+                        <Image
                           class={`mx-2 w-[90px] object-contain ${customer.class} md:w-[100px] lg:w-[120px] sm:w-[80px]`}
-                          src={`assets/customers/${customer.logo}`}
+                          src={customer.logo}
                           alt={customer.text}
                           title={customer.text}
                         />
@@ -406,7 +407,7 @@ const customers = [
                 title={project.name}
                 content={project.detailLists.join(", ")}
                 className="mt-6"
-                image={`assets/briefcase/${project.image}`}
+                image={project.image}
               />
             );
           })
