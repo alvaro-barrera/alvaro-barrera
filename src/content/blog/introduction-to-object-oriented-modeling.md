@@ -2,7 +2,8 @@
 author: Álvaro Barrera
 pubDatetime: 2024-08-24T15:22:00Z
 modDatetime: 2024-08-24T15:22:00Z
-title: Introducción al Modelado Orientado a Objetos
+title: >-
+  Programación Orientado a Objetos: Introducción al Modelado 
 slug: introduccion-al-modelado-orientado-a-objetos
 featured: false
 draft: false
@@ -10,6 +11,7 @@ tags:
   - poo
   - modelado orientado a objetos
 description: Pensamiento orientado a objetos y algunos ejemplos
+order: 1
 ---
 
 ¿Qué encuentras cuando miras a tu alrededor? Una laptop, una mesa, una silla, incluso tú mismo o la habitación en su totalidad, son todos objetos.

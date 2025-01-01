@@ -2,7 +2,8 @@
 author: Álvaro Barrera
 pubDatetime: 2024-08-24T15:22:00Z
 modDatetime: 2024-08-24T15:22:00Z
-title: Clasificación de Objetos en Programación Orientada a Objetos
+title: >-
+  Programación Orientado a Objetos: Clasificación de Objetos
 slug: >-
   clasificacion-de-objetos-en-la-programacion-orientada-a-objetos
 featured: false
@@ -12,6 +13,7 @@ tags:
   - modelado orientado a objetos
 description: >-
   Clasificación y roles de objetos en POO: entidad, frontera y control
+order: 2
 ---
 
 ## Tabla de contenido

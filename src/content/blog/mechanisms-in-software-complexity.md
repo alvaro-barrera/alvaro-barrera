@@ -12,6 +12,7 @@ tags:
   - complejidad del software
 description: >-
   Mecanismos para la gestión de la complejidad del software: Abstracción, Encapsulación, Modularidad y Jerarquía
+order: 9
 ---
 
 ## Tabla de contenido

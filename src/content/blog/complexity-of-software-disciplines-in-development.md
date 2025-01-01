@@ -13,6 +13,7 @@ tags:
   - fases del desarrollo de software
 description: >-
   Fases o disciplinas del desarrollo de software: Requisitos, Análisis, Diseño, Implementación, Pruebas y Despliegue, cada una con sus retos y problemas específicos
+order: 8
 ---
 
 ## Tabla de contenido

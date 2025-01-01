@@ -12,6 +12,7 @@ tags:
   - diseño conceptual de software
   - diseño técnico de software
 description: Diseño conceptual y técnico en el desarrollo de software
+order: 3
 ---
 
 El desarrollo de software es un proceso iterativo, donde se añaden y refinan los requisitos en cada iteración hasta alcanzar una solución final.

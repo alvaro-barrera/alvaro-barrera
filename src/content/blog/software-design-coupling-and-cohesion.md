@@ -4,13 +4,14 @@ pubDatetime: 2024-08-24T15:22:00Z
 modDatetime: 2024-08-24T15:22:00Z
 title: >-
   Diseño de Software: Acoplamiento y Cohesión
-slug: disenio-de-software-coupling-and-cohesion
+slug: disenio-de-software-acoplamiento-y-cohesion
 featured: false
 draft: false
 tags:
   - diseño de software
   - acoplamiento y cohesión
 description: Bajo acoplamiento y alta cohesión optimizan el diseño de software
+order: 5
 ---
 
 ## Tabla de contenido

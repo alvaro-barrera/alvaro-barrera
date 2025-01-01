@@ -12,6 +12,7 @@ tags:
   - calidad de software
 description: >-
   Equilibrar la calidad y tiempo en las decisiones del diseño de software
+order: 10
 ---
 
 Tomar decisiones de diseño de software implica encontrar un equilibrio entre varios atributos de calidad, como rendimiento, usabilidad y seguridad. Sin embargo, al profundizar en el análisis, surgen otros criterios igualmente importantes, como el mantenimiento, la escalabilidad del sistema y, desde una perspectiva empresarial, el tiempo de comercialización (GTM o Go to Market). En muchas ocasiones, la presión por lanzar nuevas funcionalidades rápidamente puede comprometer estos atributos.

@@ -7,6 +7,9 @@ import { SITE } from "@config";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import getPostsByGroupCondition from "@utils/getPostsByGroupCondition";
+import getUniqueTags from "@utils/getUniqueTags";
+import Tag from "@components/Tag.astro";
+import LinkButton from "@components/LinkButton.astro";
 
 // Redirect to 404 page if `showArchives` config is false
 if (!SITE.showArchives) {
@@ -16,24 +19,40 @@ if (!SITE.showArchives) {
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 
 const MonthMap: Record<string, string> = {
-  "1": "January",
-  "2": "February",
-  "3": "March",
-  "4": "April",
-  "5": "May",
-  "6": "June",
-  "7": "July",
-  "8": "August",
-  "9": "September",
-  "10": "October",
-  "11": "November",
-  "12": "December",
+  "1": "Enero",
+  "2": "Febrero",
+  "3": "Marzo",
+  "4": "Abril",
+  "5": "Mayo",
+  "6": "Junio",
+  "7": "Julio",
+  "8": "Agosto",
+  "9": "Septiembre",
+  "10": "Octubre",
+  "11": "Noviembre",
+  "12": "Diciembre",
 };
+
+let tags = getUniqueTags(posts);
 ---
 
-<Layout title={`Archives | ${SITE.title}`}>
-  <Header activeNav="archives" />
-  <Main pageTitle="Archives" pageDesc="All the articles I've archived.">
+<Layout title={`Blog | ${SITE.title}`}>
+  <Header activeNav="posts" />
+  <Main pageTitle="Blog" pageDesc="Todos los artículos">
+    <ul>
+      {tags.map(tagItem => <Tag tag={tagItem.tag} size="sm" />)}
+    </ul>
+    <br />
+
+    <LinkButton
+      href="/posts/"
+      className={`focus-outline flex justify-center p-3 sm:p-1`}
+      ariaLabel="blog"
+      title="Artículos"
+    >
+      Listar todo
+    </LinkButton>
+
     {
       Object.entries(
         getPostsByGroupCondition(posts, post =>

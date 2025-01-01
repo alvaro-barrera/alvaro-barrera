@@ -11,6 +11,7 @@ tags:
   - diseño de software
   - arquitectura de software
 description: Introducción a la Arquitectura de Software, roles de diseñador y arquitecto
+order: 6
 ---
 
 ## Tabla de contenido

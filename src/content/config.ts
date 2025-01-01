@@ -7,6 +7,7 @@ const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
   schema: ({ image }) =>
     z.object({
+      order: z.number(),
       author: z.string().default(SITE.author),
       pubDatetime: z.date(),
       modDatetime: z.date().optional().nullable(),

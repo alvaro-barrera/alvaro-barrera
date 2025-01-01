@@ -12,6 +12,7 @@ tags:
   - arquitectura de software
 description: >-
   Pincipios de paquetes en arquitectura de software para la reutilización, el mantenimiento y la estabilidad
+order: 7
 ---
 
 ## Tabla de contenido
