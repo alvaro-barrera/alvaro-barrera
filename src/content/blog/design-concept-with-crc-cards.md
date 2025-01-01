@@ -3,7 +3,7 @@ author: Álvaro Barrera
 pubDatetime: 2024-08-24T15:22:00Z
 modDatetime: 2024-08-24T15:22:00Z
 title: >-
-  Diseño Conceptual con Tarjetas CRC: Ejemplos y Beneficios
+  Diseño de Software: Diseño Conceptual con Tarjetas CRC
 slug: disenio-conceptual-con-tarjetas-crc
 featured: false
 draft: false
@@ -11,7 +11,7 @@ tags:
   - diseño de software
   - diseño conceptual de software
 description: >-
-  Uso de tarjetas CRC para organizar y visualizar el diseño conceptual
+  Uso de tarjetas CRC para organizar y visualizar el diseño conceptual, ejemplos y beneficios
 order: 4
 ---
 

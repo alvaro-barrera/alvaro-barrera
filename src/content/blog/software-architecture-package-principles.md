@@ -21,7 +21,7 @@ order: 7
 
 ## Introducción
 
-En la arquitectura de software, los paquetes se agrupan para ofrecer versionar el código de manera cohesiva y mantenible. Entender los principios de la organización y gestión de paquetes es fundamental para diseñar software escalable y mantenible.
+En la arquitectura de software, los paquetes se agrupan para versionar el código de manera cohesiva y mantenible. Entender los principios de la organización y gestión de paquetes es fundamental para diseñar software escalable y mantenible.
 
 ## Principios de Paquetes
 
