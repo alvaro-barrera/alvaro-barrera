@@ -39,6 +39,7 @@ import logoSolti from "assets/customers/logo_solti.webp";
 import logoUss from "assets/customers/logo_uss.webp";
 import logoCas from "assets/customers/logo_cas.webp";
 import { Image } from "astro:assets";
+import ContactAction from "@components/shared/ContactAction.astro";
 
 const projects = [
   {
@@ -246,15 +247,6 @@ const customers = [
       <p>
         Stack: Ruby on Rails, Laravel, Angular, PostgreSQL, MySQL, Docker, Git
       </p>
-      <p>
-        <LinkButton
-          target="_blank"
-          className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
-          href="https://www.linkedin.com/in/alvaro-barrera"
-        >
-          Contáctame
-        </LinkButton>
-      </p>
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
@@ -288,6 +280,8 @@ const customers = [
       </ul>
     </section>
 
+    <ContactAction />
+
     <section id="services">
       <h2>Servicios</h2>
 
@@ -296,12 +290,20 @@ const customers = [
         <InfoCard
           title="Consultoría IT"
           content="Especializado en migraciones y optimización de sistemas legacy Laravel y Angular, diseño de bases de datos y suites de tests automáticos. Transforma tu infraestructura tecnológica con soluciones personalizadas y eficientes. ¡Optimiza tu sistema y mejora su rendimiento!"
+          className="mb-6"
         />
 
+        <!-- Desarrollo de páginas web -->
         <InfoCard
           title="Desarrollo de páginas web"
           content="Creación de páginas para información empresarial, catálogos de productos, y opciones de contacto. Implemento carritos de compras, gestión de pedidos, optimización móvil y SEO. ¡Transforma tu presencia online con soluciones personalizadas!"
-          className="mt-6"
+          className="mb-6"
+        />
+
+        <!-- Desarrollo a medida -->
+        <InfoCard
+          title="Desarrollo a medida"
+          content="Desarrollo a medida que se adapta a los requerimientos específicos de tu negocio. Trabajamos juntos para construir soluciones que impulsan tu crecimiento."
         />
       </div>
     </section>
