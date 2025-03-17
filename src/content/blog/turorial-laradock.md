@@ -16,8 +16,9 @@ description: >-
 order: 11
 ---
 
-1. Clonar el repositorio de Laradock
-   Primero, clona el repositorio de Laradock desde GitHub:
+### 1. Clonar el repositorio de Laradock
+
+Primero, clona el repositorio de Laradock desde GitHub:
 
 ![Clonar laradock](/assets/tutorials/laradock/download-laradock.jpeg "Clonar laradock")
 
@@ -25,8 +26,9 @@ order: 11
 git clone https://github.com/Laradock/laradock
 ```
 
-2. Mover Laradock a la carpeta del proyecto
-   Ubica el directorio laradock al mismo nivel que tu carpeta de proyecto Laravel. La estructura de directorios debería quedar así:
+### 2. Mover Laradock a la carpeta del proyecto
+
+Ubica el directorio laradock al mismo nivel que tu carpeta de proyecto Laravel. La estructura de directorios debería quedar así:
 
 ![Mover laradock](/assets/tutorials/laradock/mkdir.jpeg "Mover carpeta")
 
@@ -36,14 +38,16 @@ git clone https://github.com/Laradock/laradock
   /laradock
 ```
 
-3. Configurar la versión de PHP
-   En el archivo .env dentro de Laradock, verifica y ajusta la versión de PHP que tu proyecto necesita. Puedes hacerlo modificando la variable PHP_VERSION según tus necesidades.
+### 3. Configurar la versión de PHP
+
+En el archivo .env dentro de Laradock, verifica y ajusta la versión de PHP que tu proyecto necesita. Puedes hacerlo modificando la variable PHP_VERSION según tus necesidades.
 
 ![ENV](/assets/tutorials/laradock/env.jpeg "ENV")
 ![Versión php](/assets/tutorials/laradock/version-php.jpeg "Versión php")
 
-4. Configurar Nginx
-   Navega a la carpeta laradock/nginx/sites y copia un archivo de configuración de ejemplo para tu nuevo proyecto. Puedes hacerlo con:
+### 4. Configurar Nginx
+
+Navega a la carpeta laradock/nginx/sites y copia un archivo de configuración de ejemplo para tu nuevo proyecto. Puedes hacerlo con:
 
 ![NGNIX](/assets/tutorials/laradock/sites.jpeg "Configurar ngnix")
 
@@ -62,12 +66,14 @@ Cambia la ruta de root por la carpeta de tu proyecto Laravel, algo similar a:
 root /var/www/myproject/public;
 ```
 
-5. Configurar Docker Desktop
-   Asegúrate de tener [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado y funcionando.
+### 5. Configurar Docker Desktop
 
-6. Iniciar contenedores con Docker Compose. 
-   Asegurate de abrir Docker Desktop antes de este paso.
-   Dependiendo de la base de datos que quieras utilizar, ejecuta uno de los siguientes comandos para levantar los contenedores:
+Asegúrate de tener [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado y funcionando.
+
+### 6. Iniciar contenedores con Docker Compose
+
+Asegurate de abrir Docker Desktop antes de este paso.
+Dependiendo de la base de datos que quieras utilizar, ejecuta uno de los siguientes comandos para levantar los contenedores:
 
 ![Docker build](/assets/tutorials/laradock/docker-build.jpeg "Correr docker-build")
 
@@ -87,8 +93,9 @@ Para PostgreSQL:
 docker-compose up -d --build nginx postgres
 ```
 
-7. Ingresar al contenedor
-   Una vez levantados los contenedores, ingresa al contenedor workspace con el siguiente comando:
+### 7. Ingresar al contenedor
+
+Una vez levantados los contenedores, ingresa al contenedor workspace con el siguiente comando:
 
 ![Docker bash](/assets/tutorials/laradock/docker-bash.jpeg "Correr docker bash")
 
@@ -98,15 +105,17 @@ docker-compose up -d --build nginx postgres
 docker-compose exec workspace bash
 ```
 
-8. Crear el proyecto Laravel
-   Dentro del contenedor, ejecuta el siguiente comando para crear un nuevo proyecto Laravel (ajusta finance-api al nombre de tu proyecto):
+### 8. Crear el proyecto Laravel
+
+Dentro del contenedor, ejecuta el siguiente comando para crear un nuevo proyecto Laravel (ajusta finance-api al nombre de tu proyecto):
 
 ```
 composer create-project --prefer-dist laravel/laravel finance-api
 ```
 
-9. Configurar el archivo hosts
-   En tu máquina local (fuera del contenedor), abre el archivo de hosts y agrega el dominio que declaraste en el archivo Nginx, algo como:
+### 9. Configurar el archivo hosts
+
+En tu máquina local (fuera del contenedor), abre el archivo de hosts y agrega el dominio que declaraste en el archivo Nginx, algo como:
 
 ![HOSTS](/assets/tutorials/laradock/hosts.jpeg "Configurar hosts")
 ![HOSTS 2](/assets/tutorials/laradock/hosts-2.jpeg "Configurar hosts 2")
@@ -118,7 +127,8 @@ composer create-project --prefer-dist laravel/laravel finance-api
 
 Guarda los cambios.
 
-10. Instalar dependencias en Laravel
+### 10. Instalar dependencias en Laravel
+
     Una vez que hayas creado el proyecto Laravel, navega a la carpeta del proyecto y copia el archivo .env:
 
 ![Instalar app](/assets/tutorials/laradock/app-install.jpeg "Instalar app")
@@ -137,8 +147,9 @@ Luego instala las dependencias de Composer:
 composer install
 ```
 
-11. Configurar la base de datos en Laravel
-    En el archivo .env de tu proyecto Laravel, actualiza las variables de conexión de base de datos para que se correspondan con la configuración de Laradock. Por ejemplo, para PostgreSQL:
+### 11. Configurar la base de datos en Laravel
+
+En el archivo .env de tu proyecto Laravel, actualiza las variables de conexión de base de datos para que se correspondan con la configuración de Laradock. Por ejemplo, para PostgreSQL:
 
 ```
 DB_CONNECTION=pgsql
@@ -157,8 +168,9 @@ Puedes revisar la configuración desde el .env de laradock
 
 Asegúrate de que el nombre de la base de datos (DB_DATABASE) sea el mismo que crearás en el siguiente paso.
 
-12. Crear la base de datos
-    Ingresa al contenedor de PostgreSQL y crea la base de datos:
+### 12. Crear la base de datos
+
+Ingresa al contenedor de PostgreSQL y crea la base de datos:
 
 ![Configurar postgres](/assets/tutorials/laradock/db.jpeg "Configurar postgres")
 
@@ -169,8 +181,9 @@ docker-compose exec postgres bash
 exit
 ```
 
-13. Ejecutar migraciones y seeders
-    Ejecuta las migraciones y genera el seed del proyecto dentro de la consulta bash, ingresando a la carpeta del proyecto laravel:
+### 13. Ejecutar migraciones y seeders
+
+Ejecuta las migraciones y genera el seed del proyecto dentro de la consulta bash, ingresando a la carpeta del proyecto laravel:
 
 ![Preparar laravel](/assets/tutorials/laradock/laravel-config.jpeg "Preparar laravel")
 
@@ -179,8 +192,9 @@ php artisan key:generate
 php artisan migrate
 ```
 
-14. Acceder a la aplicación en el navegador
-    Abre tu navegador y accede a la aplicación usando el dominio que configuraste, por ejemplo:
+### 14. Acceder a la aplicación en el navegador
+
+Abre tu navegador y accede a la aplicación usando el dominio que configuraste, por ejemplo:
 
 ![Navegar al sitio local](/assets/tutorials/laradock/localhost.jpeg "Navegar al sitio local")
 
