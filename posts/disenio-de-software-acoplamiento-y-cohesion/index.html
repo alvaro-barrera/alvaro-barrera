@@ -126,21 +126,78 @@ Blog
 </a> </li> <li class="astro-3ef6ksr2"> <a href="/search/" target="_self" class="group inline-block hover:text-skin-accent focus-outline p-3 sm:p-1  flex astro-3ef6ksr2" aria-label="buscar" title="Buscar"> <svg xmlns="http://www.w3.org/2000/svg" class="scale-125 sm:scale-100 astro-3ef6ksr2"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z" class="astro-3ef6ksr2"></path> </svg> <span class="sr-only astro-3ef6ksr2">Buscar</span> </a> </li>  </ul> </nav> </div> </div> <div class="max-w-3xl mx-auto px-4"> <hr class="border-skin-line" aria-hidden="true"> </div> </header>   <div class="mx-auto flex w-full max-w-3xl justify-start px-2 astro-vj4tpspi"> <button class="focus-outline mb-2 mt-8 flex hover:opacity-75 astro-vj4tpspi" onclick="(() => (history.length === 1) ? window.location = '/' : history.back())()"> <svg xmlns="http://www.w3.org/2000/svg" class="astro-vj4tpspi"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-vj4tpspi"></path> </svg><span class="astro-vj4tpspi">Regresar</span> </button> </div> <main id="main-content" class="astro-vj4tpspi"> <h1 class="post-title astro-vj4tpspi" data-astro-transition-scope="astro-plk3gbjq-1">Diseño de Software: Acoplamiento y Cohesión</h1> <div class="flex items-center space-x-2 opacity-80 my-2 astro-vj4tpspi"><svg xmlns="http://www.w3.org/2000/svg" class="scale-100 inline-block h-6 w-6 min-w-[1.375rem] fill-skin-base" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Publicado:</span><span class="italic text-base"><time dateTime="2024-08-24T15:22:00.000Z">24 ago 2024</time></span></div> <p class="astro-vj4tpspi"></p> <article id="article" class="prose mx-auto mt-8 max-w-3xl astro-vj4tpspi"> <h2 id="tabla-de-contenido">Tabla de contenido</h2>
 <p></p><details><summary>Ver contenido</summary><p></p>
 <ul>
-<li><a href="#introducci%C3%B3n">Introducción</a></li>
+<li>
+<p><a href="#introducci%C3%B3n">Introducción</a></p>
+</li>
+<li>
+<p><a href="#acoplamiento">Acoplamiento</a></p>
+<ul>
 <li><a href="#evaluaci%C3%B3n-del-acoplamiento">Evaluación del Acoplamiento</a></li>
-<li><a href="#cohesi%C3%B3n-alta-vs-cohesi%C3%B3n-baja">Cohesión Alta vs. Cohesión Baja</a></li>
-<li><a href="#la-cohesi%C3%B3n-en-funci%C3%B3n-al-acoplamiento">La cohesión en función al acoplamiento</a></li>
+<li><a href="#acoplamiento-fuerte-indeseable">Acoplamiento Fuerte (indeseable)</a></li>
+<li><a href="#acoplamiento-d%C3%A9bil-deseable">Acoplamiento Débil (deseable)</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#cohesi%C3%B3n">Cohesión</a></p>
+<ul>
+<li><a href="#cohesi%C3%B3n-debil">Cohesión Debil</a></li>
+<li><a href="#cohesi%C3%B3n-media">Cohesión Media</a></li>
+<li><a href="#cohesi%C3%B3n-fuerte">Cohesión Fuerte</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#cohesi%C3%B3n-alta-vs-cohesi%C3%B3n-baja">Cohesión Alta vs. Cohesión Baja</a></p>
+</li>
+<li>
+<p><a href="#la-cohesi%C3%B3n-en-funci%C3%B3n-al-acoplamiento">La cohesión en Función al Acoplamiento</a></p>
+</li>
 </ul>
 <p></p></details><p></p>
 <h2 id="introducción">Introducción</h2>
 <p>Cuando un componente o módulo depende fuertemente de otro, se dice que están altamente acoplados. Para que nuestros módulos sean fácilmente integrables con otros, es fundamental buscar un bajo acoplamiento.</p>
-<h2 id="evaluación-del-acoplamiento">Evaluación del Acoplamiento</h2>
+<h2 id="acoplamiento">Acoplamiento</h2>
+<p>El acoplamiento describe el grado de dependencia entre módulos. Un acoplamiento fuerte puede dificultar el mantenimiento y la evolución del software, mientras que un acoplamiento débil promueve la reutilización y la independencia.</p>
+<h3 id="evaluación-del-acoplamiento">Evaluación del Acoplamiento</h3>
 <p>Para evaluar el acoplamiento, debemos considerar tanto la cantidad de conexiones como la complejidad de estas interacciones. Un bajo acoplamiento implica que los módulos son independientes y flexibles, facilitando la implementación y los cambios. Esto significa que si las reglas de negocio requieren reemplazar o modificar componentes, el impacto será mínimo.</p>
 <p>Aunque el acoplamiento se refiere a las interacciones externas entre módulos, el concepto de cohesión se enfoca en el comportamiento interno de un componente. La cohesión mide qué tan bien definido está el propósito y la responsabilidad de un componente.</p>
+<h3 id="acoplamiento-fuerte-indeseable">Acoplamiento Fuerte (indeseable)</h3>
+<ol>
+<li><strong>Acoplamiento por contenido</strong>: Un módulo accede directamente a los datos o procedimientos internos de otro módulo.</li>
+<li><strong>Acoplamiento común</strong>: Dos o más módulos dependen de datos globales.</li>
+<li><strong>Acoplamiento externo</strong>: Dependencia de formatos, protocolos o interfaces impuestas externamente. Este tipo puede impactar a múltiples módulos cuando cambia.</li>
+<li><strong>Acoplamiento de control</strong>: Un módulo controla el flujo lógico de otro al indicarle qué hacer o en qué orden.</li>
+<li><strong>Acoplamiento por estructura de datos</strong>: Dos módulos dependen de la misma estructura de datos.</li>
+<li><strong>Acoplamiento por datos internos</strong>: Un módulo depende de los datos internos (no expuestos) de otro.</li>
+</ol>
+<h3 id="acoplamiento-débil-deseable">Acoplamiento Débil (deseable)</h3>
+<ol>
+<li><strong>Acoplamiento por parámetros</strong>: Los módulos se comunican pasando solo los datos necesarios.</li>
+<li><strong>Acoplamiento por mensaje</strong>: Comunicación basada en el envío de mensajes sin exponer implementación interna.</li>
+<li><strong>Acoplamiento por coincidencia de tipo</strong>: Los módulos comparten tipos de datos, pero no su implementación.</li>
+</ol>
+<h2 id="cohesión">Cohesión</h2>
+<p>La cohesión mide el grado de relación de los elementos dentro de un módulo. A mayor cohesión, mayor claridad, mantenibilidad y reutilización.</p>
+<h3 id="cohesión-debil">Cohesión Debil</h3>
+<ol>
+<li><strong>Cohesión coincidente</strong>: Los elementos están juntos simplemente porque sí, sin relación funcional (ej. mismo archivo).</li>
+<li><strong>Cohesión temporal</strong>: Los elementos se agrupan porque se ejecutan al mismo tiempo, pero no están conceptualmente relacionados.</li>
+<li><strong>Cohesión procesal</strong>: Los elementos se ejecutan uno tras otro, pero sin que haya una relación significativa entre ellos.</li>
+<li><strong>Cohesión lógica</strong>: Los elementos realizan funciones similares, pero independientes. Agruparlos puede dificultar la comprensión del propósito real del módulo.</li>
+</ol>
+<h3 id="cohesión-media">Cohesión Media</h3>
+<ol>
+<li><strong>Cohesión comunicacional</strong>: Los elementos operan sobre los mismos datos de entrada o producen salidas similares.</li>
+<li><strong>Cohesión secuencial</strong>: La salida de una parte sirve como entrada para otra dentro del mismo módulo.</li>
+</ol>
+<h3 id="cohesión-fuerte">Cohesión Fuerte</h3>
+<ol>
+<li><strong>Cohesión de objetos</strong>: Cada parte del módulo contribuye a un propósito dentro del mismo objeto.</li>
+<li><strong>Cohesión funcional</strong>: Todos los elementos del módulo trabajan juntos para realizar una única tarea o comportamiento bien definido. Va más allá de entrada y salida: todo está enfocado en un solo objetivo funcional.</li>
+</ol>
 <h2 id="cohesión-alta-vs-cohesión-baja">Cohesión Alta vs. Cohesión Baja</h2>
 <p>Una alta cohesión indica que un componente tiene un propósito claro y bien definido, y que todas sus responsabilidades están alineadas. Por el contrario, un componente con baja cohesión tiene múltiples responsabilidades no relacionadas, lo que puede indicar la necesidad de dividirlo en varios componentes más específicos.</p>
 <p>Al identificar una baja cohesión, es probable que podamos refactorizar el componente para mejorar su diseño, dividiendo sus responsabilidades en componentes más especializados y manejables”.</p>
-<h2 id="la-cohesión-en-función-al-acoplamiento">La cohesión en función al acoplamiento</h2>
+<h2 id="la-cohesión-en-función-al-acoplamiento">La cohesión en Función al Acoplamiento</h2>
 <p>De acuerdo con el Principio de Responsabilidad Única (SRP), una clase debe tener una única razón para cambiar. Al extender este principios a los paquetes de software, estos deberían agrupar clases que respondan a las mismas razones de cambio.</p>
 <p>Para evitar la propagación de cambios en lugares no previstos, es fundamental mantener juntos aquellos elementos (clases/métodos/líneas de código) que comparten la misma naturaleza de cambio. Así, la cohesión de un elemento aumenta en la medida en que sus subelementos estén fuertemente relacionados entre sí (internamente acoplados) y dependan menos de elementos externos (clases/paquetes/contextos).</p>
 <p>Por lo que, un componente será más cohesivo cuanto más acoplados estén sus componentes internos y menos dependa de componentes externos.</p>

@@ -134,9 +134,28 @@ Blog
 </li>
 <li>
 <p><a href="#dise%C3%B1o-de-software">Diseño de Software</a></p>
+<ul>
+<li><a href="#preocupaciones-claves-en-el-dise%C3%B1o">Preocupaciones Claves en el Diseño</a></li>
+</ul>
 </li>
 <li>
 <p><a href="#arquitectura-de-software">Arquitectura de Software</a></p>
+<ul>
+<li>
+<p><a href="#beneficios-de-una-buena-arquitectura-de-software">Beneficios de una Buena Arquitectura de Software</a></p>
+</li>
+<li>
+<p><a href="#proceso-de-arquitectura">Proceso de Arquitectura</a></p>
+</li>
+<li>
+<p><a href="#atributos-de-una-arquitectura-de-calidad">Atributos de una Arquitectura de Calidad</a></p>
+<ul>
+<li><a href="#atributos-de-calidad"><strong>Atributos de Calidad</strong></a></li>
+<li><a href="#atributos-de-operaci%C3%B3n"><strong>Atributos de Operación</strong></a></li>
+<li><a href="#atributos-de-rendimiento"><strong>Atributos de Rendimiento</strong></a></li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
 <p><a href="#t%C3%A9rminos-claves-estilo-arquitect%C3%B3nico">Términos Claves: Estilo arquitectónico</a></p>
@@ -148,14 +167,6 @@ Blog
 <p><a href="#equilibrio-entre-velocidad-y-calidad">Equilibrio entre Velocidad y Calidad</a></p>
 </li>
 <li>
-<p><a href="#atributos-de-una-arquitectura-de-calidad">Atributos de una Arquitectura de Calidad</a></p>
-<ul>
-<li><a href="#batributos-de-calidadb"><b>Atributos de Calidad</b></a></li>
-<li><a href="#batributos-de-operaci%C3%B3nb"><b>Atributos de Operación</b></a></li>
-<li><a href="#batributos-de-rendimientob"><b>Atributos de Rendimiento</b></a></li>
-</ul>
-</li>
-<li>
 <p><a href="#conclusi%C3%B3n">Conclusión</a></p>
 </li>
 </ul>
@@ -163,34 +174,81 @@ Blog
 <h2 id="introducción">Introducción</h2>
 <p>Una buena arquitectura debe cumplir con atributos que la hacen funcional, escalable, adaptable y mantenible a lo largo del tiempo. En términos generales, un software bien estructurado debe ser:</p>
 <ul>
-<li>Flexible - Reutilizable - Mantenible</li>
+<li>Flexible</li>
+<li>Reutilizable</li>
+<li>Mantenible</li>
 </ul>
 <h2 id="principios-de-diseño-y-uml">Principios de Diseño y UML</h2>
 <p>Es esencial conocer y aplicar principios de diseño adecuados, y para comunicar estos principios usamos UML (Lenguaje Unificado de Modelado), que sirve como una herramienta visual para representar los diferentes componentes y su interacción dentro del sistema. Si no comprendes por qué las piezas están organizadas de cierta manera, es una señal de que la arquitectura del proyecto puede no haber sido bien pensada desde el principio. Diferencia entre Diseño y Arquitectura de Software</p>
 <h2 id="diseño-de-software">Diseño de Software</h2>
+<p>El diseño de software es el proceso creativo de transformar un problema en una solución.</p>
+<p>Se basa en requisitos abstractos y los transforma en detalles listos para la implementación, sin incluir detalles técnicos específicos de código.</p>
+<p>Durante esta etapa se deciden clases, métodos, tipos de datos, etc., sin centrarse aún en decisiones específicas de tecnología o lenguaje.</p>
 <p>El diseño de software se enfoca en resolver problemas concretos del sistema mediante la definición de componentes individuales, sus interacciones y responsabilidades. Su objetivo principal es convertir los requisitos funcionales en código operativo, asegurando que sea fácil de mantener y actualizar a largo plazo. Es aquí donde se determinan las clases, relaciones y casos de uso.</p>
+<h3 id="preocupaciones-claves-en-el-diseño">Preocupaciones Claves en el Diseño</h3>
+<ul>
+<li>Estructuración del sistema: descomposición en subsistemas y definición de contratos/interfaces.</li>
+<li>Modelado de control: definición del comportamiento de los componentes en ejecución.</li>
+<li>Descomposición modular: identificación de componentes basada en criterios como mantenibilidad, fiabilidad, seguridad y gestión de recursos.</li>
+</ul>
 <h2 id="arquitectura-de-software">Arquitectura de Software</h2>
 <p>Por otro lado, la arquitectura de software se concentra en los aspectos de nivel superior del sistema. Un arquitecto de software es responsable de analizar el sistema completo, seleccionar el marco de trabajo, definir el almacenamiento de datos y determinar cómo interactúan entre sí los distintos componentes. Mientras el diseño se enfoca en los detalles de implementación, la arquitectura abarca un panorama más amplio, considerando las decisiones que afectan la estructura global y los problemas comerciales que deben resolverse.</p>
+<h3 id="beneficios-de-una-buena-arquitectura-de-software">Beneficios de una Buena Arquitectura de Software</h3>
+<p>Entre los beneficios clave de una buena arquitectura se encuentran:</p>
+<ul>
+<li>
+<p>Descentralización del desarrollo y mantenimiento, lo que permite la óptima gestión de recursos y riesgos.</p>
+</li>
+<li>
+<p>División en subsistemas, facilitando la evaluación de costos y beneficios para decisiones de compra o construcción del software.</p>
+</li>
+<li>
+<p>Documentación arquitectónica clara, esencial para la comunicación efectiva y la comprensión integral del sistema.</p>
+</li>
+<li>
+<p>Escalabilidad y mantenibilidad, aspectos extremadamente importantes en entornos ágiles donde la frecuencia de cambios es mayor.</p>
+</li>
+<li>
+<p>Revisión y ajuste continuo de la arquitectura, necesarios para mantener la calidad y adaptarse a necesidades nuevas a lo largo del ciclo de vida del software.</p>
+</li>
+</ul>
+<h3 id="proceso-de-arquitectura">Proceso de Arquitectura</h3>
+<p>La arquitectura de software se ocupa de:</p>
+<ul>
+<li>Estimar: cuánto trabajo tomará, cuánto tiempo y quién lo hará.</li>
+<li>Asegurar la calidad: principalmente en aspectos como fiabilidad y rendimiento.</li>
+<li>Particionar: dividir el sistema en partes más pequeñas (subsistemas y módulos) para su posterior diseño y construcción.</li>
+</ul>
+<h3 id="atributos-de-una-arquitectura-de-calidad">Atributos de una Arquitectura de Calidad</h3>
+<p>Los atributos de una arquitectura de software de calidad se dividen en tres categorías:</p>
+<h4 id="atributos-de-calidad"><strong>Atributos de Calidad</strong></h4>
+<ul>
+<li>Mantenibilidad</li>
+<li>Testabilidad</li>
+<li>Usabilidad</li>
+<li>Seguridad</li>
+<li>Integridad</li>
+</ul>
+<h4 id="atributos-de-operación"><strong>Atributos de Operación</strong></h4>
+<ul>
+<li>Disponibilidad</li>
+<li>Actualización</li>
+<li>Fiabilidad</li>
+<li>Recuperabilidad</li>
+<li>Capacidad de Gestión</li>
+</ul>
+<h4 id="atributos-de-rendimiento"><strong>Atributos de Rendimiento</strong></h4>
+<ul>
+<li>Tiempo de respuesta</li>
+<li>Elasticidad</li>
+<li>Capacidad (Throughput)</li>
+</ul>
 <h2 id="términos-claves-estilo-arquitectónico">Términos Claves: Estilo arquitectónico</h2>
 <p>Es el conjunto de decisiones de diseño aplicadas en un contexto definido. Estas decisiones organizan el sistema en módulos y componentes, y definen cómo interactúan. El estilo arquitectónico incluye vocabulario específico, restricciones sobre cómo combinar los componentes, y determina las propiedades del sistema resultante.</p>
 <h2 id="colaboración-entre-diseñador-y-arquitecto">Colaboración entre Diseñador y Arquitecto</h2>
 <p>Ambos roles son esenciales y complementarios. El diseñador traduce los requisitos en soluciones concretas, mientras que el arquitecto toma decisiones estratégicas sobre la estructura general del sistema. Ambos deben ser capaces de comunicar soluciones de alta calidad a las partes interesadas.</p>
 <h2 id="equilibrio-entre-velocidad-y-calidad">Equilibrio entre Velocidad y Calidad</h2>
 <p>Uno de los desafíos clave en la arquitectura de software es encontrar un equilibrio entre la rapidez y la calidad. Los clientes suelen desear soluciones rápidas, mientras que los equipos de ingeniería buscan entregar sistemas robustos y bien diseñados. Esta situación requiere negociación para asegurar que ambas partes obtengan lo que necesitan: un software que no solo funcione bien, sino que también cumpla con los plazos establecidos.</p>
-<h2 id="atributos-de-una-arquitectura-de-calidad">Atributos de una Arquitectura de Calidad</h2>
-<p>Los atributos de una arquitectura de software de calidad se dividen en tres categorías:</p>
-<h3 id="atributos-de-calidad"><b>Atributos de Calidad</b></h3>
-<ul>
-<li>Mantenibilidad - Testabilidad - Usabilidad - Seguridad -Integridad</li>
-</ul>
-<h3 id="atributos-de-operación"><b>Atributos de Operación</b></h3>
-<ul>
-<li>Disponibilidad - Actualización - Fiabilidad - Recuperabilidad - Capacidad de Gestión</li>
-</ul>
-<h3 id="atributos-de-rendimiento"><b>Atributos de Rendimiento</b></h3>
-<ul>
-<li>Tiempo de respuesta - Elasticidad - Capacidad (Throughput)</li>
-</ul>
 <h2 id="conclusión">Conclusión</h2>
 <p>Una buena arquitectura de software no solo se trata de elegir la tecnología adecuada, sino de organizar los componentes de manera que el sistema sea robusto, fácil de mantener y escalable. Tanto el diseño como la arquitectura son fundamentales para lograr un software de calidad, y su correcta implementación asegura que el sistema cumpla con las expectativas tanto del cliente como del equipo de desarrollo.”</p> </article> <ul class="my-8 astro-vj4tpspi"> <li class="inline-block my-1 underline-offset-4 astro-blwjyjpt"> <a href="/tags/diseno-de-software/" class="text-sm pr-2 group astro-blwjyjpt" data-astro-transition-scope="astro-36ssibgs-2"> <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-blwjyjpt"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-blwjyjpt"></path> </svg>
 &nbsp;<span class="astro-blwjyjpt">diseno-de-software</span> </a> </li> <li class="inline-block my-1 underline-offset-4 astro-blwjyjpt"> <a href="/tags/arquitectura-de-software/" class="text-sm pr-2 group astro-blwjyjpt" data-astro-transition-scope="astro-36ssibgs-3"> <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-blwjyjpt"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-blwjyjpt"></path> </svg>
