@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="es" class="scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favico.ico"><link rel="canonical" href="https://alvaro-barrera.me/posts/arquitectura-software/"><meta name="generator" content="Astro v4.16.3"><!-- General Meta Tags --><title>Arquitectura de Software: Introducción | Álvaro Barrera | Desarrollador de software</title><meta name="title" content="Arquitectura de Software: Introducción | Álvaro Barrera | Desarrollador de software"><meta name="description" content="Introducción a la Arquitectura de Software, roles de diseñador y arquitecto"><meta name="author" content="Álvaro Barrera"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph / Facebook --><meta property="og:title" content="Arquitectura de Software: Introducción | Álvaro Barrera | Desarrollador de software"><meta property="og:description" content="Introducción a la Arquitectura de Software, roles de diseñador y arquitecto"><meta property="og:url" content="https://alvaro-barrera.me/posts/arquitectura-software/"><meta property="og:image" content="https://alvaro-barrera.me/posts/arquitectura-de-software-introduccion.png"><!-- Article Published/Modified time --><meta property="article:published_time" content="2024-08-23T15:22:00.000Z"><meta property="article:modified_time" content="2024-08-23T15:22:00.000Z"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://alvaro-barrera.me/posts/arquitectura-software/"><meta property="twitter:title" content="Arquitectura de Software: Introducción | Álvaro Barrera | Desarrollador de software"><meta property="twitter:description" content="Introducción a la Arquitectura de Software, roles de diseñador y arquitecto"><meta property="twitter:image" content="https://alvaro-barrera.me/posts/arquitectura-de-software-introduccion.png"><!-- Google JSON-LD Structured data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Arquitectura de Software: Introducción | Álvaro Barrera | Desarrollador de software","image":"https://alvaro-barrera.me/posts/arquitectura-de-software-introduccion.png","datePublished":"2024-08-23T15:22:00.000Z","dateModified":"2024-08-23T15:22:00.000Z","author":[{"@type":"Person","name":"Álvaro Barrera","url":"https://alvaro-barrera.me/"}]}</script><!-- Google Font --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="preload" as="style" onload="this.onload=null; this.rel='stylesheet';" crossorigin><meta name="theme-color" content=""><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script src="/toggle-theme.js" async></script><script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-6R2WEDW7BD"></script><script type="text/partytown">
+<!DOCTYPE html><html lang="es" class="scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favico.ico"><link rel="canonical" href="https://alvaro-barrera.me/posts/arquitectura-software/"><meta name="generator" content="Astro v4.16.3"><!-- General Meta Tags --><title>Arquitectura de Software: Introducción | Álvaro Barrera | Desarrollador de software</title><meta name="title" content="Arquitectura de Software: Introducción | Álvaro Barrera | Desarrollador de software"><meta name="description" content="Introducción a la Arquitectura de Software, roles de diseñador y arquitecto"><meta name="author" content="Álvaro Barrera"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph / Facebook --><meta property="og:title" content="Arquitectura de Software: Introducción | Álvaro Barrera | Desarrollador de software"><meta property="og:description" content="Introducción a la Arquitectura de Software, roles de diseñador y arquitecto"><meta property="og:url" content="https://alvaro-barrera.me/posts/arquitectura-software/"><meta property="og:image" content="https://alvaro-barrera.me/posts/arquitectura-de-software-introduccion.png"><!-- Article Published/Modified time --><meta property="article:published_time" content="2024-08-23T15:22:00.000Z"><meta property="article:modified_time" content="2025-05-26T22:13:00.000Z"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://alvaro-barrera.me/posts/arquitectura-software/"><meta property="twitter:title" content="Arquitectura de Software: Introducción | Álvaro Barrera | Desarrollador de software"><meta property="twitter:description" content="Introducción a la Arquitectura de Software, roles de diseñador y arquitecto"><meta property="twitter:image" content="https://alvaro-barrera.me/posts/arquitectura-de-software-introduccion.png"><!-- Google JSON-LD Structured data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Arquitectura de Software: Introducción | Álvaro Barrera | Desarrollador de software","image":"https://alvaro-barrera.me/posts/arquitectura-de-software-introduccion.png","datePublished":"2024-08-23T15:22:00.000Z","dateModified":"2025-05-26T22:13:00.000Z","author":[{"@type":"Person","name":"Álvaro Barrera","url":"https://alvaro-barrera.me/"}]}</script><!-- Google Font --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="preload" as="style" onload="this.onload=null; this.rel='stylesheet';" crossorigin><meta name="theme-color" content=""><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script src="/toggle-theme.js" async></script><script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-6R2WEDW7BD"></script><script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         // eslint-disable-next-line prefer-rest-params
@@ -123,7 +123,7 @@ const t={preserveBehavior:!1},e=e=>{if("string"==typeof e)return[e,t];const[n,r=
 	animation-fill-mode: both;
 	animation-name: astroFadeIn; }</style></head> <body>  <header class="astro-3ef6ksr2"> <a id="skip-to-content" href="#main-content" class="astro-3ef6ksr2">Skip to content</a> <div class="nav-container astro-3ef6ksr2"> <div class="top-nav-wrap astro-3ef6ksr2"> <a href="/" class="logo whitespace-nowrap astro-3ef6ksr2"> Álvaro Barrera </a> <nav id="nav-menu" class="astro-3ef6ksr2"> <button class="hamburger-menu focus-outline astro-3ef6ksr2" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="menu-icon astro-3ef6ksr2"> <line x1="7" y1="12" x2="21" y2="12" class="line astro-3ef6ksr2"></line> <line x1="3" y1="6" x2="21" y2="6" class="line astro-3ef6ksr2"></line> <line x1="12" y1="18" x2="21" y2="18" class="line astro-3ef6ksr2"></line> <line x1="18" y1="6" x2="6" y2="18" class="close astro-3ef6ksr2"></line> <line x1="6" y1="6" x2="18" y2="18" class="close astro-3ef6ksr2"></line> </svg> </button> <ul id="menu-items" class="display-none sm:flex astro-3ef6ksr2"> <li class="astro-3ef6ksr2"> <a href="/" class=" astro-3ef6ksr2"> Inicio </a> </li> <li class="astro-3ef6ksr2"> <a href="/posts/" class=" astro-3ef6ksr2">
 Blog
-</a> </li> <li class="astro-3ef6ksr2"> <a href="/search/" target="_self" class="group inline-block hover:text-skin-accent focus-outline p-3 sm:p-1  flex astro-3ef6ksr2" aria-label="buscar" title="Buscar"> <svg xmlns="http://www.w3.org/2000/svg" class="scale-125 sm:scale-100 astro-3ef6ksr2"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z" class="astro-3ef6ksr2"></path> </svg> <span class="sr-only astro-3ef6ksr2">Buscar</span> </a> </li>  </ul> </nav> </div> </div> <div class="max-w-3xl mx-auto px-4"> <hr class="border-skin-line" aria-hidden="true"> </div> </header>   <div class="mx-auto flex w-full max-w-3xl justify-start px-2 astro-vj4tpspi"> <button class="focus-outline mb-2 mt-8 flex hover:opacity-75 astro-vj4tpspi" onclick="(() => (history.length === 1) ? window.location = '/' : history.back())()"> <svg xmlns="http://www.w3.org/2000/svg" class="astro-vj4tpspi"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-vj4tpspi"></path> </svg><span class="astro-vj4tpspi">Regresar</span> </button> </div> <main id="main-content" class="astro-vj4tpspi"> <h1 class="post-title astro-vj4tpspi" data-astro-transition-scope="astro-plk3gbjq-1">Arquitectura de Software: Introducción</h1> <div class="flex items-center space-x-2 opacity-80 my-2 astro-vj4tpspi"><svg xmlns="http://www.w3.org/2000/svg" class="scale-100 inline-block h-6 w-6 min-w-[1.375rem] fill-skin-base" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Publicado:</span><span class="italic text-base"><time dateTime="2024-08-23T15:22:00.000Z">23 ago 2024</time></span></div> <p class="astro-vj4tpspi"></p> <article id="article" class="prose mx-auto mt-8 max-w-3xl astro-vj4tpspi"> <h2 id="tabla-de-contenido">Tabla de contenido</h2>
+</a> </li> <li class="astro-3ef6ksr2"> <a href="/search/" target="_self" class="group inline-block hover:text-skin-accent focus-outline p-3 sm:p-1  flex astro-3ef6ksr2" aria-label="buscar" title="Buscar"> <svg xmlns="http://www.w3.org/2000/svg" class="scale-125 sm:scale-100 astro-3ef6ksr2"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z" class="astro-3ef6ksr2"></path> </svg> <span class="sr-only astro-3ef6ksr2">Buscar</span> </a> </li>  </ul> </nav> </div> </div> <div class="max-w-3xl mx-auto px-4"> <hr class="border-skin-line" aria-hidden="true"> </div> </header>   <div class="mx-auto flex w-full max-w-3xl justify-start px-2 astro-vj4tpspi"> <button class="focus-outline mb-2 mt-8 flex hover:opacity-75 astro-vj4tpspi" onclick="(() => (history.length === 1) ? window.location = '/' : history.back())()"> <svg xmlns="http://www.w3.org/2000/svg" class="astro-vj4tpspi"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-vj4tpspi"></path> </svg><span class="astro-vj4tpspi">Regresar</span> </button> </div> <main id="main-content" class="astro-vj4tpspi"> <h1 class="post-title astro-vj4tpspi" data-astro-transition-scope="astro-plk3gbjq-1">Arquitectura de Software: Introducción</h1> <div class="flex items-center space-x-2 opacity-80 my-2 astro-vj4tpspi"><svg xmlns="http://www.w3.org/2000/svg" class="scale-100 inline-block h-6 w-6 min-w-[1.375rem] fill-skin-base" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="italic text-base">Updated:</span><span class="italic text-base"><time dateTime="2025-05-26T22:13:00.000Z">26 may 2025</time></span></div> <p class="astro-vj4tpspi"></p> <article id="article" class="prose mx-auto mt-8 max-w-3xl astro-vj4tpspi"> <h2 id="tabla-de-contenido">Tabla de contenido</h2>
 <p></p><details><summary>Ver contenido</summary><p></p>
 <ul>
 <li>
@@ -142,6 +142,9 @@ Blog
 <p><a href="#arquitectura-de-software">Arquitectura de Software</a></p>
 <ul>
 <li>
+<p><a href="#el-arquitecto-de-software">El Arquitecto de software</a></p>
+</li>
+<li>
 <p><a href="#beneficios-de-una-buena-arquitectura-de-software">Beneficios de una Buena Arquitectura de Software</a></p>
 </li>
 <li>
@@ -158,13 +161,17 @@ Blog
 </ul>
 </li>
 <li>
-<p><a href="#t%C3%A9rminos-claves-estilo-arquitect%C3%B3nico">Términos Claves: Estilo arquitectónico</a></p>
-</li>
-<li>
 <p><a href="#colaboraci%C3%B3n-entre-dise%C3%B1ador-y-arquitecto">Colaboración entre Diseñador y Arquitecto</a></p>
 </li>
 <li>
 <p><a href="#equilibrio-entre-velocidad-y-calidad">Equilibrio entre Velocidad y Calidad</a></p>
+</li>
+<li>
+<p><a href="#t%C3%A9rminos-claves">Términos Claves</a></p>
+<ul>
+<li><a href="#estilo-arquitect%C3%B3nico">Estilo arquitectónico</a></li>
+<li><a href="#subsistemas-vs-m%C3%B3dulos">Subsistemas vs Módulos</a></li>
+</ul>
 </li>
 <li>
 <p><a href="#conclusi%C3%B3n">Conclusión</a></p>
@@ -181,74 +188,69 @@ Blog
 <h2 id="principios-de-diseño-y-uml">Principios de Diseño y UML</h2>
 <p>Es esencial conocer y aplicar principios de diseño adecuados, y para comunicar estos principios usamos UML (Lenguaje Unificado de Modelado), que sirve como una herramienta visual para representar los diferentes componentes y su interacción dentro del sistema. Si no comprendes por qué las piezas están organizadas de cierta manera, es una señal de que la arquitectura del proyecto puede no haber sido bien pensada desde el principio. Diferencia entre Diseño y Arquitectura de Software</p>
 <h2 id="diseño-de-software">Diseño de Software</h2>
-<p>El diseño de software es el proceso creativo de transformar un problema en una solución.</p>
-<p>Se basa en requisitos abstractos y los transforma en detalles listos para la implementación, sin incluir detalles técnicos específicos de código.</p>
-<p>Durante esta etapa se deciden clases, métodos, tipos de datos, etc., sin centrarse aún en decisiones específicas de tecnología o lenguaje.</p>
-<p>El diseño de software se enfoca en resolver problemas concretos del sistema mediante la definición de componentes individuales, sus interacciones y responsabilidades. Su objetivo principal es convertir los requisitos funcionales en código operativo, asegurando que sea fácil de mantener y actualizar a largo plazo. Es aquí donde se determinan las clases, relaciones y casos de uso.</p>
+<p>El diseño de software es el proceso creativo de transformar un problema en una solución estructurada. Empieza con requisitos abstractos y los convierte en detalles listos para implementar, sin incluir detalles técnicos específicos de código.</p>
+<p>Durante esta etapa se deciden los componentes del sistema, como clases, métodos y tipos de datos, así como sus interacciones y responsabilidades. El enfoque se centra en resolver problemas concretos del sistema mediante una organización coherente de los elementos.</p>
+<p>El objetivo principal es convertir los requisitos funcionales en código operativo, asegurando que sea fácil de mantener y actualizar a largo plazo.</p>
 <h3 id="preocupaciones-claves-en-el-diseño">Preocupaciones Claves en el Diseño</h3>
 <ul>
-<li>Estructuración del sistema: descomposición en subsistemas y definición de contratos/interfaces.</li>
-<li>Modelado de control: definición del comportamiento de los componentes en ejecución.</li>
-<li>Descomposición modular: identificación de componentes basada en criterios como mantenibilidad, fiabilidad, seguridad y gestión de recursos.</li>
+<li><strong>Estructuración del sistema</strong>: descomposición en subsistemas y definición de contratos/interfaces.</li>
+<li><strong>Modelado de control</strong>: definición del comportamiento de los componentes en ejecución.</li>
+<li><strong>Descomposición modular</strong>: identificación de componentes basada en criterios como mantenibilidad, fiabilidad, seguridad y gestión de recursos.</li>
 </ul>
 <h2 id="arquitectura-de-software">Arquitectura de Software</h2>
-<p>Por otro lado, la arquitectura de software se concentra en los aspectos de nivel superior del sistema. Un arquitecto de software es responsable de analizar el sistema completo, seleccionar el marco de trabajo, definir el almacenamiento de datos y determinar cómo interactúan entre sí los distintos componentes. Mientras el diseño se enfoca en los detalles de implementación, la arquitectura abarca un panorama más amplio, considerando las decisiones que afectan la estructura global y los problemas comerciales que deben resolverse.</p>
+<p>La arquitectura de software se enfoca en los aspectos de nivel superior del sistema. Su propósito principal es analizar, separar y estructurar los componentes fundamentales, determinando cómo deben dividirse para facilitar la solución del problema. Además, aborda preocupaciones transversales que afectan a todo el sistema, haciendo énfasis en el contexto de la empresa.</p>
+<h3 id="el-arquitecto-de-software">El Arquitecto de software</h3>
+<p>Un arquitecto de software es responsable de analizar el sistema completo, seleccionar el marco de trabajo, definir el almacenamiento de datos y determinar cómo interactúan entre sí los distintos componentes. Mientras el diseño se enfoca en los detalles de implementación, la arquitectura abarca un panorama más amplio, considerando las decisiones que afectan la estructura global y los problemas comerciales que deben resolverse.</p>
 <h3 id="beneficios-de-una-buena-arquitectura-de-software">Beneficios de una Buena Arquitectura de Software</h3>
 <p>Entre los beneficios clave de una buena arquitectura se encuentran:</p>
 <ul>
 <li>
-<p>Descentralización del desarrollo y mantenimiento, lo que permite la óptima gestión de recursos y riesgos.</p>
+<p><strong>Descentralización</strong> del desarrollo y mantenimiento, lo que permite la óptima gestión de recursos y riesgos.</p>
 </li>
 <li>
-<p>División en subsistemas, facilitando la evaluación de costos y beneficios para decisiones de compra o construcción del software.</p>
+<p><strong>División</strong> en subsistemas, facilitando la evaluación de costos y beneficios para decisiones de compra o construcción del software.</p>
 </li>
 <li>
-<p>Documentación arquitectónica clara, esencial para la comunicación efectiva y la comprensión integral del sistema.</p>
+<p><strong>Documentación</strong> arquitectónica clara, esencial para la comunicación efectiva y la comprensión integral del sistema.</p>
 </li>
 <li>
-<p>Escalabilidad y mantenibilidad, aspectos extremadamente importantes en entornos ágiles donde la frecuencia de cambios es mayor.</p>
+<p><strong>Escalabilidad</strong> y <strong>mantenibilidad</strong>, aspectos extremadamente importantes en entornos ágiles donde la frecuencia de cambios es mayor.</p>
 </li>
 <li>
-<p>Revisión y ajuste continuo de la arquitectura, necesarios para mantener la calidad y adaptarse a necesidades nuevas a lo largo del ciclo de vida del software.</p>
+<p><strong>Revisión</strong> y <strong>ajuste continuo</strong> de la arquitectura, necesarios para mantener la calidad y adaptarse a necesidades nuevas a lo largo del ciclo de vida del software.</p>
 </li>
 </ul>
 <h3 id="proceso-de-arquitectura">Proceso de Arquitectura</h3>
 <p>La arquitectura de software se ocupa de:</p>
 <ul>
-<li>Estimar: cuánto trabajo tomará, cuánto tiempo y quién lo hará.</li>
-<li>Asegurar la calidad: principalmente en aspectos como fiabilidad y rendimiento.</li>
-<li>Particionar: dividir el sistema en partes más pequeñas (subsistemas y módulos) para su posterior diseño y construcción.</li>
+<li><strong>Estimar</strong>: cuánto trabajo tomará, cuánto tiempo y quién lo hará.</li>
+<li><strong>Asegurar la calidad</strong>: principalmente en aspectos como fiabilidad y rendimiento.</li>
+<li><strong>Particionar</strong>: dividir el sistema en partes más pequeñas (subsistemas y módulos) para su posterior diseño y construcción.</li>
 </ul>
 <h3 id="atributos-de-una-arquitectura-de-calidad">Atributos de una Arquitectura de Calidad</h3>
 <p>Los atributos de una arquitectura de software de calidad se dividen en tres categorías:</p>
 <h4 id="atributos-de-calidad"><strong>Atributos de Calidad</strong></h4>
 <ul>
-<li>Mantenibilidad</li>
-<li>Testabilidad</li>
-<li>Usabilidad</li>
-<li>Seguridad</li>
-<li>Integridad</li>
+<li>Mantenibilidad - Testabilidad - Usabilidad - Seguridad - Integridad</li>
 </ul>
 <h4 id="atributos-de-operación"><strong>Atributos de Operación</strong></h4>
 <ul>
-<li>Disponibilidad</li>
-<li>Actualización</li>
-<li>Fiabilidad</li>
-<li>Recuperabilidad</li>
-<li>Capacidad de Gestión</li>
+<li>Disponibilidad - Actualización - Fiabilidad - Recuperabilidad - Capacidad de Gestión</li>
 </ul>
 <h4 id="atributos-de-rendimiento"><strong>Atributos de Rendimiento</strong></h4>
 <ul>
-<li>Tiempo de respuesta</li>
-<li>Elasticidad</li>
-<li>Capacidad (Throughput)</li>
+<li>Tiempo de respuesta - Elasticidad - Capacidad (Throughput)</li>
 </ul>
-<h2 id="términos-claves-estilo-arquitectónico">Términos Claves: Estilo arquitectónico</h2>
-<p>Es el conjunto de decisiones de diseño aplicadas en un contexto definido. Estas decisiones organizan el sistema en módulos y componentes, y definen cómo interactúan. El estilo arquitectónico incluye vocabulario específico, restricciones sobre cómo combinar los componentes, y determina las propiedades del sistema resultante.</p>
 <h2 id="colaboración-entre-diseñador-y-arquitecto">Colaboración entre Diseñador y Arquitecto</h2>
 <p>Ambos roles son esenciales y complementarios. El diseñador traduce los requisitos en soluciones concretas, mientras que el arquitecto toma decisiones estratégicas sobre la estructura general del sistema. Ambos deben ser capaces de comunicar soluciones de alta calidad a las partes interesadas.</p>
 <h2 id="equilibrio-entre-velocidad-y-calidad">Equilibrio entre Velocidad y Calidad</h2>
 <p>Uno de los desafíos clave en la arquitectura de software es encontrar un equilibrio entre la rapidez y la calidad. Los clientes suelen desear soluciones rápidas, mientras que los equipos de ingeniería buscan entregar sistemas robustos y bien diseñados. Esta situación requiere negociación para asegurar que ambas partes obtengan lo que necesitan: un software que no solo funcione bien, sino que también cumpla con los plazos establecidos.</p>
+<h2 id="términos-claves">Términos Claves</h2>
+<h3 id="estilo-arquitectónico">Estilo arquitectónico</h3>
+<p>Es el conjunto de decisiones de diseño aplicadas en un contexto definido. Estas decisiones organizan el sistema en módulos y componentes, y definen cómo interactúan. El estilo arquitectónico incluye vocabulario específico, restricciones sobre cómo combinar los componentes, y determina las propiedades del sistema resultante.</p>
+<h3 id="subsistemas-vs-módulos">Subsistemas vs Módulos</h3>
+<p>Un <strong>subsistema</strong> es una parte del sistema que puede tener valor empresarial por sí sola. Puede operar de forma independiente o desarrollarse separadamente.</p>
+<p>Un <strong>módulo</strong> es un componente de un subsistema que no puede funcionar de manera independiente y no tiene valor empresarial por sí mismo. Agrupa funciones o características relacionadas.</p>
 <h2 id="conclusión">Conclusión</h2>
 <p>Una buena arquitectura de software no solo se trata de elegir la tecnología adecuada, sino de organizar los componentes de manera que el sistema sea robusto, fácil de mantener y escalable. Tanto el diseño como la arquitectura son fundamentales para lograr un software de calidad, y su correcta implementación asegura que el sistema cumpla con las expectativas tanto del cliente como del equipo de desarrollo.”</p> </article> <ul class="my-8 astro-vj4tpspi"> <li class="inline-block my-1 underline-offset-4 astro-blwjyjpt"> <a href="/tags/diseno-de-software/" class="text-sm pr-2 group astro-blwjyjpt" data-astro-transition-scope="astro-36ssibgs-2"> <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-blwjyjpt"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-blwjyjpt"></path> </svg>
 &nbsp;<span class="astro-blwjyjpt">diseno-de-software</span> </a> </li> <li class="inline-block my-1 underline-offset-4 astro-blwjyjpt"> <a href="/tags/arquitectura-de-software/" class="text-sm pr-2 group astro-blwjyjpt" data-astro-transition-scope="astro-36ssibgs-3"> <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-blwjyjpt"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-blwjyjpt"></path> </svg>
