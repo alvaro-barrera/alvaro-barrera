@@ -226,7 +226,7 @@ Blog
 <p>Al analizar la clase, podemos notar que tiene dos grupos de responsabilidades (métodos):</p>
 <ul>
 <li>Gestión de la trayectoria (Grupo 1): <code>is_at_end?</code>, <code>next_stop</code>, <code>get_destination_stop</code>, <code>get_total_route_distance</code>, <code>get_next_stop_distance</code>. Acceden a: <code>@destination_stop_index</code>, <code>@num_stops</code>, <code>@stops</code>, <code>@distances_between</code>, <code>@destination_stop</code></li>
-<li>Gestión de pasajeros (Grupo 2): <code>generate_new_passengers</code>, <code>update</code>. Acceden a: <code>@generator</code>, <code>@stops</code></li>
+<li>Gestión de pasajeros en relación a las estaciones (Grupo 2): <code>generate_new_passengers</code>, <code>update</code>. Acceden a: <code>@generator</code>, <code>@stops</code></li>
 </ul>
 <p>Si vamos a la definición, podemos notar que el uso de los atributos resaltan bastante bien esta división de responsabilidades.</p>
 <p>El resultado de <strong>LCOM4 es igual a 2</strong>, lo que nos indica que la clase tiene 2 responsabilidades, lo que sugiere que podría refactorizarse.</p>
@@ -236,7 +236,7 @@ Blog
 <li><strong>RouteTracker</strong>: se encarga de todo lo relacionado con la ruta, destino y el cálculo de distancias.</li>
 <li><strong>PassengerManager</strong>: se encarga de la generación de pasajeros y la actualización de estado de las estaciones.</li>
 </ul>
-<p>Es clave reconocer que la lógica de <code>update</code> implica modificaciones dinámicas en el estado del atributo @stops (estaciones). Mientras que RouteTracker se enfoca en el seguimiento estructural de la ruta —como el avance y el cálculo de distancias—, es PassengerManager quien asume la responsabilidad de manipular el estado de los pasajeros y las estaciones.</p>
+<p>Es clave reconocer que la lógica de <code>update</code> implica modificaciones dinámicas en el estado del atributo @stops (estaciones). Mientras que RouteTracker se enfoca en el seguimiento estructural de la ruta —como el avance y el cálculo de distancias—, es PassengerManager quien asume la responsabilidad de manipular el estado de los pasajeros y en relación a las estaciones.</p>
 <pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="ruby"><code><span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">class</span><span style="color:#6F42C1;--shiki-dark:#ECC48D"> RouteTracker</span></span>
 <span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> initialize</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">(</span><span style="color:#FF9800;--shiki-dark:#7FDBCA">stops</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">distances</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">num_stops</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">)</span></span>
 <span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @stops</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> stops</span></span>
