@@ -139,6 +139,7 @@ Blog
 <p><a href="#lcom-lack-of-cohesion-of-methods">LCOM (Lack of Cohesion of Methods)</a></p>
 <ul>
 <li><a href="#c%C3%A1lculo-de-lcom4">Cálculo de LCOM4</a></li>
+<li><a href="#ejemplo-en-ruby">Ejemplo en Ruby</a></li>
 <li><a href="#propuesta-de-divisi%C3%B3n-en-clases">Propuesta de división en clases</a></li>
 </ul>
 </li>
@@ -166,6 +167,7 @@ Blog
 <li>Si hay <strong>grupos de métodos aislados</strong> entre sí: <code>LCOM4 > 1</code> (clase con múltiples responsabilidades).</li>
 <li>Si <strong>ningún método accede a atributos</strong>: <code>LCOM4 = 0</code> (probablemente no es una clase valiosa).</li>
 </ul>
+<h4 id="ejemplo-en-ruby">Ejemplo en Ruby</h4>
 <p>Revisemos este caso en Ruby (considere que está hecho así por fines didácticos):</p>
 <p>La clase Route modela una ruta de transporte en un sistema simulado. Su objetivo es representar una secuencia de estaciones por las que pasa un vehículo (como un autobús), y gestionar tanto el avance en la ruta como la generación de pasajeros.</p>
 <p>Y tiene como responsabilidades:</p>
