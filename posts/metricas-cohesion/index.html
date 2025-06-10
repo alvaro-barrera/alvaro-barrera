@@ -1,0 +1,542 @@
+<!DOCTYPE html><html lang="es" class="scroll-smooth"> <head><!-- Metadatos básicos --><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link rel="canonical" href="https://alvaro-barrera.me/posts/metricas-cohesion/"><meta name="generator" content="Astro v4.16.3 + Astro"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><!-- Favicon y iconos --><link rel="icon" type="image/svg+xml" href="/favico.svg"><link rel="alternate icon" type="image/png" href="/favico.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><!-- <link rel="manifest" href="/site.webmanifest" /> --><meta name="theme-color" content="#ffffff"><!-- Título y descripción --><title>Calidad del Software I: Métricas Asociadas a la Cohesión | Álvaro Barrera | Desarrollador de software | Álvaro Barrera</title><meta name="title" content="Calidad del Software I: Métricas Asociadas a la Cohesión | Álvaro Barrera | Desarrollador de software | Álvaro Barrera"><meta name="description" content="Métricas en el diseño de software para tomar mejores decisiones arquitectónicas"><meta name="author" content="Álvaro Barrera"><meta name="keywords" content="desarrollo de software, Ruby on Rails, Laravel, API, SPA, facturación electrónica, consultoría tecnológica"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://alvaro-barrera.me/posts/metricas-cohesion/"><meta property="og:title" content="Calidad del Software I: Métricas Asociadas a la Cohesión | Álvaro Barrera | Desarrollador de software | Álvaro Barrera"><meta property="og:description" content="Métricas en el diseño de software para tomar mejores decisiones arquitectónicas"><meta property="og:image" content="https://alvaro-barrera.me/posts/calidad-del-software-i-metricas-asociadas-a-la-cohesion.png"><meta property="og:site_name" content="Álvaro Barrera | Desarrollador de software"><meta property="og:locale" content="es_ES"><meta property="article:published_time" content="2025-06-09T22:13:00.000Z"><meta property="article:modified_time" content="2025-06-09T22:13:00.000Z"><meta property="article:author" content="Álvaro Barrera"><meta property="article:section" content="Tecnología"><meta property="article:tag" content="desarrollo de software"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://alvaro-barrera.me/posts/metricas-cohesion/"><meta name="twitter:title" content="Calidad del Software I: Métricas Asociadas a la Cohesión | Álvaro Barrera | Desarrollador de software | Álvaro Barrera"><meta name="twitter:description" content="Métricas en el diseño de software para tomar mejores decisiones arquitectónicas"><meta name="twitter:image" content="https://alvaro-barrera.me/posts/calidad-del-software-i-metricas-asociadas-a-la-cohesion.png"><meta name="twitter:creator" content="@Alvaro__Barrera"><meta name="twitter:site" content="@Alvaro__Barrera"><!-- Schema.org markup for Google --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Álvaro Barrera | Desarrollador de software","url":"https://alvaro-barrera.me/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://alvaro-barrera.me/search/?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Calidad del Software I: Métricas Asociadas a la Cohesión | Álvaro Barrera | Desarrollador de software","image":"https://alvaro-barrera.me/posts/calidad-del-software-i-metricas-asociadas-a-la-cohesion.png","datePublished":"2025-06-09T22:13:00.000Z","dateModified":"2025-06-09T22:13:00.000Z","author":[{"@type":"Person","name":"Álvaro Barrera","url":"https://alvaro-barrera.me/"}],"mainEntityOfPage":{"@type":"WebPage","@id":"https://alvaro-barrera.me/posts/metricas-cohesion/"},"publisher":{"@type":"Organization","name":"Álvaro Barrera","logo":{"@type":"ImageObject","url":"https://alvaro-barrera.me/alvarobarrera.png"}}}</script><!-- Preconexiones y precargas --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="//fonts.googleapis.com"><link rel="dns-prefetch" href="//www.googletagmanager.com"><!-- Precargar fuentes críticas --><link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" type="text/css"></noscript><!-- Sitemap --><link rel="sitemap" type="application/xml" title="Mapa del sitio" href="/sitemap-index.xml"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script src="/toggle-theme.js" async></script><script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-6R2WEDW7BD"></script><script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        // eslint-disable-next-line prefer-rest-params
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-6R2WEDW7BD");
+    </script><link rel="stylesheet" href="/assets/index.CNRfeUHB.css">
+<style>a:where(.astro-blwjyjpt){position:relative;text-decoration-line:underline;text-decoration-style:dashed}a:where(.astro-blwjyjpt):hover{top:-.125rem;--tw-text-opacity: 1;color:rgba(var(--color-accent),var(--tw-text-opacity))}a:where(.astro-blwjyjpt):focus-visible{padding:.25rem}a:where(.astro-blwjyjpt) svg:where(.astro-blwjyjpt){margin-right:-1.25rem;height:1.5rem;width:1.5rem;--tw-scale-x: .95;--tw-scale-y: .95;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));--tw-text-opacity: 1;color:rgba(var(--color-text-base),var(--tw-text-opacity));opacity:.8}.group:where(.astro-blwjyjpt):hover a:where(.astro-blwjyjpt) svg:where(.astro-blwjyjpt){fill:rgb(var(--color-accent))}
+@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+.social-icons:where(.astro-wkojbtzc){display:flex;flex-direction:column;flex-wrap:wrap;align-items:center;justify-content:center;gap:.25rem}@media (min-width: 640px){.social-icons:where(.astro-wkojbtzc){align-items:flex-start}}.link-button:where(.astro-wkojbtzc){--tw-scale-x: .9;--tw-scale-y: .9;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));padding:.5rem}.link-button:where(.astro-wkojbtzc):hover{--tw-rotate: 6deg;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.link-button:where(.astro-wkojbtzc){padding:.25rem}}main:where(.astro-vj4tpspi){margin-left:auto;margin-right:auto;width:100%;max-width:48rem;padding-left:1rem;padding-right:1rem;padding-bottom:3rem}.post-title:where(.astro-vj4tpspi){font-size:1.5rem;line-height:2rem;font-weight:600;--tw-text-opacity: 1;color:rgba(var(--color-accent),var(--tw-text-opacity))}
+</style><script type="module" src="/assets/hoisted.BYHvv9Tn.js"></script>
+<script>!(function(w,p,f,c){if(!window.crossOriginIsolated && !navigator.serviceWorker) return;c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[]).concat(["dataLayer.push"])})(window,'partytown','forward');/* Partytown 0.10.3-dev1734732935152 - MIT builder.io */
+const t={preserveBehavior:!1},e=e=>{if("string"==typeof e)return[e,t];const[n,r=t]=e;return[n,{...t,...r}]},n=Object.freeze((t=>{const e=new Set;let n=[];do{Object.getOwnPropertyNames(n).forEach((t=>{"function"==typeof n[t]&&e.add(t)}))}while((n=Object.getPrototypeOf(n))!==Object.prototype);return Array.from(e)})());!function(t,r,o,i,a,s,c,d,l,p,u=t,f){function h(){f||(f=1,"/"==(c=(s.lib||"/~partytown/")+(s.debug?"debug/":""))[0]&&(l=r.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(v,999999999),r.addEventListener("pt0",w),a?y(1):o.serviceWorker?o.serviceWorker.register(c+(s.swPath||"partytown-sw.js"),{scope:c}).then((function(t){t.active?y():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&y()}))}),console.error):v())))}function y(e){p=r.createElement(e?"script":"iframe"),t._pttab=Date.now(),e||(p.style.display="block",p.style.width="0",p.style.height="0",p.style.border="0",p.style.visibility="hidden",p.setAttribute("aria-hidden",!0)),p.src=c+"partytown-"+(e?"atomics.js?v=0.10.3-dev1734732935152":"sandbox-sw.html?"+t._pttab),r.querySelector(s.sandboxParent||"body").appendChild(p)}function v(n,o){for(w(),i==t&&(s.forward||[]).map((function(n){const[r]=e(n);delete t[r.split(".")[0]]})),n=0;n<l.length;n++)(o=r.createElement("script")).innerHTML=l[n].innerHTML,o.nonce=s.nonce,r.head.appendChild(o);p&&p.parentNode.removeChild(p)}function w(){clearTimeout(d)}s=t.partytown||{},i==t&&(s.forward||[]).map((function(r){const[o,{preserveBehavior:i}]=e(r);u=t,o.split(".").map((function(e,r,o){var a;u=u[o[r]]=r+1<o.length?u[o[r]]||(a=o[r+1],n.includes(a)?[]:{}):(()=>{let e=null;if(i){const{methodOrProperty:n,thisObject:r}=((t,e)=>{let n=t;for(let t=0;t<e.length-1;t+=1)n=n[e[t]];return{thisObject:n,methodOrProperty:e.length>0?n[e[e.length-1]]:void 0}})(t,o);"function"==typeof n&&(e=(...t)=>n.apply(r,...t))}return function(){let n;return e&&(n=e(arguments)),(t._ptf=t._ptf||[]).push(o,arguments),n}})()}))})),"complete"==r.readyState?h():(t.addEventListener("DOMContentLoaded",h),t.addEventListener("load",h))}(window,document,navigator,top,window.crossOriginIsolated);;(e=>{e.addEventListener("astro:before-swap",e=>{let r=document.body.querySelector("iframe[src*='/~partytown/']");if(r)e.newDocument.body.append(r)})})(document);</script><style>[data-astro-transition-scope="astro-plk3gbjq-1"] { view-transition-name: calidad-del-software-i-metricas-asociadas-a-la-cohesion; }@layer astro { ::view-transition-old(calidad-del-software-i-metricas-asociadas-a-la-cohesion) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(calidad-del-software-i-metricas-asociadas-a-la-cohesion) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(calidad-del-software-i-metricas-asociadas-a-la-cohesion) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(calidad-del-software-i-metricas-asociadas-a-la-cohesion) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-plk3gbjq-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-plk3gbjq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-plk3gbjq-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-plk3gbjq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-plk3gbjq-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-plk3gbjq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-plk3gbjq-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-plk3gbjq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-2"] { view-transition-name: diseno-de-software; }@layer astro { ::view-transition-old(diseno-de-software) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(diseno-de-software) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(diseno-de-software) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(diseno-de-software) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-3"] { view-transition-name: cohesion; }@layer astro { ::view-transition-old(cohesion) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(cohesion) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(cohesion) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(cohesion) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body>  <header class="astro-3ef6ksr2"> <a id="skip-to-content" href="#main-content" class="astro-3ef6ksr2">Skip to content</a> <div class="nav-container astro-3ef6ksr2"> <div class="top-nav-wrap astro-3ef6ksr2"> <a href="/" class="logo whitespace-nowrap astro-3ef6ksr2"> Álvaro Barrera </a> <nav id="nav-menu" class="astro-3ef6ksr2"> <button class="hamburger-menu focus-outline astro-3ef6ksr2" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="menu-icon astro-3ef6ksr2"> <line x1="7" y1="12" x2="21" y2="12" class="line astro-3ef6ksr2"></line> <line x1="3" y1="6" x2="21" y2="6" class="line astro-3ef6ksr2"></line> <line x1="12" y1="18" x2="21" y2="18" class="line astro-3ef6ksr2"></line> <line x1="18" y1="6" x2="6" y2="18" class="close astro-3ef6ksr2"></line> <line x1="6" y1="6" x2="18" y2="18" class="close astro-3ef6ksr2"></line> </svg> </button> <ul id="menu-items" class="display-none sm:flex astro-3ef6ksr2"> <li class="astro-3ef6ksr2"> <a href="/" class=" astro-3ef6ksr2"> Inicio </a> </li> <li class="astro-3ef6ksr2"> <a href="/posts/" class=" astro-3ef6ksr2">
+Blog
+</a> </li> <li class="astro-3ef6ksr2"> <a href="/search/" target="_self" class="group inline-block hover:text-skin-accent focus-outline p-3 sm:p-1  flex astro-3ef6ksr2" aria-label="buscar" title="Buscar"> <svg xmlns="http://www.w3.org/2000/svg" class="scale-125 sm:scale-100 astro-3ef6ksr2"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z" class="astro-3ef6ksr2"></path> </svg> <span class="sr-only astro-3ef6ksr2">Buscar</span> </a> </li> <li class="astro-3ef6ksr2"> <button id="theme-btn" class="focus-outline astro-3ef6ksr2" title="Toggles light & dark" aria-label="auto" aria-live="polite"> <svg xmlns="http://www.w3.org/2000/svg" id="moon-svg" class="astro-3ef6ksr2"> <path d="M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z" class="astro-3ef6ksr2"></path> </svg> <svg xmlns="http://www.w3.org/2000/svg" id="sun-svg" class="astro-3ef6ksr2"> <path d="M6.993 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007S14.761 6.993 12 6.993 6.993 9.239 6.993 12zM12 8.993c1.658 0 3.007 1.349 3.007 3.007S13.658 15.007 12 15.007 8.993 13.658 8.993 12 10.342 8.993 12 8.993zM10.998 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2h-3zm17 0h3v2h-3zM4.219 18.363l2.12-2.122 1.415 1.414-2.12 2.122zM16.24 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.342 7.759 4.22 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z" class="astro-3ef6ksr2"></path> </svg> </button> </li> </ul> </nav> </div> </div> <div class="max-w-3xl mx-auto px-4"> <hr class="border-skin-line" aria-hidden="true"> </div> </header>   <div class="mx-auto flex w-full max-w-3xl justify-start px-2 astro-vj4tpspi"> <button class="focus-outline mb-2 mt-8 flex hover:opacity-75 astro-vj4tpspi" onclick="(() => (history.length === 1 || document.referrer === '' || window.location.href === document.referrer) ? window.location = '/' : history.back())()"> <svg xmlns="http://www.w3.org/2000/svg" class="astro-vj4tpspi"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-vj4tpspi"></path> </svg><span class="astro-vj4tpspi">Regresar</span> </button> </div> <main id="main-content" class="astro-vj4tpspi"> <h1 class="post-title astro-vj4tpspi" data-astro-transition-scope="astro-plk3gbjq-1">Calidad del Software I: Métricas Asociadas a la Cohesión</h1> <div class="flex items-center space-x-2 opacity-80 my-2 astro-vj4tpspi"><svg xmlns="http://www.w3.org/2000/svg" class="scale-100 inline-block h-6 w-6 min-w-[1.375rem] fill-skin-base" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Publicado:</span><span class="italic text-base"><time dateTime="2025-06-09T22:13:00.000Z">9 jun 2025</time></span></div> <p class="astro-vj4tpspi"></p> <article id="article" class="prose mx-auto mt-8 max-w-3xl astro-vj4tpspi"> <h2 id="tabla-de-contenido">Tabla de contenido</h2>
+<p></p><details><summary>Ver contenido</summary><p></p>
+<ul>
+<li>
+<p><a href="#introducci%C3%B3n">Introducción</a></p>
+</li>
+<li>
+<p><a href="#por-qu%C3%A9-cuantificar-la-calidad-del-dise%C3%B1o-de-software">¿Por qué cuantificar la calidad del diseño de software?</a></p>
+</li>
+<li>
+<p><a href="#m%C3%A9tricas-de-cohesi%C3%B3n">Métricas de Cohesión</a></p>
+<ul>
+<li>
+<p><a href="#lcom-lack-of-cohesion-of-methods">LCOM (Lack of Cohesion of Methods)</a></p>
+<ul>
+<li><a href="#c%C3%A1lculo-de-lcom4">Cálculo de LCOM4</a></li>
+<li><a href="#propuesta-de-divisi%C3%B3n-en-clases">Propuesta de división en clases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#conclusi%C3%B3n">Conclusión</a></p>
+</li>
+</ul>
+<p></p></details><p></p>
+<h2 id="introducción">Introducción</h2>
+<p>¿La calidad depende del observador? En el software, la calidad es un concepto amplio y multifacético: no todos la perciben de la misma forma. Lo que para algunos usuarios representa una mejora, para otros puede ser una pérdida.</p>
+<p>En términos generales, los usuarios esperan un producto que consideren justo en relación a su inversión. Para los ingenieros, en cambio, la calidad implica que el software sea robusto, flexible y fácil de mantener.</p>
+<p>Por tanto, la calidad no se evalúa únicamente por su funcionalidad exterior, sino también por la forma en que está construido. Medir la calidad estructural permite tomar decisiones fundamentadas sobre el diseño.</p>
+<h2 id="por-qué-cuantificar-la-calidad-del-diseño-de-software">¿Por qué cuantificar la calidad del diseño de software?</h2>
+<p>Si bien los ingenieros tienen criterio para identificar problemas de diseño, ese juicio puede ser subjetivo en muchos casos. Las métricas, por otro lado, permiten detectar problemas tangibles y justificar decisiones arquitectónicas con datos.</p>
+<h2 id="métricas-de-cohesión">Métricas de Cohesión</h2>
+<h3 id="lcom-lack-of-cohesion-of-methods">LCOM (Lack of Cohesion of Methods)</h3>
+<p>Existen varias versiones de esta métrica. Nos centraremos en <strong>LCOM4</strong>, la más moderna y útil para evaluar la cohesión de clases.</p>
+<p><strong>LCOM4</strong> evalúa qué tan cohesiva es una clase, basándose en cuántos grupos de responsabilidades (métodos) acceden a datos comunes de una instancia.</p>
+<h4 id="cálculo-de-lcom4">Cálculo de LCOM4</h4>
+<ul>
+<li>Los <strong>constructores y destructores se excluyen</strong> del cálculo.</li>
+<li>Si <strong>todos los métodos acceden a los mismos atributos</strong>: <code>LCOM4 = 1</code> (clase cohesiva, responsabilidad definida).</li>
+<li>Si hay <strong>grupos de métodos aislados</strong> entre sí: <code>LCOM4 > 1</code> (clase con múltiples responsabilidades).</li>
+<li>Si <strong>ningún método accede a atributos</strong>: <code>LCOM4 = 0</code> (probablemente no es una clase valiosa).</li>
+</ul>
+<p>Revisemos este caso en Ruby (considere que está hecho así por fines didácticos):</p>
+<p>La clase Route modela una ruta de transporte en un sistema simulado. Su objetivo es representar una secuencia de paradas por las que pasa un vehículo (como un autobús), y gestionar tanto el avance en la ruta como la generación de pasajeros.</p>
+<p>Y tiene como responsabilidades:</p>
+<ul>
+<li>Saber si se llegó al final de la ruta (is_at_end?)</li>
+<li>Avanzar a la siguiente parada (next_stop)</li>
+<li>Obtener la parada de destino actual (get_destination_stop)</li>
+<li>Calcular distancias (get_total_route_distance, get_next_stop_distance)</li>
+<li>Generar pasajeros en cada parada (generate_new_passengers)</li>
+<li>Ejecutar la generación de nuevos pasajeros y actualizar las paradas (update)</li>
+</ul>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="ruby"><code><span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">class</span><span style="color:#6F42C1;--shiki-dark:#ECC48D"> Route</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> initialize</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">(</span><span style="color:#FF9800;--shiki-dark:#7FDBCA">name</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">stops</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">distances</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">num_stops</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">generator</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @name</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> name</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @stops</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> stops</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @distances_between</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> distances</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @num_stops</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> num_stops</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @generator</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> generator</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @destination_stop_index</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @destination_stop</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#1976D2;--shiki-dark:#82AAFF"> nil</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> update</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    generate_new_passengers</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @stops</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">each(</span><span style="color:#D32F2F;--shiki-dark:#C792EA">&#x26;</span><span style="color:#24292EFF;--shiki-dark:#82AAFF">:update</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> is_at_end?</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @destination_stop_index</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> >=</span><span style="color:#24292EFF;--shiki-dark:#BAEBE2"> @num_stops</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> next_stop</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @destination_stop_index</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> +=</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 1</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    if</span><span style="color:#24292EFF;--shiki-dark:#BAEBE2"> @destination_stop_index</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> &#x3C;</span><span style="color:#24292EFF;--shiki-dark:#BAEBE2"> @num_stops</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">      @destination_stop</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#BAEBE2"> @stops</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">[</span><span style="color:#24292EFF;--shiki-dark:#BAEBE2">@destination_stop_index</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">]</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    else</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">      @destination_stop</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#BAEBE2"> @stops</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">last</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    end</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> get_destination_stop</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @destination_stop</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> get_total_route_distance</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @distances_between</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">sum</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> get_next_stop_distance</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @distances_between</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">[</span><span style="color:#24292EFF;--shiki-dark:#BAEBE2">@destination_stop_index</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> -</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 1</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">]</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> generate_new_passengers</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @generator</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">generate_passengers</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">end</span></span>
+<span class="line"></span></code></pre>
+<p>Al analizar la clase, podemos notar que tiene dos grupos de responsabilidades (métodos):</p>
+<ul>
+<li>Gestión de la trayectoria (Grupo 1): <code>is_at_end?</code>, <code>next_stop</code>, <code>get_destination_stop</code>, <code>get_total_route_distance</code>, <code>get_next_stop_distance</code>. Acceden a: <code>@destination_stop_index</code>, <code>@num_stops</code>, <code>@stops</code>, <code>@distances_between</code>, <code>@destination_stop</code></li>
+<li>Gestión de pasajeros (Grupo 2): <code>generate_new_passengers</code>, <code>update</code>. Acceden a: <code>@generator</code>, <code>@stops</code></li>
+</ul>
+<p>Si vamos a la definición, podemos notar que el uso de los atributos resaltan bastante bien esta división de responsabilidades.</p>
+<p>El resultado de <strong>LCOM4 es igual a 2</strong>, lo que nos indica que la clase tiene 2 responsabilidades, lo que sugiere que podría refactorizarse.</p>
+<h4 id="propuesta-de-división-en-clases">Propuesta de división en clases</h4>
+<p>A continuación, refactorizaremos la lógica de la clase Route en dos componentes:</p>
+<ul>
+<li>RouteTracker: se encarga de todo lo relacionado con la ruta, destino y el cálculo de distancias.</li>
+<li>PassengerManager: se encarga de la generación de pasajeros y la actualización de las paradas.</li>
+</ul>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="ruby"><code><span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">class</span><span style="color:#6F42C1;--shiki-dark:#ECC48D"> RouteTracker</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> initialize</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">(</span><span style="color:#FF9800;--shiki-dark:#7FDBCA">stops</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">distances</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">num_stops</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @stops</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> stops</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @distances_between</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> distances</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @num_stops</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> num_stops</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @destination_stop_index</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 0</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @destination_stop</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#1976D2;--shiki-dark:#82AAFF"> nil</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> is_at_end?</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @destination_stop_index</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> >=</span><span style="color:#24292EFF;--shiki-dark:#BAEBE2"> @num_stops</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> next_stop</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @destination_stop_index</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> +=</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 1</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @destination_stop</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> if</span><span style="color:#24292EFF;--shiki-dark:#BAEBE2"> @destination_stop_index</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> &#x3C;</span><span style="color:#24292EFF;--shiki-dark:#BAEBE2"> @num_stops</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">                          @stops</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">[</span><span style="color:#24292EFF;--shiki-dark:#BAEBE2">@destination_stop_index</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">]</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">                        else</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">                          @stops</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">last</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">                        end</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> get_destination_stop</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @destination_stop</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> get_total_route_distance</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @distances_between</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">sum</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> get_next_stop_distance</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @distances_between</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">[</span><span style="color:#24292EFF;--shiki-dark:#BAEBE2">@destination_stop_index</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> -</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 1</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">]</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">end</span></span>
+<span class="line"></span></code></pre>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="ruby"><code><span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">class</span><span style="color:#6F42C1;--shiki-dark:#ECC48D"> PassengerManager</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> initialize</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">(</span><span style="color:#FF9800;--shiki-dark:#7FDBCA">generator</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">stops</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @generator</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> generator</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @stops</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> stops</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> generate_new_passengers</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @generator</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">generate_passengers</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> update</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    generate_new_passengers</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @stops</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">each(</span><span style="color:#D32F2F;--shiki-dark:#C792EA">&#x26;</span><span style="color:#24292EFF;--shiki-dark:#82AAFF">:update</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">end</span></span>
+<span class="line"></span></code></pre>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="ruby"><code><span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">class</span><span style="color:#6F42C1;--shiki-dark:#ECC48D"> Route</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> initialize</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">(</span><span style="color:#FF9800;--shiki-dark:#7FDBCA">name</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">stops</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">distances</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">num_stops</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">generator</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @name</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> name</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @tracker</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#1976D2;--shiki-dark:#C5E478"> RouteTracker</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">new</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">(stops</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> distances</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> num_stops)</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @passenger_manager</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#1976D2;--shiki-dark:#C5E478"> PassengerManager</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">new</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">(generator</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> stops)</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> update</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @passenger_manager</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">update</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> is_at_end?</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @tracker</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">is_at_end?</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> next_stop</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @tracker</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">next_stop</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> get_destination_stop</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @tracker</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">get_destination_stop</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> get_total_route_distance</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @tracker</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">get_total_route_distance</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> get_next_stop_distance</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @tracker</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">get_next_stop_distance</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> generate_new_passengers</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @passenger_manager</span><span style="color:#212121;--shiki-dark:#D6DEEB">.</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">generate_new_passengers</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  end</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">end</span></span>
+<span class="line"></span></code></pre>
+<p>Como puedes observar, ahora la clase Route actúa como una API que delega responsabilidades a RouteTracker y PassengerManager, mejorando la testabilidad y la separación de responsabilidades.</p>
+<h2 id="conclusión">Conclusión</h2>
+<p>El cálculo de métricas asociadas a la cohesión es una herramienta más para tomar decisiones de diseño basadas en datos. No debemos depender exclusivamente de una sola métrica, sino utilizarla como guía complementaria a nuestro criterio.</p>
+<p>LCOM4 nos ayuda a identificar una posible violación del principio de responsabilidad única (SRP). En este ejemplo, propusimos una refactorización que separa las responsabilidades de manera más clara. Como toda métrica, su valor está en cómo se interpreta y aplica.</p> </article> <ul class="my-8 astro-vj4tpspi"> <li class="inline-block my-1 underline-offset-4 astro-blwjyjpt"> <a href="/tags/diseno-de-software/" class="text-sm pr-2 group astro-blwjyjpt" data-astro-transition-scope="astro-36ssibgs-2"> <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-blwjyjpt"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-blwjyjpt"></path> </svg>
+&nbsp;<span class="astro-blwjyjpt">diseno-de-software</span> </a> </li> <li class="inline-block my-1 underline-offset-4 astro-blwjyjpt"> <a href="/tags/cohesion/" class="text-sm pr-2 group astro-blwjyjpt" data-astro-transition-scope="astro-36ssibgs-3"> <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-blwjyjpt"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-blwjyjpt"></path> </svg>
+&nbsp;<span class="astro-blwjyjpt">cohesion</span> </a> </li>  </ul> <div class="flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4 astro-vj4tpspi"> <button id="back-to-top" class="focus-outline whitespace-nowrap py-1 hover:opacity-75 astro-vj4tpspi"> <svg xmlns="http://www.w3.org/2000/svg" class="rotate-90 astro-vj4tpspi"> <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-vj4tpspi"></path> </svg> <span class="astro-vj4tpspi">Subir</span> </button> <div class="social-icons astro-wkojbtzc"> <span class="italic astro-wkojbtzc">Compartir post en:</span> <div class="text-center astro-wkojbtzc"> <a href="https://wa.me/?text=https://alvaro-barrera.me/posts/metricas-cohesion/" target="_blank" class="group inline-block hover:text-skin-accent link-button astro-wkojbtzc" title="Compartir post vía WhatsApp" rel="noopener noreferrer"> <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon-tabler"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+      <path d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1"></path>
+    </svg> <span class="sr-only astro-wkojbtzc">Compartir post vía WhatsApp</span> </a><a href="https://www.facebook.com/sharer.php?u=https://alvaro-barrera.me/posts/metricas-cohesion/" target="_blank" class="group inline-block hover:text-skin-accent link-button astro-wkojbtzc" title="Compartir post en Facebook" rel="noopener noreferrer"> <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon-tabler"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path
+      d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
+    ></path>
+  </svg> <span class="sr-only astro-wkojbtzc">Compartir post en Facebook</span> </a><a href="https://x.com/intent/post?url=https://alvaro-barrera.me/posts/metricas-cohesion/" target="_blank" class="group inline-block hover:text-skin-accent link-button astro-wkojbtzc" title="Compartir post en X" rel="noopener noreferrer"> <svg  
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon-tabler"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+    </svg> <span class="sr-only astro-wkojbtzc">Compartir post en X</span> </a><a href="https://t.me/share/url?url=https://alvaro-barrera.me/posts/metricas-cohesion/" target="_blank" class="group inline-block hover:text-skin-accent link-button astro-wkojbtzc" title="Compartir post vía Telegram" rel="noopener noreferrer"> <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon-tabler"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
+      </svg> <span class="sr-only astro-wkojbtzc">Compartir post vía Telegram</span> </a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://alvaro-barrera.me/posts/metricas-cohesion/" target="_blank" class="group inline-block hover:text-skin-accent link-button astro-wkojbtzc" title="Compartir post vía LinkedIn" rel="noopener noreferrer"> <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon-tabler"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+    <line x1="8" y1="11" x2="8" y2="16"></line>
+    <line x1="8" y1="8" x2="8" y2="8.01"></line>
+    <line x1="12" y1="16" x2="12" y2="11"></line>
+    <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+  </svg> <span class="sr-only astro-wkojbtzc">Compartir post vía LinkedIn</span> </a> </div> </div>  </div> <hr class="my-6 border-dashed astro-vj4tpspi"> <section class="bg-skin-background text-center"> <p class="text-skin-muted mb-4 text-skin-accent">
+¿Buscas soluciones tecnológicas personalizadas?
+</p> <a href="https://www.linkedin.com/in/alvaro-barrera" target="_blank" class="group inline-block hover:text-skin-accent text-lg font-semibold" aria-label="Consultoría IT y desarrollo a medida - Álvaro Barrera" rel="noopener noreferrer">
+Contáctame para consultorías IT y desarrollo a medida
+</a> </section> <hr class="my-6 border-dashed astro-vj4tpspi">  <!-- Previous/Next Post Buttons --> <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 astro-vj4tpspi"> <a href="/posts/arquitectura-software-principios-paquetes" class="flex w-full gap-1 hover:opacity-75 astro-vj4tpspi"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left flex-none astro-vj4tpspi">  <path stroke="none" d="M0 0h24v24H0z" fill="none" class="astro-vj4tpspi"></path> <path d="M15 6l-6 6l6 6" class="astro-vj4tpspi"></path>  </svg> <div class="astro-vj4tpspi"> <span class="astro-vj4tpspi">Anterior post</span> <div class="text-sm text-skin-accent/85 astro-vj4tpspi">Arquitectura de Software III: Principios de Paquetes</div> </div> </a> <a href="/posts/mecanismos-en-la-complejidad-del-software" class="flex w-full justify-end gap-1 text-right hover:opacity-75 sm:col-start-2 astro-vj4tpspi"> <div class="astro-vj4tpspi"> <span class="astro-vj4tpspi">Siguiente post</span> <div class="text-sm text-skin-accent/85 astro-vj4tpspi">Complejidad del Software I: Mecanismos Fundamentales</div> </div> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right flex-none astro-vj4tpspi">  <path stroke="none" d="M0 0h24v24H0z" fill="none" class="astro-vj4tpspi"></path> <path d="M9 6l6 6l-6 6" class="astro-vj4tpspi"></path>  </svg> </a> </div> </main> <footer class="mt-auto astro-sz7xmlte"> <div class="max-w-3xl mx-auto px-0"> <hr class="border-skin-line" aria-hidden="true"> </div> <div class="footer-wrapper text-gray-500 dark:text-gray-300 astro-sz7xmlte"> <div class="social-icons flex astro-upu6fzxr"> <a href="https://github.com/alvaro-barrera" target="_blank" class="group inline-block hover:text-skin-accent link-button astro-upu6fzxr" title=" Álvaro Barrera | Desarrollador de software en Github" rel="noopener noreferrer"> <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon-tabler"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path
+      d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+    ></path>
+  </svg> <span class="sr-only astro-upu6fzxr"> Álvaro Barrera | Desarrollador de software en Github</span> </a><a href="https://www.linkedin.com/in/alvaro-barrera" target="_blank" class="group inline-block hover:text-skin-accent link-button astro-upu6fzxr" title="Álvaro Barrera | Desarrollador de software en LinkedIn" rel="noopener noreferrer"> <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon-tabler"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+    <line x1="8" y1="11" x2="8" y2="16"></line>
+    <line x1="8" y1="8" x2="8" y2="8.01"></line>
+    <line x1="12" y1="16" x2="12" y2="11"></line>
+    <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+  </svg> <span class="sr-only astro-upu6fzxr">Álvaro Barrera | Desarrollador de software en LinkedIn</span> </a><a href="https://twitter.com/Alvaro__Barrera" target="_blank" class="group inline-block hover:text-skin-accent link-button astro-upu6fzxr" title="Álvaro Barrera | Desarrollador de software en X" rel="noopener noreferrer"> <svg  
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon-tabler"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+    </svg> <span class="sr-only astro-upu6fzxr">Álvaro Barrera | Desarrollador de software en X</span> </a><a href="https://www.instagram.com/cobayatech" target="_blank" class="group inline-block hover:text-skin-accent link-button astro-upu6fzxr" title="Álvaro Barrera | Desarrollador de software en Instagram" rel="noopener noreferrer"> <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon-tabler"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+    <circle cx="12" cy="12" r="3"></circle>
+    <line x1="16.5" y1="7.5" x2="16.5" y2="7.501"></line>
+  </svg> <span class="sr-only astro-upu6fzxr">Álvaro Barrera | Desarrollador de software en Instagram</span> </a> </div>  <div class="copyright-wrapper astro-sz7xmlte"> <span class="astro-sz7xmlte">Copyright &#169; 2022-2025</span> <span class="separator astro-sz7xmlte">&nbsp;|&nbsp;</span> <span class="astro-sz7xmlte">Álvaro Barrera</span> </div> </div> </footer>   </body></html>  <script data-astro-rerun>
+  /** Create a progress indicator
+   *  at the top */
+  function createProgressBar() {
+    // Create the main container div
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-skin-fill";
+
+    // Create the progress bar div
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-skin-accent";
+    progressBar.id = "myBar";
+
+    // Append the progress bar to the progress container
+    progressContainer.appendChild(progressBar);
+
+    // Append the progress container to the document body or any other desired parent element
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  /** Update the progress bar
+   *  when user scrolls */
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  /** Attaches links to headings in the document,
+   *  allowing sharing of sections easily */
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ml-2 opacity-0 group-hover:opacity-100 focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  /** Attaches copy buttons to code blocks in the document,
+   * allowing users to copy code easily. */
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const copyButton = document.createElement("button");
+      copyButton.className =
+        "copy-code absolute right-3 -top-3 rounded bg-skin-card px-2 py-1 text-xs leading-4 text-skin-base font-medium";
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      // wrap codebock with relative parent element
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      // visual feedback that task is completed
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Scrolls the document to the top when
+   * the "Back to Top" button is clicked. */
+  function backToTop() {
+    document.querySelector("#back-to-top")?.addEventListener("click", () => {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+  }
+  backToTop();
+
+  /* Go to page start after page swap */
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>
