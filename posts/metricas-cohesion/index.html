@@ -167,7 +167,7 @@ Blog
 <li>Si <strong>ningún método accede a atributos</strong>: <code>LCOM4 = 0</code> (probablemente no es una clase valiosa).</li>
 </ul>
 <p>Revisemos este caso en Ruby (considere que está hecho así por fines didácticos):</p>
-<p>La clase Route modela una ruta de transporte en un sistema simulado. Su objetivo es representar una secuencia de paradas por las que pasa un vehículo (como un autobús), y gestionar tanto el avance en la ruta como la generación de pasajeros.</p>
+<p>La clase Route modela una ruta de transporte en un sistema simulado. Su objetivo es representar una secuencia de estaciones por las que pasa un vehículo (como un autobús), y gestionar tanto el avance en la ruta como la generación de pasajeros.</p>
 <p>Y tiene como responsabilidades:</p>
 <ul>
 <li>Saber si se llegó al final de la ruta (is_at_end?)</li>
@@ -175,7 +175,7 @@ Blog
 <li>Obtener la parada de destino actual (get_destination_stop)</li>
 <li>Calcular distancias (get_total_route_distance, get_next_stop_distance)</li>
 <li>Generar pasajeros en cada parada (generate_new_passengers)</li>
-<li>Ejecutar la generación de nuevos pasajeros y actualizar las paradas (update)</li>
+<li>Ejecutar la generación de nuevos pasajeros y actualizar las estaciones (update)</li>
 </ul>
 <pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="ruby"><code><span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">class</span><span style="color:#6F42C1;--shiki-dark:#ECC48D"> Route</span></span>
 <span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> initialize</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">(</span><span style="color:#FF9800;--shiki-dark:#7FDBCA">name</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">stops</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">distances</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">num_stops</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">generator</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">)</span></span>
@@ -231,11 +231,12 @@ Blog
 <p>Si vamos a la definición, podemos notar que el uso de los atributos resaltan bastante bien esta división de responsabilidades.</p>
 <p>El resultado de <strong>LCOM4 es igual a 2</strong>, lo que nos indica que la clase tiene 2 responsabilidades, lo que sugiere que podría refactorizarse.</p>
 <h4 id="propuesta-de-división-en-clases">Propuesta de división en clases</h4>
-<p>A continuación, refactorizaremos la lógica de la clase Route en dos componentes:</p>
+<p>A continuación, refactorizaremos la lógica de la clase <code>Route</code> en dos componentes:</p>
 <ul>
-<li>RouteTracker: se encarga de todo lo relacionado con la ruta, destino y el cálculo de distancias.</li>
-<li>PassengerManager: se encarga de la generación de pasajeros y la actualización de las paradas.</li>
+<li><strong>RouteTracker</strong>: se encarga de todo lo relacionado con la ruta, destino y el cálculo de distancias.</li>
+<li><strong>PassengerManager</strong>: se encarga de la generación de pasajeros y la actualización de estado de las estaciones.</li>
 </ul>
+<p>Es clave reconocer que la lógica de <code>update</code> implica modificaciones dinámicas en el estado del atributo @stops (estaciones). Mientras que RouteTracker se enfoca en el seguimiento estructural de la ruta —como el avance y el cálculo de distancias—, es PassengerManager quien asume la responsabilidad de manipular el estado de los pasajeros y las estaciones.</p>
 <pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="ruby"><code><span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">class</span><span style="color:#6F42C1;--shiki-dark:#ECC48D"> RouteTracker</span></span>
 <span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">  def</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> initialize</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">(</span><span style="color:#FF9800;--shiki-dark:#7FDBCA">stops</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">distances</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="color:#FF9800;--shiki-dark:#7FDBCA">num_stops</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">)</span></span>
 <span class="line"><span style="color:#24292EFF;--shiki-dark:#BAEBE2">    @stops</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> stops</span></span>
