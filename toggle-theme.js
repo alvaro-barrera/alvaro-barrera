@@ -26,9 +26,12 @@ function setTheme(theme) {
   // Actualizar el color de la barra de direcciones en móviles
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
   if (metaThemeColor) {
-    // Usar el tema directamente para evitar getComputedStyle
-    const bgVar = theme === 'dark' ? '--color-bg-dark' : '--color-bg-light';
-    metaThemeColor.content = getComputedStyle(document.documentElement).getPropertyValue(bgVar);
+    // Usar valores hardcodeados para evitar getComputedStyle y redistribuciones forzadas
+    const themeColors = {
+      light: '#fefbfb',
+      dark: '#0c0c0c'
+    };
+    metaThemeColor.content = themeColors[theme] || themeColors.light;
   }
   
   // Actualizar el botón del tema con batch updates
