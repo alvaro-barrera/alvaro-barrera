@@ -263,10 +263,70 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 30000); // 30 segundos de inactividad
   }
 
+  // Comportamiento de aparición/desaparición según scroll
+  let mascotVisible = false;
+  
+  // Crear un elemento centinela para detectar cuando se ha hecho scroll
+  const scrollSentinel = document.createElement('div');
+  scrollSentinel.style.position = 'absolute';
+  scrollSentinel.style.top = '300px';
+  scrollSentinel.style.width = '1px';
+  scrollSentinel.style.height = '1px';
+  scrollSentinel.style.opacity = '0';
+  scrollSentinel.style.pointerEvents = 'none';
+  document.body.appendChild(scrollSentinel);
+
+  // Función para mostrar/ocultar el personaje
+  const toggleMascot = (shouldShow) => {
+    if (shouldShow !== mascotVisible) {
+      mascotVisible = shouldShow;
+      
+      if (shouldShow) {
+        mascot.style.opacity = '1';
+        mascot.style.visibility = 'visible';
+        mascot.style.pointerEvents = 'auto';
+      } else {
+        mascot.style.opacity = '0';
+        mascot.style.visibility = 'hidden';
+        mascot.style.pointerEvents = 'none';
+        // Ocultar burbuja si está visible
+        bubble.classList.remove('show');
+      }
+    }
+  };
+
+  // Usar IntersectionObserver para evitar lecturas de scroll
+  const scrollObserver = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0];
+      // Cuando el centinela no es visible, significa que hemos hecho scroll > 300px
+      toggleMascot(!entry.isIntersecting);
+    },
+    {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0
+    }
+  );
+
+  // Observar el elemento centinela
+  scrollObserver.observe(scrollSentinel);
+
   // Reiniciar temporizador de inactividad
   ['mousemove', 'click', 'keypress', 'scroll'].forEach(event => {
     window.addEventListener(event, resetSleepTimer, { passive: true });
   });
 
   resetSleepTimer();
+
+  // Limpieza al desmontar
+  const cleanup = () => {
+    scrollObserver.disconnect();
+    if (scrollSentinel.parentNode) {
+      scrollSentinel.parentNode.removeChild(scrollSentinel);
+    }
+  };
+
+  // Limpiar si la página se recarga o cambia
+  window.addEventListener('beforeunload', cleanup);
 });
