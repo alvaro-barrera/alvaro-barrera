@@ -70,44 +70,46 @@ function updateThemeButton(theme) {
 
 // Inicializar el tema al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
-  // Aplicar el tema actual
-  setTheme();
+  // Verificar si hay un tema guardado en localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  
+  // Determinar el tema inicial
+  let initialTheme;
+  if (savedTheme) {
+    // Si hay un tema guardado, usarlo
+    initialTheme = savedTheme;
+  } else {
+    // Si no hay tema guardado, usar el tema del sistema
+    initialTheme = prefersDark.matches ? 'dark' : 'light';
+  }
+  
+  // Aplicar el tema inicial
+  setTheme(initialTheme);
   
   // Configurar el evento de clic en el botón de tema
   const themeBtn = document.getElementById('theme-btn');
   if (themeBtn) {
-    themeBtn.addEventListener('click', toggleTheme);
+    themeBtn.addEventListener('click', () => {
+      const currentTheme = getCurrentTheme();
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      setTheme(newTheme);
+      // Guardar la preferencia del usuario en localStorage
+      localStorage.setItem('theme', newTheme);
+    });
   }
   
   // Escuchar cambios en las preferencias del sistema
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-  let userHasManuallyChangedTheme = false;
-  
-  // Verificar si el usuario ha cambiado manualmente el tema
-  document.addEventListener('click', (e) => {
-    if (e.target.closest('#theme-btn')) {
-      userHasManuallyChangedTheme = true;
-      // Guardar la preferencia del usuario
-      const currentTheme = getCurrentTheme();
-      localStorage.setItem('theme', currentTheme);
-    }
-  }, { once: false, capture: true });
-  
   const handleSystemThemeChange = (e) => {
-    // Solo cambiar automáticamente si el usuario no ha establecido una preferencia manual
-    if (!userHasManuallyChangedTheme) {
+    // Solo cambiar automáticamente si no hay preferencia guardada
+    if (!localStorage.getItem('theme')) {
       const newTheme = e.matches ? 'dark' : 'light';
       setTheme(newTheme);
-      // Limpiar cualquier preferencia guardada para seguir las preferencias del sistema
-      localStorage.removeItem('theme');
     }
   };
   
-  // Configurar el listener inicial
+  // Configurar el listener para cambios del sistema
   prefersDark.addEventListener('change', handleSystemThemeChange);
-  
-  // Verificar el tema del sistema al cargar
-  handleSystemThemeChange({ matches: prefersDark.matches });
   
   // Limpiar el event listener cuando se desmonte el componente
   return () => {
